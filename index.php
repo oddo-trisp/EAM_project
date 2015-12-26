@@ -10,6 +10,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="assets/css/index.css">
+        <link rel="stylesheet" href="assets/css/header.css">
         <script src="assets/js/index.js"></script>
         <title>EAM_Project</title>
     </head>
