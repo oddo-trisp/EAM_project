@@ -1,17 +1,18 @@
 <div class="header">
     <img src="assets/img/books.jpg">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">UOA Library</a>
-        </div>
-        <div>
-          <ul class="nav navbar-nav">
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <ul class="nav nav-pills">
+        <li><a href="#">ΑΡΧΙΚΗ</a></li>
+        <li><a href="#">ΑΝΑΚΟΙΝΩΣΕΙΣ</a></li>
+        <li class="dropdown">
+             <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΒΙΒΛΙΟΘΗΚΕΣ
+                 <span class="caret"></span>
+             </a>
+             <ul class="dropdown-menu">
+                 <li><a href="#">Submenu 1-1</a></li>
+                 <li><a href="#">Submenu 1-2</a></li>
+                 <li><a href="#">Submenu 1-3</a></li>
+             </ul>
+         </li>
+         <li><a href="#">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+    </ul>
 </div>
