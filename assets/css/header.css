@@ -1,26 +1,37 @@
 .header img{
-    width: 960px;
+    width: 100%;
     height: 120px;
     border-radius: 1%;
 }
 
-.navbar-default{
-    padding-top: 0;
+.nav-pills{
     background-color: #2d252d;
 }
 
-.navbar-header a , .navbar-nav a{
+.nav-pills a{
     color: #fff !important;
 }
 
-.navbar-header a:hover , .navbar-nav a:hover{
+.nav-pills a:focus{
+    background-color: #171317 !important;
+}
+
+.nav-pills a:hover{
     color: #aaa !important;
+    background-color: #382e38 !important;
 }
 
-.navbar-header a:active , .navbar-nav a:active{
-    color: #000 !important;
+.nav-pills a:active{
+    color: #aaa !important;
+    background-color: #382e38 !important;
+
 }
 
-.nav-divider{
-    color: #fff !important;
+.dropdown-menu{
+    background-color: #2d252d;
+}
+
+.dropdown-menu > li > a{
+    background-color: #2d252d;
+    color: #fff;
 }

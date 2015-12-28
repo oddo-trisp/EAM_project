@@ -1,4 +1,28 @@
-html{
-    width: 960px;
+html,body{
+    background-color: #FCE8D8;
+    height: 100%;
+}
+
+#container{
+    width: 1024px;
+    margin: auto;
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto -30px;
+    /* Pad bottom by footer height */
+    padding: 0 0 30px;
+}
+
+#headerfile{
+    width: auto;
+}
+
+#mainfile{
+    width: auto;
+}
+
+#footerfile{
+    width: 1024px;
     margin: auto;
 }
