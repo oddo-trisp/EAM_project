@@ -1,0 +1,19 @@
+.row{
+    width: auto;
+    margin: auto;
+}
+
+.col-md-4{
+    background-color: #23db21;
+    height: 500px;
+}
+
+.col-md-6{
+    background-color: #7812ba;
+    height: 500px;
+}
+
+.col-md-2{
+    height: 500px;
+    background-color: #fd3232;
+}
