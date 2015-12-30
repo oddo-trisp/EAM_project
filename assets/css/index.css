@@ -12,6 +12,8 @@ html,body{
     margin: 0 auto -30px;
     /* Pad bottom by footer height */
     padding: 0 0 30px;
+    border-left: 2px solid #2d252d;
+    border-right: 2px solid #2d252d;
 }
 
 #headerfile{
