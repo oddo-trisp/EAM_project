@@ -1,14 +1,24 @@
-#footer {
-    height: 30px;
-    background-color: #2d252d;
+#footer{
+    border-left: 2px solid #2d252d;
+    border-right: 2px solid #2d252d;
 }
 
-#footer .center{
-    margin: auto;
-    width: 50%;
+#footer .logos{
+    background-color: #e2d0c2;
 }
 
-#footer p{
+#footer .copy{
+    background-color:  #2d252d;
+}
+
+#footer .logos img{
+    height: 65px;
+    width: 120px;
+}
+
+#footer .copy p{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 12px;
     color: #fff;
-    text-align: center;
 }
