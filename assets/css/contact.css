@@ -1,0 +1,64 @@
+.container{
+    width: auto;
+}
+
+.col-sm-6 h3{
+    text-align: center;
+}
+
+.form{
+    text-align: center;
+}
+
+/* ===========================
+   ====== Contact Form =======
+   =========================== */
+
+input, textarea {
+    margin-top: 20px;
+
+	padding: 10px;
+	border: 1px solid #e5e5e5;
+	width: 200px;
+	color: #888;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+}
+
+textarea {
+	width: 400px;
+	height: 150px;
+	max-width: 400px;
+	line-height: 18px;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+	border-color: 1px solid #C9C9C9;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+}
+
+.form label {
+    margin-top: 20px;
+	color: #888;
+    margin-right: 10px;
+}
+
+/* ===========================
+   ====== Submit Button ======
+   =========================== */
+
+.submit input {
+    margin-top: 20px;
+	width: 100px;
+	height: 40px;
+	background-color: #474E69;
+	color: #FFF;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+    margin-bottom: 20px;
+}
