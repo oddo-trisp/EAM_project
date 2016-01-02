@@ -1,14 +1,17 @@
 #footer .logos{
-    background-color: #e2d0c2;
+    border-top: 1px solid #ccc;
+    background-color:  #fff;
 }
 
 #footer .copy{
-    background-color:  #2d252d;
+    background-color:  #003366;
 }
 
 #footer .logos img{
     height: 65px;
-    width: 120px;
+    width: 140px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 #footer .copy p{
