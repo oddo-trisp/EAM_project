@@ -19,7 +19,6 @@
     <body>
         <div id="container">
             <div id="headerfile"> <?php include 'header.php' ?></div>
-            <div id="mainfile"> <?php include 'mainbody.php' ?></div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>
     </body>
