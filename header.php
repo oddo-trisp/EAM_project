@@ -23,5 +23,13 @@
              </ul>
          </li>-->
          <li><a href="contact.php">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+         <form class="navbar-form navbar-right" role="search">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="Search" name="q">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+         </form>
     </ul>
 </div>
