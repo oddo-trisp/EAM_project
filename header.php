@@ -11,7 +11,8 @@
         <li><a href="index.php">ΑΡΧΙΚΗ</a></li>
         <li><a href="faq.php">ΠΛΗΡΟΦΟΡΙΕΣ (F.A.Q)</a></li>
         <li><a href="#">ΥΠΗΡΕΣΙΕΣ</a></li>
-        <li class="dropdown">
+        <li><a href="libraries.php">ΒΙΒΛΙΟΘΗΚΕΣ</a></li>
+        <!--<li class="dropdown">
              <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΒΙΒΛΙΟΘΗΚΕΣ
                  <span class="caret"></span>
              </a>
@@ -20,7 +21,7 @@
                  <li><a href="#">Submenu 1-2</a></li>
                  <li><a href="#">Submenu 1-3</a></li>
              </ul>
-         </li>
+         </li>-->
          <li><a href="contact.php">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
     </ul>
 </div>
