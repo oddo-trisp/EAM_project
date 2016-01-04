@@ -19,7 +19,7 @@
     <body>
         <div id="container">
             <div id="headerfile"> <?php include 'header.php' ?></div>
-            <div class="container">
+            <div class="wrapper">
                 <h3>Φόρμα Επικοινωνίας</h3>
                 <form class="form">
                     <table align="center">
