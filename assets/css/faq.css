@@ -1,0 +1,25 @@
+.container{
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+h3{
+    text-align: center;
+}
+
+#faqs h4{
+    cursor:pointer;
+    color: #336699;
+    background-color: #ddd;
+    padding: 5px;
+}
+
+#faqs h4.active{
+    color: #003333;
+    background-color: #cccc99;
+}
+
+#faqs div{
+    margin-bottom: 10px;
+}
