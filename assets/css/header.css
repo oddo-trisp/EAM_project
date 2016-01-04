@@ -56,6 +56,12 @@
     margin-right: 1%;
 }
 
-.navbar-right form-control{
-    width: 20px;
+.input-group .form-control{
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.input-group .input-group-btn .btn-default{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
