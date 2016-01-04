@@ -20,35 +20,25 @@
         <div id="container">
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="container">
-              <div class="row">
-
-                <div class="col-sm-3"></div>
-
-                <div class="col-sm-6">
-                    <h3>Φόρμα Επικοινωνίας</h3>
-                    <form class="form">
-                        <table align="center">
-                            <tr>
-                                <td> <label for="name">Ονοματεπώνυμο</label> </td>
-                    			<td> <input type="text" name="name" id="name" placeholder="Προκόπης Προκοπίου" /> </td>
-                            </tr>
-                            <tr>
-                                <td> <label for="email">Email</label> </td>
-                    			<td> <input type="text" name="email" id="email" placeholder="mail@example.com" /> </td>
-                    		</tr>
-                            <tr>
-                                <td> <label for="text">Τηλέφωνο</label> </td>
-                    			<td> <input type="text" name="email" id="email" placeholder="692-2222222" /> </td>
-                    		</tr>
-                        </table>
-                        <textarea name="text" placeholder="Αφήστε το μήνυμα σας" /></textarea>
-                        <div class="submit"> <input type="submit" value="Αποστολή" /> </div>
-                	</form>
-                </div>
-
-                <div class="col-sm-3"></div>
-
-              </div>
+                <h3>Φόρμα Επικοινωνίας</h3>
+                <form class="form">
+                    <table align="center">
+                        <tr>
+                            <td> <label for="name">Ονοματεπώνυμο</label> </td>
+                    		<td> <input type="text" name="name" id="name" placeholder="Προκόπης Προκοπίου" /> </td>
+                        </tr>
+                        <tr>
+                            <td> <label for="email">Email</label> </td>
+                    		<td> <input type="text" name="email" id="email" placeholder="mail@example.com" /> </td>
+                    	</tr>
+                        <tr>
+                            <td> <label for="text">Τηλέφωνο</label> </td>
+                    		<td> <input type="text" name="email" id="email" placeholder="692-2222222" /> </td>
+                    	</tr>
+                    </table>
+                    <textarea name="text" placeholder="Αφήστε το μήνυμα σας" /></textarea>
+                    <div class="submit"> <input type="submit" value="Αποστολή" /> </div>
+                </form>
             </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>
