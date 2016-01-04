@@ -1,5 +1,6 @@
 .header #lang{
     float: right;
+    margin-top: 3px;
 }
 
 .header #lang img{
