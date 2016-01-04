@@ -1,4 +1,8 @@
 <div class="header">
+    <div id="lang">
+        <img src="assets/img/grflag.png">
+        <img src="assets/img/ukflag.png">
+    </div>
     <div class="page-header">
         <h1> ΒΙΒΛΙΟΘΗΚΕΣ ΚΑΙ ΥΠΗΡΕΣΙΕΣ ΠΛΗΡΟΦΟΡΗΣΗΣ <br><small>  ΕΘΝΙΚΟ ΚΑΙ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ </small></h1>
     </div>
