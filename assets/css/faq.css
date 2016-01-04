@@ -4,6 +4,12 @@
     padding-right: 10%;
 }
 
+.wrapper{
+    width: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 h3{
     text-align: center;
 }

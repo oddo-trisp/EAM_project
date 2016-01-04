@@ -22,7 +22,7 @@
 
             <div id="headerfile"> <?php include 'header.php' ?></div>
 
-            <div class="container">
+            <div class="wrapper">
                 <h3>F.A.Q</h3>
                 <div id="faqs">
                     <h4>Τί είναι ο Κατάλογος ή OPAC;</h4>
