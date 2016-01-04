@@ -1,8 +1,12 @@
 <div class="header">
-    <img src="assets/img/books.jpg">
-    <ul class="nav nav-pills">
+    <div class="page-header">
+        <h1> ΒΙΒΛΙΟΘΗΚΕΣ ΚΑΙ ΥΠΗΡΕΣΙΕΣ ΠΛΗΡΟΦΟΡΗΣΗΣ <br><small>  ΕΘΝΙΚΟ ΚΑΙ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ </small></h1>
+    </div>
+    <img src="assets/img/books2.jpg">
+    <ul class="nav nav-tabs">
         <li><a href="index.php">ΑΡΧΙΚΗ</a></li>
-        <li><a href="#">ΑΝΑΚΟΙΝΩΣΕΙΣ</a></li>
+        <li><a href="faq.php">ΠΛΗΡΟΦΟΡΙΕΣ (F.A.Q)</a></li>
+        <li><a href="#">ΥΠΗΡΕΣΙΕΣ</a></li>
         <li class="dropdown">
              <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΒΙΒΛΙΟΘΗΚΕΣ
                  <span class="caret"></span>
