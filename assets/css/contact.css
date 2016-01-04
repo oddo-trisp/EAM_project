@@ -12,7 +12,7 @@
    ====== Contact Form =======
    =========================== */
 
-input, textarea {
+.wrapper input, textarea {
     margin-top: 20px;
 	padding: 10px;
 	border: 1px solid #e5e5e5;

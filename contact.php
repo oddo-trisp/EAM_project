@@ -33,7 +33,7 @@
                     	</tr>
                         <tr>
                             <td> <label for="text">Τηλέφωνο</label> </td>
-                    		<td> <input type="text" name="email" id="email" placeholder="692-2222222" /> </td>
+                    		<td> <input type="text" name="email" id="phone" placeholder="692-2222222" /> </td>
                     	</tr>
                     </table>
                     <textarea name="text" placeholder="Αφήστε το μήνυμα σας" /></textarea>
