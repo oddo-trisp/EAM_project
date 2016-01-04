@@ -9,6 +9,10 @@
 
 #footer .copy{
     background-color:  #003366;
+    box-shadow: inset 1px 1px 5px 0 #666699;
+    -webkit-box-shadow: inset 1px 1px 5px 0 #666699;
+    -moz-box-shadow: inset 1px 1px 5px 0 #666699;
+    -o-box-shadow: inset 1px 1px 5px 0 #666699;
 }
 
 #footer .logos img{
