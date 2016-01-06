@@ -10,18 +10,16 @@
     <ul class="nav nav-tabs">
         <li><a href="index.php">ΑΡΧΙΚΗ</a></li>
         <li><a href="faq.php">ΠΛΗΡΟΦΟΡΙΕΣ (F.A.Q)</a></li>
-        <li><a href="#">ΥΠΗΡΕΣΙΕΣ</a></li>
         <li><a href="libraries.php">ΒΙΒΛΙΟΘΗΚΕΣ</a></li>
-        <!--<li class="dropdown">
-             <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΒΙΒΛΙΟΘΗΚΕΣ
-                 <span class="caret"></span>
-             </a>
-             <ul class="dropdown-menu">
-                 <li><a href="#">Submenu 1-1</a></li>
-                 <li><a href="#">Submenu 1-2</a></li>
-                 <li><a href="#">Submenu 1-3</a></li>
-             </ul>
-         </li>-->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΥΠΗΡΕΣΙΕΣ
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">ΔΑΝΕΙΣΜΟΣ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
+                <li><a href="bookentry.php">ΚΑΤΑΧΩΡΗΣΗ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
+            </ul>
+         </li>
          <li><a href="contact.php">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
          <form class="navbar-form navbar-right" role="search">
             <div class="input-group input-group-sm">
