@@ -52,16 +52,16 @@
     border-left:none;
 }
 
-.dropdown-toggle{
+.header .dropdown-toggle{
     background-color: #003366 !important;
 }
 
 
-.dropdown-menu {
+.header .dropdown-menu {
     background-color: #003366;
 }
 
-.dropdown-menu a:hover{
+.header .dropdown-menu a:hover{
     color: #fff !important;
     background-color: #666699 !important;
     box-shadow: inset 2px 2px 10px 0 #999;
@@ -75,12 +75,12 @@
     margin-right: 1%;
 }
 
-.input-group .form-control{
+.header .input-group .form-control{
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
 }
 
-.input-group .input-group-btn .btn-default{
+.header .input-group .input-group-btn .btn-default{
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }

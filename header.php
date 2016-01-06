@@ -16,7 +16,7 @@
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="#">ΔΑΝΕΙΣΜΟΣ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
+                <li><a href="booksearch.php">ΑΝΑΖΗΤΗΣΗ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
                 <li><a href="bookentry.php">ΚΑΤΑΧΩΡΗΣΗ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
             </ul>
          </li>
