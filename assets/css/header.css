@@ -52,6 +52,25 @@
     border-left:none;
 }
 
+.dropdown-toggle{
+    background-color: #003366 !important;
+}
+
+
+.dropdown-menu {
+    background-color: #003366;
+}
+
+.dropdown-menu a:hover{
+    color: #fff !important;
+    background-color: #666699 !important;
+    box-shadow: inset 2px 2px 10px 0 #999;
+    -webkit-box-shadow: inset 2px 2px 10px 0 #999;
+    -moz-box-shadow: inset 2px 2px 10px 0 #999;
+    -o-box-shadow: inset 2px 2px 10px 0 #999;
+    border:none;
+}
+
 .navbar-right{
     margin-right: 1%;
 }
