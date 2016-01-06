@@ -34,6 +34,10 @@
     -o-box-shadow: inset 1px 1px 5px 0 #666699;
 }
 
+.dropdown-menu{
+    background-color: #003366;
+}
+
 .nav-tabs a{
     color: #fff !important;
     font-size: 16px;
