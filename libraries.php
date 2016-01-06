@@ -51,7 +51,7 @@
                             while ($row = mysqli_fetch_object($results))
                             {
                                 $i++;
-                                echo "<h4>$i.$row->MainLibrary</h4>";
+                                echo '<h4>'.$i.'.'.$row->MainLibrary.'</h4>';
 
 
                                     $query = 'SELECT Name FROM Library WHERE MainLibrary="'.$row->MainLibrary.'"';
@@ -62,22 +62,21 @@
                                       while($row1 = mysqli_fetch_object($results1))
                                       {
                                             $j++;
-                                            echo "<li><a href='libpage.php'>$row1->Name</a></li>";
-                                            echo "<br>";
+                                            echo '<li><a href="libpage.php?name='.$row1->Name.'">'.$row1->Name.'</a></li>';
+                                            echo '<br>';
                                       }
                                     }
                                     else
                                     {
-                                        echo "Δεν βρέθηκαν αποτελέσματα...";
+                                        echo 'Δεν βρέθηκαν αποτελέσματα...';
                                     }
-                                echo "<br>";
+                                echo '<br>';
                             }
-                            echo "</div>";
                         }
                         //alliws, an den epistrafikan apotelesmata
                         else
                         {
-                            echo "Δεν βρέθηκαν αποτελέσματα...";
+                            echo '<h4>Δεν βρέθηκαν αποτελέσματα...<h4>';
                         }
                         mysqli_close($link);
                   ?>
