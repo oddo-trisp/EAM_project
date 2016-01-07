@@ -66,8 +66,12 @@
                 <center>
                     <div id="map"></div>
                 </center>
-                <h4> <b>Προσωπικό</b> </h4>
-                 <?php echo ''.$row->Info.''?>
+                <center>
+                    <div id="people">
+                        <h4 class="ppl"> <b>Προσωπικό</b> </h4>
+                        <?php echo ''.$row->Info.''?>
+                    </div>
+                </center>
             </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>
