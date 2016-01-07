@@ -2,6 +2,31 @@
     width: auto;
 }
 
+.libs{
+    width: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 .libs h3{
     text-align: center;
+    margin-bottom: 3%;
+}
+
+.libs li a{
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.libs h4{
+    text-align: center;
+    cursor: pointer;
+    background-color: #ddd;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.libs h4.active{
+    background-color: #cccc99;
 }

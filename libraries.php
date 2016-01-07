@@ -24,7 +24,6 @@
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="libs">
                 <h3> Βιβλιοθήκες Πανεπιστημίου Αθηνών </h3>
-                <ol>
                     <!--<li><a href="libpage.php">Βιβλιοθήκη Αγγλικής Γλώσσας και Φιλολογίας</a></li>
                     <li><a href="libpage.php">Βιβλιοθήκη Αρχαιολογίας και Ιστορίας της Τέχνης</a></li>
                     <li><a href="libpage.php">Βιβλιοθήκη Αστροφυσικής και Αστρονομίας</a></li>-->
@@ -51,9 +50,8 @@
                             while ($row = mysqli_fetch_object($results))
                             {
                                 $i++;
-                                echo '<h4>'.$i.'.'.$row->MainLibrary.'</h4>';
-
-
+                                echo '<h4>'.$row->MainLibrary.'</h4>';
+                                echo '<div>';
                                     $query = 'SELECT Name FROM Library WHERE MainLibrary="'.$row->MainLibrary.'"';
                                     $results1 = mysqli_query($link,$query) or die ("Query failed");
                                     if(mysqli_num_rows($results1) > 0)
@@ -70,6 +68,7 @@
                                     {
                                         echo 'Δεν βρέθηκαν αποτελέσματα...';
                                     }
+                                    echo '</div>';
                                 echo '<br>';
                             }
                         }
@@ -80,7 +79,6 @@
                         }
                         mysqli_close($link);
                   ?>
-                </ol>
             </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>
