@@ -23,3 +23,7 @@
 .wrapper .combined .input-group{
     width: 400px;
 }
+
+.wrapper .combined .btn-info{
+    background-color: #336699;
+}
