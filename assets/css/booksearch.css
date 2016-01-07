@@ -1,0 +1,25 @@
+.container{
+    width: auto;
+    text-align: center;
+}
+
+.wrapper{
+    text-align: center;
+}
+
+.wrapper h4{
+    margin-bottom: 5%;
+}
+
+.wrapper .quick .input-group{
+    width: 400px;
+}
+
+.wrapper p{
+    width: 450px;
+    margin-top: 3%;
+}
+
+.wrapper .combined .input-group{
+    width: 400px;
+}
