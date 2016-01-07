@@ -34,7 +34,7 @@
     -o-box-shadow: inset 1px 1px 5px 0 #666699;
 }
 
-.dropdown-menu{
+.header .dropdown-menu{
     background-color: #003366;
 }
 
