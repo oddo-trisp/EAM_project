@@ -11,6 +11,7 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="assets/css/index.css">
         <link rel="stylesheet" href="assets/css/header.css">
+        <link rel="stylesheet" href="assets/css/login.css">
         <link rel="stylesheet" href="assets/css/footer.css">
         <script src="assets/js/index.js"></script>
         <title>EAM_Project</title>
@@ -18,6 +19,7 @@
     <body>
         <div id="container">
             <div id="headerfile"> <?php include 'header.php' ?></div>
+            <div id="loginfile"> <?php include 'login.php' ?> </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>
     </body>
