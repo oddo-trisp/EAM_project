@@ -28,7 +28,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" name="x" placeholder="Search term...">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                                    <a href="bookresults.php" class="btn btn-info" role="button"><span class="glyphicon glyphicon-search"></span></a>
                                 </span>
                             </div>
                             <p>Για να χρησιμοποιήσετε τη "Γρήγορη Αναζήτηση", πληκτρολογείστε απλώς τον όρο που αναζητείτε.</p>
@@ -52,7 +52,7 @@
                             	<input type="text" class="form-control" name="q" placeholder="Search.." id="search_key" value="">
                             	<span class="input-group-btn">
                             			<a class="btn btn-default text-muted" href="http://adminlte.dev/user/item" title="Clear"><i class="glyphicon glyphicon-remove"></i> </a>
-                            			<button class="btn btn-info" type="submit">  Search  </button>
+                                        <a href="bookresults.php" class="btn btn-info" role="button"><span class="glyphicon glyphicon-search"></span></a>
                             	</span>
                             </div>
                             <p>Για να χρησιμοποιήσετε τη "Σύνθετη Αναζήτηση", επιλέξτε από το μενού την κατηγορία αναζήτησης και πληκτρολογείστε τον όρο που αναζητείτε.</p>
