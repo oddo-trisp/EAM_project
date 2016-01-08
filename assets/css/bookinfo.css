@@ -1,0 +1,30 @@
+.container{
+    width: auto;
+}
+
+.wrapper{
+    margin-bottom: 5%;
+}
+
+.wrapper h3{
+    margin-bottom: 3%;
+}
+
+.wrapper img{
+    margin-bottom: 3%;
+}
+
+.wrapper table td{
+    font-size: 18px;
+    padding-right: 8px;
+}
+
+.rates h4{
+    margin-top: 3%;
+}
+
+.rates .glyphicon{
+    font-size: 35px;
+    color: #cccc99;
+    cursor: pointer;
+}
