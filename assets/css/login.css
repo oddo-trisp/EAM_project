@@ -1,0 +1,21 @@
+.form{
+    margin-top: 10%;
+    padding: 5%;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.form h4{
+    text-align: center;
+}
+
+.form .btn-info{
+    background-color: #336699;
+    border: none;
+}
+
+.form p{
+    margin-top: 5%;
+    text-align: center;
+}
