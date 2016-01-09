@@ -1,0 +1,18 @@
+.container{
+    width: auto;
+}
+
+.wrapper{
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+.wrapper h3{
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.wrapper img{
+    margin-bottom: 3%;
+    padding-right: 5%;
+}
