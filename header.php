@@ -18,6 +18,7 @@
             <ul class="dropdown-menu">
                 <li><a href="booksearch.php">ΑΝΑΖΗΤΗΣΗ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
                 <li><a href="bookentry.php">ΚΑΤΑΧΩΡΗΣΗ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
+                <li><a href="mybooks.php">ΤΑ ΒΙΒΛΙΑ ΜΟΥ</a></li>
             </ul>
          </li>
          <li><a href="contact.php">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
