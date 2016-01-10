@@ -13,7 +13,12 @@
             <img src="assets/img/social/email-blue.png" title="email"/>
         </div>
         <div class="copy">
-            <p> &copy 2015. All rights reserved. </p>
+            <p>
+                <a href="contact.php">Επικοινωνία</a> |
+                <a href="#">Σχετικά με τον ιστότοπο</a> |
+                <a href="#">Πολιτική Απορρήτου</a> <br />
+                &copy 2015. All rights reserved.
+            </p>
         </div>
     </center>
 </div>
