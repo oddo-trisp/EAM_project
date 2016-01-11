@@ -5,6 +5,7 @@
 
 .wrapper{
     text-align: center;
+    margin-bottom: 10%;
 }
 
 .wrapper h4{
@@ -15,6 +16,10 @@
     width: 400px;
 }
 
+.wrapper .input-group-btn a{
+    background-color: #336699;
+}
+
 .wrapper p{
     width: 450px;
     margin-top: 3%;
@@ -22,4 +27,39 @@
 
 .wrapper .combined .input-group{
     width: 400px;
+}
+
+.wrapper .combined input{
+    width: 300px;
+	padding: 10px;
+	border: 1px solid #e5e5e5;
+	color: #888;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+}
+
+.wrapper .combined input:hover, .wrapper .combined input:focus{
+	border-color: 1px solid #C9C9C9;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+}
+
+.wrapper .combined .form label {
+    margin-top: 20px;
+	color: #888;
+    margin-right: 20px;
+}
+
+.wrapper .combined .submit input {
+    width: 100px;
+    margin-top: 20px;
+	height: 40px;
+	background-color: #336699;
+	color: #FFF;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+    margin-bottom: 20px;
 }

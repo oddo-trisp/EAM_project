@@ -37,25 +37,24 @@
                     <center>
                         <div class="col-sm-6 combined">
                             <h4>Σύνθετη Αναζήτηση</h4>
-                            <div class="input-group">
-                                <div class="input-group-btn search-panel">
-                            		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            		<span id="search_concept">Name</span> <span class="caret"></span>
-                            		</button>
-                            		<ul class="dropdown-menu" role="menu">
-                            			<li><a href="#id"><i class="fa fa-angle-double-right"></i> ID</a></li>
-                            			<li><a href="#name"><i class="fa fa-angle-double-right"></i> Name</a></li>
-                            			<li><a href="#description"><i class="fa fa-angle-double-right"></i> Description</a></li>
-                            		</ul>
-                            	</div>
-                            	<input type="hidden" name="search_param" value="name" id="search_param">
-                            	<input type="text" class="form-control" name="q" placeholder="Search.." id="search_key" value="">
-                            	<span class="input-group-btn">
-                            			<a class="btn btn-default text-muted" href="http://adminlte.dev/user/item" title="Clear"><i class="glyphicon glyphicon-remove"></i> </a>
-                                        <a href="bookresults.php" class="btn btn-info" role="button"><span class="glyphicon glyphicon-search"></span></a>
-                            	</span>
-                            </div>
-                            <p>Για να χρησιμοποιήσετε τη "Σύνθετη Αναζήτηση", επιλέξτε από το μενού την κατηγορία αναζήτησης και πληκτρολογείστε τον όρο που αναζητείτε.</p>
+                            <form class="form">
+                                <table>
+                                    <tr>
+                                        <td> <label for="text">Τίτλος</label> </td>
+                                		<td> <input type="text"/> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> <label for="name">Συγγραφέας</label> </td>
+                                		<td> <input type="text"/> </td>
+                                	</tr>
+                                    <tr>
+                                        <td> <label for="text">Εκδοτικός Οίκος</label> </td>
+                                		<td> <input type="text"/> </td>
+                                	</tr>
+                                </table>
+                                <div class="submit"> <input type="submit" value="Αναζήτηση" /> </div>
+                            </form>
+                            <p>Για να χρησιμοποιήσετε τη "Σύνθετη Αναζήτηση", συμπληρώστε τη φόρμα και πατήστε το πλήκτρο αναζήτησης.</p>
                         </div>
                     </center>
                 </div>
