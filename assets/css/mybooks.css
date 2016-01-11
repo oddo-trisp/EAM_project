@@ -16,3 +16,9 @@
     margin-bottom: 3%;
     padding-right: 5%;
 }
+
+.wrapper .date{
+    width: 200px;
+    margin-left: 10%;
+    color: red;
+}
