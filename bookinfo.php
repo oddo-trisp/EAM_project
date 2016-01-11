@@ -38,13 +38,19 @@
                             <td> Εκδοτική Α.Ε </td>
                         </tr>
                     </table>
-                    <div class="rates">
-                        <h4> Αξιολόγηση Συγγράμματος: </h4>
-                        <input type="number" class="rating" data-min="1" data-max="5" value="0">
-
-                        <h4> Μεταφόρτωση δείγματος του Συγγράμματος: </h4>
-                        <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
-
+                    <div class="row rates">
+                        <div class="col-sm-4">
+                            <h4> Αξιολόγηση Συγγράμματος: </h4>
+                            <input type="number" class="rating" data-min="1" data-max="5" value="0">
+                        </div>
+                        <div class="col-sm-4">
+                            <h4> Μεταφόρτωση δείγματος του Συγγράμματος: </h4>
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                        </div>
+                        <div class="col-sm-4">
+                            <h4> Δανεισμός του Συγγράμματος: </h4>
+                            <div class="submit"> <input type="submit" value="Δανεισμός" /> </div>
+                        </div>
                     </div>
                 </center>
             </div>

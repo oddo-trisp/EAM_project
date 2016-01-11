@@ -19,12 +19,23 @@
     padding-right: 8px;
 }
 
-.rates h4{
-    margin-top: 3%;
+.rates{
+    margin-top: 5%;
+    width: 700px;
 }
+
 
 .rates .glyphicon{
     font-size: 35px;
     color: #cccc99;
     cursor: pointer;
+}
+
+.rates .submit input {
+	height: 40px;
+	background-color: #cccc99;
+	color: #fff;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
