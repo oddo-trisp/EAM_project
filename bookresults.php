@@ -21,10 +21,57 @@
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="wrapper">
                 <h3> Αποτελέσματα Αναζήτησης </h3>
+                <?php
+                    $db_hostname = "localhost";		//database server (use localhost or 127.0.0.1 if this is the same machine the web server runs on)
+                    $db_name = "library";		// database
+                    $db_user = "root";			// database username
+                    $db_pass = "";			// database password
+                    $link=mysqli_connect($db_hostname, $db_user, $db_pass, $db_name) or die ("Unable to connect to database");
+                    mysqli_set_charset($link,"utf8");
+                  if(isset($_POST["qsearch"]) && !empty($_POST["q"]))
+                  {
+                    //sximatismos tou query
+                    $query = 'SELECT * FROM Book WHERE Name LIKE "'.$_POST["q"].'"';
+                  }
+                  else if(isset($_POST['qsbutton']) && !empty($_POST['qsfield']))
+                  {
+                    echo $_POST["menu"];
+                      $query = 'SELECT * FROM Book ';
+                  }
+                  else
+                  {
+                      $query='xa';
+                  }
+                  //ektelesi tou query
+                  $results = mysqli_query($link,$query) or die ("Query failed");
+                  $row=mysqli_fetch_object($results);
+                ?>
                 <div class="row">
                    <div class="col-md-7 col-lg-7">
                        <ul class="media-list main-list">
-                         <li class="media">
+                         <?php
+                         if(mysqli_num_rows($results) > 0)
+                         {
+                           while($row = mysqli_fetch_object($results))
+                           {
+                             echo '<li class="media">
+                               <a class="pull-left" href="bookinfo.php">
+                                 <img class="media-object" src="http://placehold.it/150x90" alt="...">
+                               </a>
+                               <div class="media-body">
+                                 <h4 class="media-heading">'.$row->Name.'</h4>
+                                 <p class="by-author">'.$row->ISBN.'</p>
+                                 <p class="by-author">By Jhon Doe</p>
+                               </div>
+                             </li>';
+                                 echo '<br>';
+                           }
+                         }
+                         else
+                            echo 'Δεν βρέθηκαν αποτελέσματα...!';
+                        mysqli_close($link);
+                         ?>
+                         <!--<li class="media">
                            <a class="pull-left" href="bookinfo.php">
                              <img class="media-object" src="http://placehold.it/150x90" alt="...">
                            </a>
@@ -50,7 +97,7 @@
                              <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
                              <p class="by-author">By Jhon Doe</p>
                            </div>
-                         </li>
+                         </li>-->
                        </ul>
                    </div>
                </div>

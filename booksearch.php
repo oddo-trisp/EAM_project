@@ -22,18 +22,38 @@
             <div class="wrapper">
                 <h3>Αναζήτηση Συγγραμμάτων</h3>
                 <div class="row">
-                    <center>
-                        <div class="col-sm-6 quick">
-                            <h4>Γρήγορη Αναζήτηση</h4>
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="x" placeholder="Search term...">
-                                <span class="input-group-btn">
-                                    <a href="bookresults.php" class="btn btn-info" role="button"><span class="glyphicon glyphicon-search"></span></a>
-                                </span>
+                  <center>
+                    <form role="search" action="bookresults.php" method="post">
+                      <div class="col-sm-6 quick">
+                          <h4>Γρήγορη Αναζήτηση</h4>
+                          <div class="input-group">
+                              <div class="input-group-btn search-panel">
+                                <select id="menu" name="menu" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <option value="ID"><i class="fa fa-angle-double-right"></i> ID</option>
+                                    <option value="Name"><i class="fa fa-angle-double-right"></i> Name</option>
+                                    <option value="Description"><i class="fa fa-angle-double-right"></i> Description</option>
+                                  </select>
+                              <!--<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              <span id="search_concept">Name</span> <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="#id"><i class="fa fa-angle-double-right"></i> ID</a></li>
+                                <li><a href="#name"><i class="fa fa-angle-double-right"></i> Name</a></li>
+                                <li><a href="#description"><i class="fa fa-angle-double-right"></i> Description</a></li>
+                              </ul>-->
                             </div>
-                            <p>Για να χρησιμοποιήσετε τη "Γρήγορη Αναζήτηση", πληκτρολογείστε απλώς τον όρο που αναζητείτε.</p>
-                        </div>
-                    </center>
+                            <input type="hidden" name="search_param" value="name" id="search_param">
+                            <input type="text" class="form-control" name="qsfield" placeholder="Search.." id="search_key" value="">
+                            <span class="input-group-btn">
+                                <a class="btn btn-default text-muted" href="http://adminlte.dev/user/item" title="Clear"><i class="glyphicon glyphicon-remove"></i> </a>
+                                <button name="qsbutton" class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </span>
+                          </div>
+
+                          <p>Για να χρησιμοποιήσετε τη "Γρήγορη Αναζήτηση", επιλέξτε από το μενού την κατηγορία αναζήτησης και πληκτρολογείστε τον όρο που αναζητείτε.</p>
+                      </div>
+                    </form>
+                  </center>
                     <center>
                         <div class="col-sm-6 combined">
                             <h4>Σύνθετη Αναζήτηση</h4>
