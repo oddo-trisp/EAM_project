@@ -28,10 +28,6 @@
 
 .nav-tabs{
     background-color: #003366;
-    box-shadow: inset 1px 1px 5px 0 #666699;
-    -webkit-box-shadow: inset 1px 1px 5px 0 #666699;
-    -moz-box-shadow: inset 1px 1px 5px 0 #666699;
-    -o-box-shadow: inset 1px 1px 5px 0 #666699;
 }
 
 .header .dropdown-menu{
@@ -40,7 +36,7 @@
 
 .nav-tabs a{
     color: #fff !important;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .nav-tabs a:hover{
@@ -50,10 +46,6 @@
     -webkit-box-shadow: inset 2px 2px 10px 0 #999;
     -moz-box-shadow: inset 2px 2px 10px 0 #999;
     -o-box-shadow: inset 2px 2px 10px 0 #999;
-    border-bottom: 4px solid;
-    border-top:none;
-    border-right:none;
-    border-left:none;
 }
 
 .header .dropdown-toggle{
@@ -75,10 +67,45 @@
     border:none;
 }
 
-.navbar-right{
-    margin-right: 1%;
+.header .navbar-form .input-group{
+    width: 220px;
 }
 
+.header .navbar-form .input-group input{
+    height: 25px;
+}
+
+.header .navbar-form .input-group .input-group-btn .btn-danger{
+    height: 25px;
+    background-color: #336699;
+    border: 1px solid #336699;
+}
+
+.header .navbar-form .input-group .input-group-btn .btn .glyphicon-search{
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.header .pull-right .dropdown-menu{
+    width: 200px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+
+.header .pull-right .dropdown-menu .form{
+    border: none;
+}
+
+.header .pull-right .dropdown-menu .text-center{
+    color: #fff;
+}
+
+.header .pull-right .dropdown-menu .text-center a:hover{
+    text-decoration: none;
+}
+
+/*
 .header .input-group .form-control{
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -88,3 +115,4 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
+*/

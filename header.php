@@ -6,7 +6,9 @@
     <div class="page-header">
         <h1> ΒΙΒΛΙΟΘΗΚΕΣ ΚΑΙ ΥΠΗΡΕΣΙΕΣ ΠΛΗΡΟΦΟΡΗΣΗΣ <br><small>  ΕΘΝΙΚΟ ΚΑΙ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ </small></h1>
     </div>
+
     <img src="assets/img/books2.jpg">
+
     <ul class="nav nav-tabs">
         <li><a href="index.php">ΑΡΧΙΚΗ</a></li>
         <li><a href="faq.php">ΠΛΗΡΟΦΟΡΙΕΣ (F.A.Q)</a></li>
@@ -22,13 +24,45 @@
             </ul>
          </li>
          <li><a href="contact.php">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
-         <form class="navbar-form navbar-right" role="search" action="bookresults.php" method="post">
-            <div class="input-group input-group-sm">
-                <input type="text" class="form-control" placeholder="Search" name="q">
-                <div class="input-group-btn">
-                    <button name="qsearch" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-            </div>
-        </form>
+         <form class="navbar-form navbar-left" role="search">
+             <div class="input-group">
+                 <input type="text" class="search-query form-control" placeholder="Search" />
+                 <span class="input-group-btn">
+                     <button class="btn btn-danger" type="button">
+                         <span class="glyphicon glyphicon-search"></span>
+                     </button>
+                 </span>
+             </div>
+         </form>
+         <ul class="nav nav-tabs pull-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Συνδεθείτε</b> <span class="caret"></span></a>
+    			<ul id="login-dp" class="dropdown-menu">
+    				<li>
+    					 <div class="row">
+    							<div class="col-md-12">
+    								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+    										<div class="form-group">
+    											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
+    											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+    										</div>
+    										<div class="form-group">
+    											 <label class="sr-only" for="exampleInputPassword2">Password</label>
+    											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+    										</div>
+    										<div class="form-group">
+    											 <button type="submit" class="btn btn-primary btn-block">Σύνδεση</button>
+    										</div>
+    								 </form>
+    							</div>
+    							<div class="bottom text-center">
+    								Νέος Χρήστης ? <br /> <a href="signup.php"><b>Εγγραφείτε</b></a>
+    							</div>
+    					 </div>
+    				</li>
+    			</ul>
+            </li>
+          </ul>
     </ul>
+
 </div>
