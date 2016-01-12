@@ -16,8 +16,8 @@
     width: 400px;
 }
 
-.wrapper .input-group-btn a{
-    background-color: #336699;
+.wrapper .quick .input-group .search-panel .dropdown-toggle{
+    border: 2px solid #ccc;
 }
 
 .wrapper p{
