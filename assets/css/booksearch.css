@@ -18,6 +18,7 @@
 
 .wrapper .quick .input-group .search-panel .dropdown-toggle{
     border: 2px solid #ccc;
+    background-color: #66CCFF;
 }
 
 .wrapper p{

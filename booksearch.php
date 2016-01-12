@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="assets/css/header.css">
         <link rel="stylesheet" href="assets/css/footer.css">
         <link rel="stylesheet" href="assets/css/booksearch.css">
+        <script src="assets/js/booksearch.js"></script>
         <script src="assets/js/index.js"></script>
         <title>EAM_Project</title>
     </head>
@@ -23,7 +24,7 @@
                 <h3>Αναζήτηση Συγγραμμάτων</h3>
                 <div class="row">
                   <center>
-                    <form role="search" action="bookresults.php" method="post">
+                    <form name="quicksearch" role="search" action="bookresults.php" method="post">
                       <div class="col-sm-6 quick">
                           <h4>Γρήγορη Αναζήτηση</h4>
                           <div class="input-group">
@@ -45,8 +46,8 @@
                             <input type="hidden" name="search_param" value="name" id="search_param">
                             <input type="text" class="form-control" name="qsfield" placeholder="Search.." id="search_key" value="">
                             <span class="input-group-btn">
-                                <a class="btn btn-default text-muted" href="http://adminlte.dev/user/item" title="Clear"><i class="glyphicon glyphicon-remove"></i> </a>
-                                <button name="qsbutton" class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                <button class="btn btn-default text-muted" type="reset" title="Clear"><i class="glyphicon glyphicon-remove"></i> </button>
+                                <button  onclick="return validateForm()" name="qsbutton" class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </span>
                           </div>
 
@@ -57,22 +58,22 @@
                     <center>
                         <div class="col-sm-6 combined">
                             <h4>Σύνθετη Αναζήτηση</h4>
-                            <form class="form">
+                            <form name="combsearch" class="form" action="bookresults.php" method="post">
                                 <table>
                                     <tr>
                                         <td> <label for="text">Τίτλος</label> </td>
-                                		<td> <input type="text"/> </td>
+                                		<td> <input type="text" name="title"/> </td>
                                     </tr>
                                     <tr>
                                         <td> <label for="name">Συγγραφέας</label> </td>
-                                		<td> <input type="text"/> </td>
+                                		<td> <input type="text" name="author"/> </td>
                                 	</tr>
                                     <tr>
                                         <td> <label for="text">Εκδοτικός Οίκος</label> </td>
-                                		<td> <input type="text"/> </td>
+                                		<td> <input type="text" name="publisher"/> </td>
                                 	</tr>
                                 </table>
-                                <div class="submit"> <input type="submit" value="Αναζήτηση" /> </div>
+                                <div class="submit"> <input onclick="return validateCombForm()" type="submit" name="csbutton" value="Αναζήτηση" /> <input type="reset" value="Καθαρισμός" />  </div>
                             </form>
                             <p>Για να χρησιμοποιήσετε τη "Σύνθετη Αναζήτηση", συμπληρώστε τη φόρμα και πατήστε το πλήκτρο αναζήτησης.</p>
                         </div>

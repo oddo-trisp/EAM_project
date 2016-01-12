@@ -28,20 +28,21 @@
                     $db_pass = "";			// database password
                     $link=mysqli_connect($db_hostname, $db_user, $db_pass, $db_name) or die ("Unable to connect to database");
                     mysqli_set_charset($link,"utf8");
+                    $flag="false";
                   if(isset($_POST["qsearch"]) && !empty($_POST["q"]))
                   {
                     //sximatismos tou query
                     $query = 'SELECT * FROM Book WHERE Name LIKE "'.$_POST["q"].'"';
                   }
-                  else if(isset($_POST['qsbutton']) && !empty($_POST['qsfield']))
+                  else if(isset($_POST["qsbutton"]) && !empty($_POST["qsfield"]))
                   {
-                    echo $_POST["menu"];
-                      $query = 'SELECT * FROM Book ';
+                      $query = 'SELECT * FROM Book WHERE "'.$_POST["menu"].'" LIKE "'.$_POST["qsfield"].'"';
                   }
-                  else
+                  else if(isset($_POST["csbutton"]))
                   {
-                      $query='xa';
+                    $query="xa";
                   }
+
                   //ektelesi tou query
                   $results = mysqli_query($link,$query) or die ("Query failed");
                   $row=mysqli_fetch_object($results);
