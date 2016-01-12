@@ -24,6 +24,7 @@
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
+                <li><a href="libsearch.php">ΑΝΑΖΗΤΗΣΗ ΒΙΒΛΙΟΘΗΚΗΣ</a></li>
                 <li><a href="booksearch.php">ΑΝΑΖΗΤΗΣΗ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
                 <li><a href="bookentry.php">ΚΑΤΑΧΩΡΗΣΗ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
                 <li><a href="mybooks.php">ΤΑ ΒΙΒΛΙΑ ΜΟΥ</a></li>
