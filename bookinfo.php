@@ -22,20 +22,35 @@
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="wrapper">
                 <center>
+                  <?php
+                      $isbn=$_GET['isbn'];
+
+                      //Connect to database
+                      include 'connect.php';
+
+                      //sximatismos tou query
+                      $query = 'SELECT * FROM Book WHERE ISBN="'.$isbn.'"';
+
+                      //ektelesi tou query
+                      $results = mysqli_query($link,$query) or die ("Query failed");
+                      $row=mysqli_fetch_object($results);
+                      $results->close();
+                      mysqli_close($link);
+                  ?>
                     <h3> Πληροφορίες Συγγράμματος </h3>
                     <img class="media-object" src="http://placehold.it/250x160" alt="...">
                     <table>
                         <tr>
                             <td> <b> Τίτλος: </b> </td>
-                            <td> Το όνομα του ρόδου </td>
+                            <td> <?php echo ''.$row->Name.''; ?> </td>
                         </tr>
                         <tr>
                             <td> <b> Συγγραφέας: </b> </td>
-                            <td> Umberto Eco</td>
+                            <td> <?php echo ''.$row->AuthorName.''; ?> </td>
                         </tr>
                         <tr>
                             <td> <b> Εκδοτικός Οίκος: </b> </td>
-                            <td> Εκδοτική Α.Ε </td>
+                            <td> <?php echo ''.$row->PublisherName.''; ?> </td>
                         </tr>
                     </table>
                     <div class="row rates">

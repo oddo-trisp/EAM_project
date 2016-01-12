@@ -1,4 +1,4 @@
-function validateForm() {
+function validateQuickForm() {
     var x = document.forms["quicksearch"]["qsfield"].value;
     if (x == null || x == "") {
         alert("Πρέπει να συμπληρώσετε το πεδίο Αναζήτησης!");

@@ -30,7 +30,7 @@
                           <div class="input-group">
                               <div class="input-group-btn search-panel">
                                 <select id="menu" name="menu" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <option value="ID"><i class="fa fa-angle-double-right"></i> ID</option>
+                                    <option value="ISBN"><i class="fa fa-angle-double-right"></i> ISBN</option>
                                     <option value="Name"><i class="fa fa-angle-double-right"></i> Name</option>
                                     <option value="Description"><i class="fa fa-angle-double-right"></i> Description</option>
                                   </select>
@@ -47,7 +47,7 @@
                             <input type="text" class="form-control" name="qsfield" placeholder="Search.." id="search_key" value="">
                             <span class="input-group-btn">
                                 <button class="btn btn-default text-muted" type="reset" title="Clear"><i class="glyphicon glyphicon-remove"></i> </button>
-                                <button  onclick="return validateForm()" name="qsbutton" class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                <button  onclick="return validateQuickForm()" name="qsbutton" class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </span>
                           </div>
 

@@ -28,12 +28,8 @@
                     <li><a href="libpage.php">Βιβλιοθήκη Αρχαιολογίας και Ιστορίας της Τέχνης</a></li>
                     <li><a href="libpage.php">Βιβλιοθήκη Αστροφυσικής και Αστρονομίας</a></li>-->
                     <?php
-                        $db_hostname = "localhost";		//database server (use localhost or 127.0.0.1 if this is the same machine the web server runs on)
-                        $db_name = "library";		// database
-                        $db_user = "root";			// database username
-                        $db_pass = "";			// database password
-                        $link=mysqli_connect($db_hostname, $db_user, $db_pass, $db_name) or die ("Unable to connect to database");
-                        mysqli_set_charset($link,"utf8");
+                        //Connect to database
+                        include 'connect.php';
 
                         //sximatismos tou query
                         $query = 'SELECT DISTINCT MainLibrary FROM Library';
@@ -77,6 +73,8 @@
                         {
                             echo '<h4>Δεν βρέθηκαν αποτελέσματα...<h4>';
                         }
+                        $results->close();
+                        $results1->close();
                         mysqli_close($link);
                   ?>
             </div>

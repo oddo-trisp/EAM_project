@@ -1,3 +1,9 @@
+<?php
+  if(basename($_SERVER['PHP_SELF'])!="booksearch.php")
+  {
+      echo '<script src="assets/js/header.js"></script>';
+  }
+?>
 <div class="header">
     <div id="lang">
         <img src="assets/img/grflag.png">
@@ -24,16 +30,21 @@
             </ul>
          </li>
          <li><a href="contact.php">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
-         <form class="navbar-form navbar-left" role="search">
-             <div class="input-group">
-                 <input type="text" class="search-query form-control" placeholder="Search" />
+         <?php
+          if(basename($_SERVER['PHP_SELF'])!="booksearch.php")
+          {
+            echo '<form class="navbar-form navbar-left" name="mainsearch" role="search" action="bookresults.php" method="post">
+                <div class="input-group">
+                 <input type="text" name="mvalue" class="search-query form-control" placeholder="Search" />
                  <span class="input-group-btn">
-                     <button class="btn btn-danger" type="button">
+                     <button onclick="return validateForm()" name="mbutton" class="btn btn-danger" type="submit" >
                          <span class="glyphicon glyphicon-search"></span>
                      </button>
                  </span>
-             </div>
-         </form>
+                 </div>
+             </form>';
+           }
+          ?>
          <ul class="nav nav-tabs pull-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Συνδεθείτε</b> <span class="caret"></span></a>

@@ -164,7 +164,10 @@ INSERT INTO Library Values('Βιβλιοθήκη Ιταλικής & Ισπανι
 'Δευτέρα, Τρίτη, Πέμπτη: 9:00-17:00, Τετάρτη-Παρασκευή: 9:00-15:00',
 'Βιβλιοθήκη της Φιλοσοφικής Σχολής');
 
-select distinct MainLibrary from Library;
+INSERT INTO  Author Values('Uberto Eco',NULL,'0','');
+INSERT INTO  Publisher Values('Ψυχογιός',NULL,'0','');
 
-select count(Email) from Library;
+INSERT INTO Book Values(9604961489,'Το όνομα του ρόδου','2011',0,'',true,false,'Umberto Eco','Ψυχογιός');
 
+INSERT INTO  Publisher Values('ΕΛΛΗΝΙΚΑ ΓΡΑΜΜΑΤΑ',NULL,'0','');
+INSERT INTO Book Values(9603934887,'Το νησί της προηγούμενης ημέρας','2000',0,'',true,false,'Umberto Eco','ΕΛΛΗΝΙΚΑ ΓΡΑΜΜΑΤΑ');

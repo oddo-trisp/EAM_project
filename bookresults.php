@@ -22,21 +22,27 @@
             <div class="wrapper">
                 <h3> Αποτελέσματα Αναζήτησης </h3>
                 <?php
-                    $db_hostname = "localhost";		//database server (use localhost or 127.0.0.1 if this is the same machine the web server runs on)
-                    $db_name = "library";		// database
-                    $db_user = "root";			// database username
-                    $db_pass = "";			// database password
-                    $link=mysqli_connect($db_hostname, $db_user, $db_pass, $db_name) or die ("Unable to connect to database");
-                    mysqli_set_charset($link,"utf8");
-                    $flag="false";
-                  if(isset($_POST["qsearch"]) && !empty($_POST["q"]))
+                    //Connect to database
+                    include 'connect.php';
+
+                  if(isset($_POST["mbutton"]))
                   {
                     //sximatismos tou query
-                    $query = 'SELECT * FROM Book WHERE Name LIKE "'.$_POST["q"].'"';
+                    //echo $_POST["mvalue"];
+                    $query = 'SELECT * FROM Book WHERE INSTR(Name,"'.$_POST["mvalue"].'")>0';
+                    //$query = 'SELECT * FROM Book';
                   }
-                  else if(isset($_POST["qsbutton"]) && !empty($_POST["qsfield"]))
+                  else if(isset($_POST["qsbutton"]))
                   {
-                      $query = 'SELECT * FROM Book WHERE "'.$_POST["menu"].'" LIKE "'.$_POST["qsfield"].'"';
+                      if($_POST["menu"]=='ISBN')
+                      {
+                        $query = 'SELECT * FROM Book WHERE ISBN="'.$_POST["qsfield"].'"';
+                      }
+                      else
+                      {
+                        $query = 'SELECT * FROM Book WHERE INSTR('.$_POST["menu"].',"'.$_POST["qsfield"].'") > 0';
+                      }
+
                   }
                   else if(isset($_POST["csbutton"]))
                   {
@@ -45,7 +51,6 @@
 
                   //ektelesi tou query
                   $results = mysqli_query($link,$query) or die ("Query failed");
-                  $row=mysqli_fetch_object($results);
                 ?>
                 <div class="row">
                    <div class="col-md-7 col-lg-7">
@@ -56,13 +61,14 @@
                            while($row = mysqli_fetch_object($results))
                            {
                              echo '<li class="media">
-                               <a class="pull-left" href="bookinfo.php">
+                               <a class="pull-left" href="bookinfo.php?isbn='.$row->ISBN.'">
                                  <img class="media-object" src="http://placehold.it/150x90" alt="...">
                                </a>
                                <div class="media-body">
                                  <h4 class="media-heading">'.$row->Name.'</h4>
                                  <p class="by-author">'.$row->ISBN.'</p>
-                                 <p class="by-author">By Jhon Doe</p>
+                                 <p class="by-author">By '.$row->AuthorName.'</p>
+                                 <p class="by-author">'.$row->PublisherName.'</p>
                                </div>
                              </li>';
                                  echo '<br>';
@@ -70,8 +76,9 @@
                          }
                          else
                             echo 'Δεν βρέθηκαν αποτελέσματα...!';
-                        mysqli_close($link);
-                         ?>
+                          $results->close();
+                          mysqli_close($link);
+                        ?>
                          <!--<li class="media">
                            <a class="pull-left" href="bookinfo.php">
                              <img class="media-object" src="http://placehold.it/150x90" alt="...">
