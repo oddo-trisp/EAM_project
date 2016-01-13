@@ -38,7 +38,7 @@
                             <input type="text" class="form-control" name="qsfield" placeholder="Search.." id="search_key" value="">
                             <span class="input-group-btn">
                                 <button class="btn btn-default text-muted" type="reset" title="Clear"><i class="glyphicon glyphicon-remove"></i> </button>
-                                <button class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                <a href="libresults.php" class="btn btn-info" role="button"><span class="glyphicon glyphicon-search"></span></a>
                             </span>
                           </div>
 
@@ -49,7 +49,7 @@
                     <center>
                         <div class="col-sm-6 combined">
                             <h4>Σύνθετη Αναζήτηση</h4>
-                            <form name="combsearch" class="form">
+                            <form name="combsearch" class="form" action="libresults.php">
                                 <table>
                                     <tr>
                                         <td> <label for="text">Όνομα</label> </td>
