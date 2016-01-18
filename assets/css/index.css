@@ -23,3 +23,78 @@ html,body{
     width: 1024px;
     margin: auto;
 }
+
+#wrapper{
+    margin-left: 2%;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+#wrapper .row .col-md-8 {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+#wrapper .row .col-md-8 h4{
+    margin-top: 5%;
+}
+
+.verticalCarousel {
+  max-width: 300px;
+  border: 1px solid #ccc;
+}
+
+.verticalCarouselHeader {
+  text-align: center;
+}
+
+.verticalCarouselHeader h3{
+    margin-top: 0;
+    background-color: #cccc99;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.verticalCarouselHeader:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.verticalCarouselHeader .vc_goUp, .verticalCarouselHeader .vc_goDown {
+  float: right;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-left: 1%;
+  margin-bottom: 5%;
+  margin-right: 3%;
+  background: #cccc99;
+  text-align: center;
+  color: #000;
+  font-size: 20px;
+}
+
+.verticalCarouselHeader .vc_goUp:active, .verticalCarouselHeader .vc_goDown:active {
+  -moz-transform: scale(0.7, 0.7);
+  -ms-transform: scale(0.7, 0.7);
+  -webkit-transform: scale(0.7, 0.7);
+  transform: scale(0.7, 0.7);
+}
+
+.verticalCarouselGroup.vc_list > li {
+  border-bottom: 10px solid #fff;
+  padding: 2%;
+  background-color: #f1f1f1;
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.verticalCarouselGroup.vc_list > li > h4 {
+  text-align: center;
+}
+
+.verticalCarouselGroup.vc_list > li > .ann_link{
+    text-align: right;
+}
