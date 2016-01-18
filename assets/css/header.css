@@ -30,6 +30,11 @@
     background-color: #003366;
 }
 
+.nav-tabs .homeimg{
+    width: 40px;
+    height: 20px;
+}
+
 .header .dropdown-menu{
     background-color: #003366;
 }
