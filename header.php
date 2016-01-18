@@ -18,15 +18,22 @@
     <ul class="nav nav-tabs">
         <li><a href="index.php">ΑΡΧΙΚΗ</a></li>
         <li><a href="faq.php">ΠΛΗΡΟΦΟΡΙΕΣ (F.A.Q)</a></li>
-        <li><a href="libraries.php">ΒΙΒΛΙΟΘΗΚΕΣ</a></li>
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΥΠΗΡΕΣΙΕΣ
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΒΙΒΛΙΟΘΗΚΕΣ
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
                 <li><a href="libsearch.php">ΑΝΑΖΗΤΗΣΗ ΒΙΒΛΙΟΘΗΚΗΣ</a></li>
-                <li><a href="booksearch.php">ΑΝΑΖΗΤΗΣΗ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
-                <li><a href="bookentry.php">ΚΑΤΑΧΩΡΗΣΗ ΣΥΓΓΡΑΜΜΑΤΟΣ</a></li>
+                <li><a href="libraries.php">ΠΡΟΒΟΛΗ ΒΙΒΛΙΟΘΗΚΩΝ</a></li>
+            </ul>
+         </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΥΛΙΚΟ
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="booksearch.php">ΑΝΑΖΗΤΗΣΗ ΥΛΙΚΟΥ</a></li>
+                <li><a href="bookentry.php">ΚΑΤΑΧΩΡΗΣΗ ΥΛΙΚΟΥ</a></li>
                 <li><a href="mybooks.php">ΤΑ ΒΙΒΛΙΑ ΜΟΥ</a></li>
             </ul>
          </li>

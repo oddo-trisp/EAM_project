@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="assets/css/header.css">
         <link rel="stylesheet" href="assets/css/footer.css">
         <link rel="stylesheet" href="assets/css/libsearch.css">
+        <script src="assets/js/validators.js"></script>
         <script src="assets/js/index.js"></script>
         <title>EAM_Project</title>
     </head>
@@ -23,7 +24,7 @@
                 <h3>Αναζήτηση Βιβλιοθηκών</h3>
                 <div class="row">
                   <center>
-                    <form name="quicksearch" role="search" >
+                    <form name="quicksearch" role="search" action="libresults.php" method="post">
                       <div class="col-sm-6 quick">
                           <h4>Γρήγορη Αναζήτηση</h4>
                           <div class="input-group">
@@ -38,7 +39,7 @@
                             <input type="text" class="form-control" name="qsfield" placeholder="Search.." id="search_key" value="">
                             <span class="input-group-btn">
                                 <button class="btn btn-default text-muted" type="reset" title="Clear"><i class="glyphicon glyphicon-remove"></i> </button>
-                                <a href="libresults.php" class="btn btn-info" role="button"><span class="glyphicon glyphicon-search"></span></a>
+                                <button  onclick="return validateQuickForm()" name="qsbutton" class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </span>
                           </div>
 
@@ -49,7 +50,7 @@
                     <center>
                         <div class="col-sm-6 combined">
                             <h4>Σύνθετη Αναζήτηση</h4>
-                            <form name="combsearch" class="form" action="libresults.php">
+                            <form name="combsearch" class="form" action="libresults.php" method="post">
                                 <table>
                                     <tr>
                                         <td> <label for="text">Όνομα</label> </td>
@@ -64,7 +65,7 @@
                                 		<td> <input type="text" name="city"/> </td>
                                 	</tr>
                                 </table>
-                                <div class="submit"> <input type="submit" value="Αναζήτηση" /> <input type="reset" value="Καθαρισμός" />  </div>
+                                <div class="submit"> <input onclick="return validateCombFormLib()" type="submit" value="Αναζήτηση" /> <input type="reset" value="Καθαρισμός" />  </div>
                             </form>
                             <p>Για να χρησιμοποιήσετε τη "Σύνθετη Αναζήτηση", συμπληρώστε τη φόρμα και πατήστε το πλήκτρο αναζήτησης.</p>
                         </div>

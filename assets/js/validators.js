@@ -15,3 +15,13 @@ function validateCombForm() {
         return false;
     }
 }
+
+function validateCombFormLib() {
+    var x = document.forms["combsearch"]["name"].value;
+    var y = document.forms["combsearch"]["address"].value;
+    var z = document.forms["combsearch"]["city"].value;
+    if ((x == null || x == "") && (y == null || y == "") && (z == null || z == "")) {
+        alert("Πρέπει να συμπληρώσετε τουλάχιστον ένα πεδίο!");
+        return false;
+    }
+}

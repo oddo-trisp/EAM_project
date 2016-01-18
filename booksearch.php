@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="assets/css/header.css">
         <link rel="stylesheet" href="assets/css/footer.css">
         <link rel="stylesheet" href="assets/css/booksearch.css">
-        <script src="assets/js/booksearch.js"></script>
+        <script src="assets/js/validators.js"></script>
         <script src="assets/js/index.js"></script>
         <title>EAM_Project</title>
     </head>
