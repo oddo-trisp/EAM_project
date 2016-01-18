@@ -17,27 +17,27 @@
 
     <ul class="nav nav-tabs">
         <li><a href="index.php"><img src="assets/img/home.png" class="homeimg"></a></li>
-        <li><a href="faq.php">ΠΛΗΡΟΦΟΡΙΕΣ (F.A.Q)</a></li>
+        <li><a href="faq.php">Πληροφορίες (F.A.Q)</a></li>
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΒΙΒΛΙΟΘΗΚΕΣ
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Βιβλιοθήκες
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="libsearch.php">ΑΝΑΖΗΤΗΣΗ ΒΙΒΛΙΟΘΗΚΗΣ</a></li>
-                <li><a href="libraries.php">ΠΡΟΒΟΛΗ ΒΙΒΛΙΟΘΗΚΩΝ</a></li>
+                <li><a href="libsearch.php">Αναζήτηση Βιβλιοθήκης</a></li>
+                <li><a href="libraries.php">Προβολή Βιβλιοθηκών</a></li>
             </ul>
          </li>
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΥΛΙΚΟ
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Υλικό
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="booksearch.php">ΑΝΑΖΗΤΗΣΗ ΥΛΙΚΟΥ</a></li>
-                <li><a href="bookentry.php">ΚΑΤΑΧΩΡΗΣΗ ΥΛΙΚΟΥ</a></li>
-                <li><a href="mybooks.php">ΤΑ ΒΙΒΛΙΑ ΜΟΥ</a></li>
+                <li><a href="booksearch.php">Αναζήτηση Υλικού</a></li>
+                <li><a href="bookentry.php">Καταχώρηση Υλικού</a></li>
+                <li><a href="mybooks.php">Τα Βιβλία μου</a></li>
             </ul>
          </li>
-         <li><a href="contact.php">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+         <li><a href="contact.php">Επικοινωνία</a></li>
          <?php
           if(basename($_SERVER['PHP_SELF'])!="booksearch.php")
           {

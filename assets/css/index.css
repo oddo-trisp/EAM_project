@@ -53,7 +53,9 @@ html,body{
     background-color: #cccc99;
     padding-top: 5%;
     padding-bottom: 5%;
+    font-size: 16px;
 }
+
 
 .verticalCarouselHeader:after {
   content: "";
@@ -93,6 +95,11 @@ html,body{
 
 .verticalCarouselGroup.vc_list > li > h4 {
   text-align: center;
+  font-size: 16px;
+}
+
+.verticalCarouselGroup.vc_list > li > p{
+  font-size: 12px;
 }
 
 .verticalCarouselGroup.vc_list > li > .ann_link{
