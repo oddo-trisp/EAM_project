@@ -37,27 +37,27 @@
                                 <li>
                                     <h4>Article 1</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="ann_link"> <a href="#"> Περισσότερα </a> </div>
+                                    <div class="ann_link"> <a href="announcementpage.php"> Περισσότερα </a> </div>
                                 </li>
                                 <li>
                                     <h4>Article 2</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="ann_link"> <a href="#"> Περισσότερα </a> </div>
+                                    <div class="ann_link"> <a href="announcementpage.php"> Περισσότερα </a> </div>
                                 </li>
                                 <li>
                                     <h4>Article 3</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="ann_link"> <a href="#"> Περισσότερα </a> </div>
+                                    <div class="ann_link"> <a href="announcementpage.php"> Περισσότερα </a> </div>
                                 </li>
                                 <li>
                                     <h4>Article 4</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="ann_link"> <a href="#"> Περισσότερα </a> </div>
+                                    <div class="ann_link"> <a href="announcementpage.php"> Περισσότερα </a> </div>
                                 </li>
                                 <li>
                                     <h4>Article 5</h4>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="ann_link"> <a href="#"> Περισσότερα </a> </div>
+                                    <div class="ann_link"> <a href="announcementpage.php"> Περισσότερα </a> </div>
                                 </li>
                             </ul>
                         </div>
