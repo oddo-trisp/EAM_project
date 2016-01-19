@@ -1,0 +1,42 @@
+.container{
+    width: auto;
+}
+
+.ann{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+.ann h3, .ann h4{
+    text-align: center;
+}
+
+.ann h3{
+    margin-bottom: 3%;
+}
+
+.ann h4{
+    margin-bottom: 2%;
+}
+
+.ann .date{
+    font-size: 15px;
+    color: #336699;
+    background-color: #f1f1f1;
+    padding: 1px;
+    border: 1px solid #336699;
+    width: 250px;
+    margin-bottom: 2%;
+}
+
+.ann .pdf_view{
+    margin-top: 5%;
+}
+
+.ann .pdf_download_icon{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    padding-left: 20px;
+}
