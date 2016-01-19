@@ -39,6 +39,19 @@ html,body{
     margin-top: 5%;
 }
 
+#wrapper .row .col-md-8 .recent{
+    display: inline-block;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#wrapper .row .col-md-8 .recent .media-object{
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
 .verticalCarousel {
   max-width: 300px;
   border: 1px solid #ccc;
