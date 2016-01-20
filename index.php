@@ -96,18 +96,16 @@
 
                                 if(mysqli_num_rows($results) > 0)
                                 {
-                                    $i=0;
-                                    $lim=mysqli_num_rows($results);
-                                    while($i < $lim)
-                                    {
-                                        echo '<img class="media-object" src="http://placehold.it/100x150"/>';
-                                        echo '&emsp;&emsp;&emsp;';
-                                        $i++;
-                                    }
-                                    echo '<br> <br>';
                                     while($row = mysqli_fetch_object($results))
                                     {
-                                        echo ''.$row->title.'';
+                                        echo '<a href="bookinfo.php?id='.$row->idDocuments.'"><img class="media-object" src="http://placehold.it/100x150"/></a>';
+                                        echo '&emsp;&emsp;&emsp;';
+                                    }
+                                    echo '<br> <br>';
+                                    mysqli_data_seek($results,0);
+                                    while($row = mysqli_fetch_object($results))
+                                    {
+                                        echo '<a href="bookinfo.php?id='.$row->idDocuments.'">'.$row->title.'</a>';
                                         echo '&emsp;';
                                     }
                                 }
