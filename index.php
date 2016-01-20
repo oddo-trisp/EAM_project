@@ -83,11 +83,42 @@
                         </p>
                         <h4> Πρόσφατες αναρτήσεις </p>
                         <div class="recent">
+                            <?
+                                echo '<br>';
+
+                                //Connect to database
+                                include 'connect.php';
+
+                                //sximatismos tou query
+                                $query = 'select * from Documents order by publicationDate desc limit 3';
+
+                                $results = mysqli_query($link,$query) or die ("Query failed");
+
+                                if(mysqli_num_rows($results) > 0)
+                                {
+                                    $i=0;
+                                    $lim=mysqli_num_rows($results);
+                                    while($i < $lim)
+                                    {
+                                        echo '<img class="media-object" src="http://placehold.it/100x150"/>';
+                                        echo '&emsp;&emsp;&emsp;';
+                                        $i++;
+                                    }
+                                    echo '<br> <br>';
+                                    while($row = mysqli_fetch_object($results))
+                                    {
+                                        echo ''.$row->title.'';
+                                        echo '&emsp;';
+                                    }
+                                }
+                                $results->close();
+                                mysqli_close($link);
+                            ?>
+                          <!--  <img class="media-object" src="http://placehold.it/100x150"/>
                             <img class="media-object" src="http://placehold.it/100x150"/>
                             <img class="media-object" src="http://placehold.it/100x150"/>
                             <img class="media-object" src="http://placehold.it/100x150"/>
-                            <img class="media-object" src="http://placehold.it/100x150"/>
-                            <img class="media-object" src="http://placehold.it/100x150"/>
+                            <img class="media-object" src="http://placehold.it/100x150"/>-->
                         </div>
                     </div>
                     <div class="col-md-1">

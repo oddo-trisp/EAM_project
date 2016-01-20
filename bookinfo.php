@@ -23,35 +23,60 @@
             <div class="wrapper">
                 <center>
                   <?php
-                      $isbn=$_GET['isbn'];
+                      $id=$_GET['id'];
 
                       //Connect to database
                       include 'connect.php';
 
                       //sximatismos tou query
-                      $query = 'SELECT * FROM Book WHERE ISBN="'.$isbn.'"';
+                      $query = 'SELECT * FROM Documents WHERE idDocuments="'.$id.'"';
 
                       //ektelesi tou query
                       $results = mysqli_query($link,$query) or die ("Query failed");
                       $row=mysqli_fetch_object($results);
                       $results->close();
                       mysqli_close($link);
+
                   ?>
                     <h3> Πληροφορίες Συγγράμματος </h3>
                     <img class="media-object" src="http://placehold.it/250x160" alt="...">
                     <table>
                         <tr>
                             <td> <b> Τίτλος: </b> </td>
-                            <td> <?php echo ''.$row->Name.''; ?> </td>
+                            <td> <?php echo ''.$row->title.''; ?> </td>
+                        </tr>
+                        <tr>
+                            <td> <b> Τύπος: </b> </td>
+                            <td> <?php echo ''.$row->type.''; ?> </td>
                         </tr>
                         <tr>
                             <td> <b> Συγγραφέας: </b> </td>
-                            <td> <?php echo ''.$row->AuthorName.''; ?> </td>
+                            <td> <?php echo ''.$row->author.''; ?> </td>
                         </tr>
                         <tr>
-                            <td> <b> Εκδοτικός Οίκος: </b> </td>
-                            <td> <?php echo ''.$row->PublisherName.''; ?> </td>
+                            <td> <b> Έτος Έκδοσης: </b> </td>
+                            <td> <?php echo ''.$row->publicationDate.''; ?> </td>
                         </tr>
+                        <tr>
+                            <td> <b> Βιβλιοθήκη: </b> </td>
+                            <td> <?php echo ''.$row->libName.''; ?> </td>
+                        </tr>
+                        <?php
+                            if($row->isLended==true)
+                            {
+                              echo '<tr>
+                                <td> <b> Κατάσταση: </b> </td>
+                                <td><font color="red"> Δανεισμένο </font></td>
+                              </tr>';
+                            }
+                          else
+                          {
+                            echo '<tr>
+                              <td> <b> Κατάσταση: </b> </td>
+                              <td><font color="green"> Διαθέσιμο </font></td>
+                            </tr>';
+                          }
+                        ?>
                     </table>
                     <div class="row rates">
                         <div class="col-sm-4">
@@ -62,10 +87,15 @@
                             <h4> Μεταφόρτωση δείγματος του Συγγράμματος: </h4>
                             <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
                         </div>
-                        <div class="col-sm-4">
+                        <?php
+                        if($row->isLended!=true)
+                        {
+                          echo '<div class="col-sm-4">
                             <h4> Δανεισμός του Συγγράμματος: </h4>
                             <div class="submit"> <input type="submit" value="Δανεισμός" /> </div>
-                        </div>
+                            </div>';
+                        }
+                        ?>
                     </div>
                 </center>
             </div>

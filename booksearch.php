@@ -30,9 +30,9 @@
                           <div class="input-group">
                               <div class="input-group-btn search-panel">
                                 <select id="menu" name="menu" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <option value="ISBN"><i class="fa fa-angle-double-right"></i> ISBN</option>
-                                    <option value="Name"><i class="fa fa-angle-double-right"></i> Name</option>
-                                    <option value="Description"><i class="fa fa-angle-double-right"></i> Description</option>
+                                    <option value="title"><i class="fa fa-angle-double-right"></i> Τίτλος</option>
+                                    <option value="type"><i class="fa fa-angle-double-right"></i> Τύπος</option>
+                                    <option value="author"><i class="fa fa-angle-double-right"></i> Συγγραφέας</option>
                                   </select>
                               <!--<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                               <span id="search_concept">Name</span> <span class="caret"></span>

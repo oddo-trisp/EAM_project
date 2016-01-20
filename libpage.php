@@ -25,7 +25,7 @@
           include 'connect.php';
 
           //sximatismos tou query
-          $query = 'SELECT * FROM Library WHERE Name="'.$name.'"';
+          $query = 'SELECT * FROM Libraries WHERE libName="'.$name.'"';
 
           //ektelesi tou query
           $results = mysqli_query($link,$query) or die ("Query failed");
@@ -36,38 +36,32 @@
         <div id="container">
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="lib">
-                <h3><?php echo ''.$row->Name.''?></h3>
+                <h3><?php echo ''.$row->libName.''?></h3>
                 <h4> <b>Πληροφορίες Επικοινωνίας</b> </h4>
                 <table align="center">
                     <tr>
                         <td><b>Τηλέφωνο:</b></td>
-                        <td> <?php echo ''.$row->Phone.''?> </td>
+                        <td> <?php echo ''.$row->telNum.''?> </td>
                     </tr>
                     <tr>
                         <td> <b>Διεύθυνση:</b> </td>
-                        <td> <?php echo ''.$row->Address.''?> </td>
+                        <td> <?php echo ''.$row->address.''?> </td>
                     </tr>
                     <tr>
-                        <td><b>FAX:</b></td>
-                        <td> <?php echo ''.$row->FAX.''?> </td>
+                        <td> <b>Τμήμα:</b> </td>
+                        <td> <?php echo ''.$row->department.''?> </td>
                     </tr>
                     <tr>
                         <td><b>E-mail:</b></td>
-                        <td> <?php echo ''.$row->Email.''?> </td>
+                        <td> <?php echo ''.$row->email.''?> </td>
                     </tr>
                     <tr>
-                        <td><b>Ώρες Λειτουργίας:</b></td>
-                        <td> <?php echo ''.$row->OpenInfro.''?> </td>
+                        <td><b>Web site:</b></td>
+                        <td> <a href="http://www.<?php echo ''.$row->website.''?>"> www.<?php echo ''.$row->website.''?> </a> </td>
                     </tr>
                 </table>
                 <center>
                     <div id="map"></div>
-                </center>
-                <center>
-                    <div id="people">
-                        <h4 class="ppl"> <b>Προσωπικό</b> </h4>
-                        <?php echo ''.$row->Info.''?>
-                    </div>
                 </center>
             </div>
         </div>

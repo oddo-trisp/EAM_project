@@ -29,19 +29,13 @@
                   {
                     //sximatismos tou query
                     //echo $_POST["mvalue"];
-                    $query = 'SELECT * FROM Book WHERE INSTR(Name,"'.$_POST["mvalue"].'")>0';
+                    $query = 'SELECT * FROM Documents WHERE INSTR(title,"'.$_POST["mvalue"].'")>0';
                     //$query = 'SELECT * FROM Book';
                   }
                   else if(isset($_POST["qsbutton"]))
                   {
-                      if($_POST["menu"]=='ISBN')
-                      {
-                        $query = 'SELECT * FROM Book WHERE ISBN="'.$_POST["qsfield"].'"';
-                      }
-                      else
-                      {
-                        $query = 'SELECT * FROM Book WHERE INSTR('.$_POST["menu"].',"'.$_POST["qsfield"].'") > 0';
-                      }
+
+                        $query = 'SELECT * FROM Documents WHERE INSTR('.$_POST["menu"].',"'.$_POST["qsfield"].'") > 0';
 
                   }
                   else if(isset($_POST["csbutton"]))
@@ -60,15 +54,20 @@
                          {
                            while($row = mysqli_fetch_object($results))
                            {
+                            $lend="";
+                             if($row->isLended==true)
+                                $lend="Lended";
+                              else
+                                $lend="Available";
                              echo '<li class="media">
-                               <a class="pull-left" href="bookinfo.php?isbn='.$row->ISBN.'">
+                               <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
                                  <img class="media-object" src="http://placehold.it/150x90" alt="...">
                                </a>
                                <div class="media-body">
-                                 <h4 class="media-heading">'.$row->Name.'</h4>
-                                 <p class="by-author">'.$row->ISBN.'</p>
-                                 <p class="by-author">By '.$row->AuthorName.'</p>
-                                 <p class="by-author">'.$row->PublisherName.'</p>
+                                 <h4 class="media-heading">'.$row->title.'</h4>
+                                 <p class="by-author">'.$row->type.' By '.$row->author.'</p>
+                                 <p class="by-author">'.$row->libName.'</p>
+                                 <p class="by-author">'.$lend.'</p>
                                </div>
                              </li>';
                                  echo '<br>';

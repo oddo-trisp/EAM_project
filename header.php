@@ -1,5 +1,5 @@
 <?php
-  if(basename($_SERVER['PHP_SELF'])!="booksearch.php")
+  if(basename($_SERVER['PHP_SELF'])!="booksearch.php" && basename($_SERVER['PHP_SELF'])!="libsearch.php")
   {
       echo '<script src="assets/js/header.js"></script>';
   }
@@ -39,7 +39,7 @@
          </li>
          <li><a href="contact.php">Επικοινωνία</a></li>
          <?php
-          if(basename($_SERVER['PHP_SELF'])!="booksearch.php")
+          if(basename($_SERVER['PHP_SELF'])!="booksearch.php" && basename($_SERVER['PHP_SELF'])!="libsearch.php")
           {
             echo '<form class="navbar-form navbar-left" name="mainsearch" role="search" action="bookresults.php" method="post">
                 <div class="input-group">

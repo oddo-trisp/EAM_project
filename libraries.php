@@ -32,7 +32,7 @@
                         include 'connect.php';
 
                         //sximatismos tou query
-                        $query = 'SELECT DISTINCT MainLibrary FROM Library';
+                        $query = 'SELECT DISTINCT department FROM Libraries';
                         //  $query = 'select ISBN from Book';
 
                         //ektelesi tou query
@@ -46,9 +46,9 @@
                             while ($row = mysqli_fetch_object($results))
                             {
                                 $i++;
-                                echo '<h4>'.$row->MainLibrary.'</h4>';
+                                echo '<h4>'.$row->department.'</h4>';
                                 echo '<div>';
-                                    $query = 'SELECT Name FROM Library WHERE MainLibrary="'.$row->MainLibrary.'"';
+                                    $query = 'SELECT libName FROM Libraries WHERE department="'.$row->department.'"';
                                     $results1 = mysqli_query($link,$query) or die ("Query failed");
                                     if(mysqli_num_rows($results1) > 0)
                                     {
@@ -56,7 +56,7 @@
                                       while($row1 = mysqli_fetch_object($results1))
                                       {
                                             $j++;
-                                            echo '<li><a href="libpage.php?name='.$row1->Name.'">'.$row1->Name.'</a></li>';
+                                            echo '<li><a href="libpage.php?name='.$row1->libName.'">'.$row1->libName.'</a></li>';
                                             echo '<br>';
                                       }
                                     }
