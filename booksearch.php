@@ -65,13 +65,44 @@
                                 		<td> <input type="text" name="title"/> </td>
                                     </tr>
                                     <tr>
+                                        <td> <label for="text">Τύπος</label> </td>
+                                    <td> <input type="text" name="type"/> </td>
+                                  </tr>
+                                    <tr>
                                         <td> <label for="name">Συγγραφέας</label> </td>
                                 		<td> <input type="text" name="author"/> </td>
                                 	</tr>
-                                    <tr>
-                                        <td> <label for="text">Εκδοτικός Οίκος</label> </td>
-                                		<td> <input type="text" name="publisher"/> </td>
-                                	</tr>
+                                <tr>
+                                      <td> <label for="text">Βιβλιοθήκη</label> </td>
+                                      <td> <select id="menu" name="libMenu" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <option value="empty"><i class="fa fa-angle-double-right"></i>----Επιλογή Βιβλιοθήκης----</option>
+                                        <?php
+                                          //Connect to database
+                                          include 'connect.php';
+
+                                          //sximatismos tou query
+                                          $query = 'select * from Libraries';
+
+                                          $results = mysqli_query($link,$query) or die ("Query failed");
+
+                                          if(mysqli_num_rows($results) > 0)
+                                          {
+                                            while($row = mysqli_fetch_object($results))
+                                            {
+                                                  echo '<option value="libName"><i class="fa fa-angle-double-right"></i>'.$row->libName.'</option>';
+                                            }
+                                          }
+                                        ?>
+                                      </select>
+                                      </td>
+                                </tr>
+                                <tr>
+                                    <td> <label for="name">Κατάσταση</label> </td>
+                                    <td> <select id="menu" name="statusMenu" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                      <option value="empty"><i class="fa fa-angle-double-right"></i>----Επιλογή Κατάστασης----</option>
+                                      <option value="available"><i class="fa fa-angle-double-right"></i>Διαθέσιμο</option>
+                                      <option value="lended"><i class="fa fa-angle-double-right"></i>Δανεισμένο</option>
+                                </tr>
                                 </table>
                                 <div class="submit"> <input onclick="return validateCombForm()" type="submit" name="csbutton" value="Αναζήτηση" /> <input type="reset" value="Καθαρισμός" />  </div>
                             </form>
