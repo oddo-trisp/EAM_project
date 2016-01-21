@@ -57,7 +57,18 @@
                     </tr>
                     <tr>
                         <td><b>Web site:</b></td>
-                        <td> <a href="http://www.<?php echo ''.$row->website.''?>"> www.<?php echo ''.$row->website.''?> </a> </td>
+                        <td>
+                        <?php
+                            if(strpos($row->website,'www') !== FALSE)
+                            {
+                              echo '<a href="http://'.$row->website.'">'.$row->website.'</a>';
+                            }
+                            else
+                            {
+                              echo '<a href="http://www.'.$row->website.'">www.'.$row->website.'</a>';
+                            }
+                        ?>
+                      </td>
                     </tr>
                 </table>
                 <center>

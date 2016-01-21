@@ -7,7 +7,7 @@ function validateQuickForm() {
 }
 
 function validateCombForm() {
-    var x = document.forms["combsearch"]["name"].value;
+    var x = document.forms["combsearch"]["title"].value;
     var y = document.forms["combsearch"]["type"].value;
     var z = document.forms["combsearch"]["author"].value;
     var fa = document.forms["combsearch"]["libMenu"].value;

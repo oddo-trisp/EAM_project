@@ -25,14 +25,7 @@
                     //Connect to database
                     include 'connect.php';
 
-                  if(isset($_POST["mbutton"]))
-                  {
-                    //sximatismos tou query
-                    //echo $_POST["mvalue"];
-                    $query = 'SELECT * FROM Documents WHERE INSTR(title,"'.$_POST["mvalue"].'")>0';
-                    //$query = 'SELECT * FROM Book';
-                  }
-                  else if(isset($_POST["qsbutton"]))
+                  if(isset($_POST["qsbutton"]))
                   {
 
                         $query = 'SELECT * FROM Documents WHERE INSTR('.$_POST["menu"].',"'.$_POST["qsfield"].'") > 0';

@@ -41,7 +41,7 @@
          <?php
           if(basename($_SERVER['PHP_SELF'])!="booksearch.php" && basename($_SERVER['PHP_SELF'])!="libsearch.php")
           {
-            echo '<form class="navbar-form navbar-left" name="mainsearch" role="search" action="bookresults.php" method="post">
+            echo '<form class="navbar-form navbar-left" name="mainsearch" role="search" action="qsearchresults.php" method="post">
                 <div class="input-group">
                  <input type="text" name="mvalue" class="search-query form-control" placeholder="Search" />
                  <span class="input-group-btn">
