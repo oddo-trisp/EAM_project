@@ -56,7 +56,7 @@
                                       while($row1 = mysqli_fetch_object($results1))
                                       {
                                             $j++;
-                                            echo '<li><a href="libpage.php?name='.$row1->libName.'">'.$row1->libName.'</a></li>';
+                                            echo '<div class="link_to"> <a href="libpage.php?name='.$row1->libName.'">'.$row1->libName.'</a></div>';
                                             echo '<br>';
                                       }
                                     }
