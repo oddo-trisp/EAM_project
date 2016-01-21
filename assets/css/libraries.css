@@ -13,9 +13,15 @@
     margin-bottom: 3%;
 }
 
-.libs li a{
-    font-size: 14px;
+
+.libs a{
+    font-size: 16px;
     text-decoration: none;
+}
+
+.libs .link_to{
+    margin-top: 1%;
+    text-align: center;
 }
 
 .libs h4{
@@ -25,6 +31,8 @@
     font-size: 20px;
     padding: 5px;
     border-radius: 50%;
+    width: 600px;
+    margin: auto;
 }
 
 .libs h4.active{

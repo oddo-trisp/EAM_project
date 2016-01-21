@@ -2,6 +2,10 @@
     width: auto;
 }
 
+.lib{
+    margin-bottom: 5%;
+}
+
 .lib h3, .lib h4{
     text-align: center;
 }

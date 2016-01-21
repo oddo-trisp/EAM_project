@@ -40,16 +40,23 @@ html,body{
 }
 
 #wrapper .row .col-md-8 .recent{
-    display: inline-block;
     margin-left: 2%;
     margin-right: 2%;
 }
 
-#wrapper .row .col-md-8 .recent .media-object{
+#wrapper .row .col-md-8 .recent a:hover{
+    text-decoration: none;
+}
+
+#wrapper .row .col-md-8 .recent .img-with-txt{
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#wrapper .row .col-md-8 .recent .img-with-txt img{
     display: inline;
-    padding-left: 10px;
-    padding-right: 10px;
-    cursor: pointer;
+    padding-bottom: 5%;
 }
 
 .verticalCarousel {
