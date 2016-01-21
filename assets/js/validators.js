@@ -7,10 +7,12 @@ function validateQuickForm() {
 }
 
 function validateCombForm() {
-    var x = document.forms["combsearch"]["title"].value;
-    var y = document.forms["combsearch"]["author"].value;
-    var z = document.forms["combsearch"]["publisher"].value;
-    if ((x == null || x == "") && (y == null || y == "") && (z == null || z == "")) {
+    var x = document.forms["combsearch"]["name"].value;
+    var y = document.forms["combsearch"]["type"].value;
+    var z = document.forms["combsearch"]["author"].value;
+    var fa = document.forms["combsearch"]["libMenu"].value;
+    var fb = document.forms["combsearch"]["statusMenu"].value;
+    if ((x == null || x == "") && (y == null || y == "") && (z == null || z == "") && (fa == null || fa == "empty") && (fb == null || fb == "empty")) {
         alert("Πρέπει να συμπληρώσετε τουλάχιστον ένα πεδίο!");
         return false;
     }
