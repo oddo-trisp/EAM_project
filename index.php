@@ -98,15 +98,12 @@
                                 {
                                     while($row = mysqli_fetch_object($results))
                                     {
-                                        echo '<a href="bookinfo.php?id='.$row->idDocuments.'"><img class="media-object" src="http://placehold.it/100x150"/></a>';
-                                        echo '&emsp;&emsp;&emsp;';
-                                    }
-                                    echo '<br> <br>';
-                                    mysqli_data_seek($results,0);
-                                    while($row = mysqli_fetch_object($results))
-                                    {
-                                        echo '<a href="bookinfo.php?id='.$row->idDocuments.'">'.$row->title.'</a>';
-                                        echo '&emsp;';
+                                        echo '<a href="bookinfo.php?id='.$row->idDocuments.'">
+                                                    <div class="img-with-txt">
+                                                        <img class="media-object" src="http://placehold.it/100x150"/>
+                                                        <p> '.$row->title.'</p>
+                                                    </div>
+                                                </a>';
                                     }
                                 }
                                 $results->close();
