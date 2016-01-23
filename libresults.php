@@ -21,7 +21,69 @@
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="wrapper">
                 <h3> Αποτελέσματα Αναζήτησης </h3>
-                <div class="well well-sm">
+                <?php
+                    //Connect to database
+                    include 'connect.php';
+
+                  if(isset($_POST["qsbutton"]))
+                  {
+
+                        $query = 'SELECT * FROM Libraries WHERE INSTR('.$_POST["menu"].',"'.$_POST["qsfield"].'") > 0';
+
+                  }
+                  else if(isset($_POST["csbutton"]))
+                  {
+                      $query='SELECT * FROM Libraries WHERE ';
+                      $first='true';
+                      if($_POST["libName"] != NULL && $_POST["libName"] != '')
+                      {
+                        $query=$query.'INSTR(libName,"'.$_POST["libName"].'") > 0';
+                        $first='false';
+                      }
+                      if($_POST["address"] != NULL && $_POST["address"] != '')
+                      {
+                          if($first=='true')
+                          {
+                            $query=$query.'INSTR(address,"'.$_POST["address"].'") > 0';
+                            $first='false';
+                          }
+                          else
+                            $query=$query.' AND INSTR(address,"'.$_POST["address"].'") > 0';
+                      }
+                      if($_POST["department"] != NULL && $_POST["department"] != '')
+                      {
+                          if($first=='true')
+                          {
+                            $query=$query.'INSTR(department,"'.$_POST["department"].'") > 0';
+                            $first='false';
+                          }
+                          else
+                            $query=$query.' AND INSTR(department,"'.$_POST["department"].'") > 0';
+                      }
+
+                  }
+
+                  //ektelesi tou query
+                  $results = mysqli_query($link,$query) or die ("Query failed");
+
+                  if(mysqli_num_rows($results) > 0)
+                  {
+                    while($row = mysqli_fetch_object($results))
+                    {
+                        echo '<div class="well well-sm">
+                          <h4> '.$row->libName.' </h4>
+                          <p> '.$row->department.' </p>
+                          <p> '.$row->address.' </p>
+                          <p> <a class="more" href="libpage.php?name='.$row->libName.'"> Περισσότερα </a> </p>
+                      </div>';
+                    }
+                  }
+                  else
+                     echo 'Δεν βρέθηκαν αποτελέσματα...!';
+                   $results->close();
+                   mysqli_close($link);
+                ?>
+                <!--<div class="well well-sm">
                     <h4> Βιβλιοθήκη Αγγλικής Φιλολογίας </h4>
                     <p> Τμήμα Νομικής </p>
                     <p> Σολωμού 189, 29111 </p>
@@ -38,7 +100,7 @@
                     <p> Τμήμα ΠΛηροφορικής </p>
                     <p> Μαυρομιχάλη 12, 22257 </p>
                     <p> <a class="more" href="libpage.php"> Περισσότερα </a> </p>
-                </div>
+                </div>-->
             </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>

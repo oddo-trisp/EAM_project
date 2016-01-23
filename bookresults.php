@@ -33,7 +33,57 @@
                   }
                   else if(isset($_POST["csbutton"]))
                   {
-                    $query="xa";
+                      $query='SELECT * FROM Documents WHERE ';
+                      $first='true';
+                      if($_POST["title"] != NULL && $_POST["title"] != '')
+                      {
+                        $query=$query.'INSTR(title,"'.$_POST["title"].'") > 0';
+                        $first='false';
+                      }
+                      if($_POST["type"] != NULL && $_POST["type"] != '')
+                      {
+                          if($first=='true')
+                          {
+                            $query=$query.'INSTR(type,"'.$_POST["type"].'") > 0';
+                            $first='false';
+                          }
+                          else
+                            $query=$query.' AND INSTR(type,"'.$_POST["type"].'") > 0';
+                      }
+                      if($_POST["author"] != NULL && $_POST["author"] != '')
+                      {
+                          if($first=='true')
+                          {
+                            $query=$query.'INSTR(author,"'.$_POST["author"].'") > 0';
+                            $first='false';
+                          }
+                          else
+                            $query=$query.' AND INSTR(author,"'.$_POST["author"].'") > 0';
+                      }
+                      if($_POST["libMenu"] != 'empty')
+                      {
+                        if($first=='true')
+                        {
+                          $query=$query.'INSTR(libName,"'.$_POST["libMenu"].'")>0';
+                          $first='false';
+                        }
+                        else
+                          $query=$query.' AND INSTR(libName,"'.$_POST["libMenu"].'") > 0';
+                      }
+                      if($_POST["statusMenu"] != 'empty')
+                      {
+                        $lended=0;
+                        if($_POST["statusMenu"]=='lended')
+                              $lended=1;
+                        if($first=='true')
+                        {
+                          $query=$query.'isLended='.$lended.'';
+                          $first='false';
+                        }
+                        else
+                          $query=$query.' AND isLended='.$lended.'';
+                      }
+
                   }
 
                   //ektelesi tou query

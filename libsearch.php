@@ -30,7 +30,7 @@
                           <div class="input-group">
                               <div class="input-group-btn search-panel">
                                 <select id="menu" name="menu" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <option value="name"><i class="fa fa-angle-double-right"></i> Όνομα </option>
+                                    <option value="libName"><i class="fa fa-angle-double-right"></i> Όνομα </option>
                                     <option value="address"><i class="fa fa-angle-double-right"></i> Διεύθυνση </option>
                                     <option value="department"><i class="fa fa-angle-double-right"></i> Τμήμα </option>
                                   </select>
@@ -54,18 +54,18 @@
                                 <table>
                                     <tr>
                                         <td> <label for="text">Όνομα</label> </td>
-                                		<td> <input type="text" name="name"/> </td>
+                                		<td> <input type="text" name="libName"/> </td>
                                     </tr>
                                     <tr>
                                         <td> <label for="name">Διεύθυνση</label> </td>
                                 		<td> <input type="text" name="address"/> </td>
                                 	</tr>
                                     <tr>
-                                        <td> <label for="text">Πόλη</label> </td>
-                                		<td> <input type="text" name="city"/> </td>
+                                        <td> <label for="text">Τμήμα</label> </td>
+                                		<td> <input type="text" name="department"/> </td>
                                 	</tr>
                                 </table>
-                                <div class="submit"> <input onclick="return validateCombFormLib()" type="submit" value="Αναζήτηση" /> <input type="reset" value="Καθαρισμός" />  </div>
+                                <div class="submit"> <input onclick="return validateCombFormLib()" type="submit" name="csbutton" value="Αναζήτηση" /> <input type="reset" value="Καθαρισμός" />  </div>
                             </form>
                             <p>Για να χρησιμοποιήσετε τη "Σύνθετη Αναζήτηση", συμπληρώστε τη φόρμα και πατήστε το πλήκτρο αναζήτησης.</p>
                         </div>
