@@ -89,7 +89,7 @@
                                           {
                                             while($row = mysqli_fetch_object($results))
                                             {
-                                                  echo '<option value="libName"><i class="fa fa-angle-double-right"></i>'.$row->libName.'</option>';
+                                                  echo '<option value="'.$row->libName.'"><i class="fa fa-angle-double-right"></i>'.$row->libName.'</option>';
                                             }
                                           }
                                         ?>
