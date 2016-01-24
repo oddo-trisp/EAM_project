@@ -27,7 +27,7 @@
                     include 'connect.php';
 
                     $id=$_SESSION['id'];
-                    $query = 'SELECT * FROM Documents WHERE useridLended='.$id.'';
+                    $query = 'SELECT * FROM Documents WHERE useridLended='.$id.' ORDER BY title';
 
                     //ektelesi tou query
                     $results = mysqli_query($link,$query) or die ("Query failed");

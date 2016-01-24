@@ -29,11 +29,11 @@
                   {
                     //sximatismos tou query
                     //echo $_POST["mvalue"];
-                    $query = 'SELECT * FROM Documents WHERE INSTR(title,"'.$_POST["mvalue"].'")>0';
-                    $query1 = 'SELECT * FROM Documents WHERE INSTR(type,"'.$_POST["mvalue"].'")>0';
-                    $query2 = 'SELECT * FROM Documents WHERE INSTR(author,"'.$_POST["mvalue"].'")>0';
-                    $query3 = 'SELECT * FROM Libraries WHERE INSTR(libName,"'.$_POST["mvalue"].'")>0';
-                    $query4 = 'SELECT * FROM Libraries WHERE INSTR(department,"'.$_POST["mvalue"].'")>0';
+                    $query = 'SELECT * FROM Documents WHERE INSTR(title,"'.$_POST["mvalue"].'")>0 ORDER BY title';
+                    $query1 = 'SELECT * FROM Documents WHERE INSTR(type,"'.$_POST["mvalue"].'")>0 ORDER BY title';
+                    $query2 = 'SELECT * FROM Documents WHERE INSTR(author,"'.$_POST["mvalue"].'")>0 ORDER BY title';
+                    $query3 = 'SELECT * FROM Libraries WHERE INSTR(libName,"'.$_POST["mvalue"].'")>0 ORDER BY libName';
+                    $query4 = 'SELECT * FROM Libraries WHERE INSTR(department,"'.$_POST["mvalue"].'")>0 ORDER BY libName';
                   }
 
                   //ektelesi tou query

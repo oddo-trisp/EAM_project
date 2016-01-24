@@ -28,7 +28,7 @@
                   if(isset($_POST["qsbutton"]))
                   {
 
-                        $query = 'SELECT * FROM Libraries WHERE INSTR('.$_POST["menu"].',"'.$_POST["qsfield"].'") > 0';
+                        $query = 'SELECT * FROM Libraries WHERE INSTR('.$_POST["menu"].',"'.$_POST["qsfield"].'") > 0 ORDER BY libName';
 
                   }
                   else if(isset($_POST["csbutton"]))
@@ -60,6 +60,7 @@
                           else
                             $query=$query.' AND INSTR(department,"'.$_POST["department"].'") > 0';
                       }
+                      $query=$query.' ORDER BY libName';
 
                   }
 

@@ -32,7 +32,7 @@
                         include 'connect.php';
 
                         //sximatismos tou query
-                        $query = 'SELECT DISTINCT department FROM Libraries';
+                        $query = 'SELECT DISTINCT department FROM Libraries ORDER BY department';
                         //  $query = 'select ISBN from Book';
 
                         //ektelesi tou query
@@ -48,7 +48,7 @@
                                 $i++;
                                 echo '<h4>'.$row->department.'</h4>';
                                 echo '<div>';
-                                    $query = 'SELECT libName FROM Libraries WHERE department="'.$row->department.'"';
+                                    $query = 'SELECT libName FROM Libraries WHERE department="'.$row->department.'" ORDER BY libName';
                                     $results1 = mysqli_query($link,$query) or die ("Query failed");
                                     if(mysqli_num_rows($results1) > 0)
                                     {
