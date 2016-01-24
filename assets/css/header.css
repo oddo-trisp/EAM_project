@@ -28,15 +28,7 @@
 
 .nav-tabs{
     background-color: #003366;
-}
-
-.nav-tabs .homeimg{
-    width: 50px;
-    height: 20px;
-}
-
-.header .dropdown-menu{
-    background-color: #003366;
+    height: 45px;
 }
 
 .nav-tabs a{
@@ -53,10 +45,13 @@
     -o-box-shadow: inset 2px 2px 10px 0 #999;
 }
 
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: #003366;
+}
+
 .header .dropdown-toggle{
     background-color: #003366 !important;
 }
-
 
 .header .dropdown-menu {
     background-color: #003366;
@@ -102,6 +97,11 @@
     border: none;
 }
 
+.header .pull-right .dropdown-menu  button{
+    width: 50%;
+    margin: auto;
+}
+
 .header .pull-right .dropdown-menu .text-center{
     color: #fff;
 }
@@ -109,15 +109,3 @@
 .header .pull-right .dropdown-menu .text-center a:hover{
     text-decoration: none;
 }
-
-/*
-.header .input-group .form-control{
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-}
-
-.header .input-group .input-group-btn .btn-default{
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-}
-*/

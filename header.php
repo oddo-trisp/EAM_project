@@ -18,7 +18,6 @@
 
     <ul class="nav nav-tabs">
         <li><a href="index.php">  <span class="glyphicon glyphicon-home"/> </a></li>
-<!--<img src="assets/img/home.png" class="homeimg"></a></li>-->
         <li><a href="faq.php">Πληροφορίες (F.A.Q)</a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Βιβλιοθήκες
@@ -95,7 +94,7 @@
     			     </ul>';
              }
              else {
-              echo '<li><a href="logout.php">Αποσύνδεση</a></li><span class="caret">';
+              echo '<li class="nav pull-right"><a href="logout.php">Αποσύνδεση</a></li>';
              }
           ?>
             </li>
