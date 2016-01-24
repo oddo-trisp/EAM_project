@@ -22,7 +22,7 @@
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="wrapper">
                 <h3>Καταχώρηση Συγγράμματος</h3>
-                <form class="form" method="post" action="index.php"  onsubmit="return submitBook();">
+                <form name="bentry" class="form" method="post" action="index.php"  onsubmit="return submitBook();">
                     <table align="center">
                         <tr>
                             <td> <label for="text">Τίτλος*</label> </td>
@@ -41,8 +41,31 @@
                             <td> <input type="datetime" name="pubdate" id="pubdate" placeholder="2011-01-01 00:00:00" required/> </td>
                         </tr>
                         <tr>
+                          <!--  <td> <label for="text">Βιβλιοθήκη*</label> </td>
+                            <td> <input type="text" name="library" id="library" placeholder="Φιλοσοφική" required/> </td>-->
                             <td> <label for="text">Βιβλιοθήκη*</label> </td>
-                            <td> <input type="text" name="library" id="library" placeholder="Φιλοσοφική" required/> </td>
+                            <td> <select name="library" id="library" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              <?php
+                                //Connect to database
+                                include 'connect.php';
+
+                                //sximatismos tou query
+                                $query = 'select * from Libraries';
+
+                                $results = mysqli_query($link,$query) or die ("Query failed");
+
+                                if(mysqli_num_rows($results) > 0)
+                                {
+                                  while($row = mysqli_fetch_object($results))
+                                  {
+                                        echo '<option value="'.$row->libName.'"><i class="fa fa-angle-double-right"></i>'.$row->libName.'</option>';
+                                  }
+                                }
+                                $results->close();
+                                mysqli_close($link);
+                              ?>
+                            </select>
+                            </td>
                         </tr>
                     </table>
                     <div class="submit"> <input type="submit" value="Καταχώρηση" /> <input type="reset" value="Καθαρισμός" /> </div>

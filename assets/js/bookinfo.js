@@ -159,9 +159,8 @@ function lendBook()
        var title=document.getElementById("title").value;
        var type=document.getElementById("type").value;
        var author=document.getElementById("author").value;
-       var library=document.getElementById("library").value;
+       var library=document.forms["bentry"]["library"].value;
        var pubdate=document.getElementById("pubdate").value;
-
 
         if(title && type && author && library && pubdate)
         {

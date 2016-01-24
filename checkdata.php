@@ -28,7 +28,7 @@ if (isset($_POST['user_username']) && isset($_POST['user_email']) && isset($_POS
        if(mysqli_num_rows($res) > 0)
        {
           $row=mysqli_fetch_object($res);
-          $_SESSION['is']=$row->idUsers;
+          $_SESSION['id']=$row->idUsers;
        }
        $res->close();
        //$_SESSION['id'] = $row->idUsers;

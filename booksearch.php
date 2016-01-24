@@ -92,6 +92,8 @@
                                                   echo '<option value="'.$row->libName.'"><i class="fa fa-angle-double-right"></i>'.$row->libName.'</option>';
                                             }
                                           }
+                                          $results->close();
+                                          mysqli_close($link);
                                         ?>
                                       </select>
                                       </td>
