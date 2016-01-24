@@ -79,28 +79,10 @@
                     }
                   }
                   else
-                     echo 'Δεν βρέθηκαν αποτελέσματα...!';
+                     echo '<p class="noresults">Δεν βρέθηκαν αποτελέσματα...!</p>';
                    $results->close();
                    mysqli_close($link);
                 ?>
-                <!--<div class="well well-sm">
-                    <h4> Βιβλιοθήκη Αγγλικής Φιλολογίας </h4>
-                    <p> Τμήμα Νομικής </p>
-                    <p> Σολωμού 189, 29111 </p>
-                    <p> <a class="more" href="libpage.php"> Περισσότερα </a> </p>
-                </div>
-                <div class="well well-sm">
-                    <h4> Βιβλιοθήκη Θεωρητικών Μαθηματικών </h4>
-                    <p> Τμήμα Μαθηματικών </p>
-                    <p> Αραβαντινού 22, 12292 </p>
-                    <p> <a class="more" href="libpage.php"> Περισσότερα </a> </p>
-                </div>
-                <div class="well well-sm">
-                    <h4> Βιβλιοθήκη Πληροφορικής και Τηλεπικοινωνιών </h4>
-                    <p> Τμήμα ΠΛηροφορικής </p>
-                    <p> Μαυρομιχάλη 12, 22257 </p>
-                    <p> <a class="more" href="libpage.php"> Περισσότερα </a> </p>
-                </div>-->
             </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>

@@ -117,37 +117,10 @@
                            }
                          }
                          else
-                            echo 'Δεν βρέθηκαν αποτελέσματα...!';
+                            echo '<p class="noresults">Δεν βρέθηκαν αποτελέσματα...!</p>';
                           $results->close();
                           mysqli_close($link);
                         ?>
-                         <!--<li class="media">
-                           <a class="pull-left" href="bookinfo.php">
-                             <img class="media-object" src="http://placehold.it/150x90" alt="...">
-                           </a>
-                           <div class="media-body">
-                             <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
-                             <p class="by-author">By Jhon Doe</p>
-                           </div>
-                         </li>
-                         <li class="media">
-                           <a class="pull-left" href="bookinfo.php">
-                             <img class="media-object" src="http://placehold.it/150x90" alt="...">
-                           </a>
-                           <div class="media-body">
-                             <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
-                             <p class="by-author">By Jhon Doe</p>
-                           </div>
-                         </li>
-                         <li class="media">
-                           <a class="pull-left" href="bookinfo.php">
-                             <img class="media-object" src="http://placehold.it/150x90" alt="...">
-                           </a>
-                           <div class="media-body">
-                             <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
-                             <p class="by-author">By Jhon Doe</p>
-                           </div>
-                         </li>-->
                        </ul>
                    </div>
                </div>
