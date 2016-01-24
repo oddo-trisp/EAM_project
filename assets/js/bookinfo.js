@@ -116,3 +116,40 @@
   });
 
 }(jQuery));
+
+function lendBook()
+{
+      var idDocuments=document.getElementById("idDoc").value;
+      var userID=document.getElementById("idUser").value;;
+
+       if(idDocuments && userID)
+       {
+           $.ajax({
+           type: 'post',
+           url: 'lendbook.php',
+           data: {
+             user_id:userID,
+             documents_id:idDocuments,
+           },
+           success: function (response)
+           {
+                if(response!="OK")
+                {
+                  alert("Αποτυχία δανεισμού!");
+                  return false;
+                }
+                else
+                {
+                  alert("\tΕπιτυχής δανεισμός!\nΕπιστροφή στην αρχική σελίδα!");
+                  window.location.replace("index.php");
+                  return true;
+                }
+
+            }
+         });
+        }
+        else {
+          alert("Σφάλμα!")
+          return false;
+        }
+ }

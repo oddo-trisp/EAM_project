@@ -1,8 +1,9 @@
 <?php
-  if(basename($_SERVER['PHP_SELF'])!="booksearch.php" && basename($_SERVER['PHP_SELF'])!="libsearch.php")
-  {
+  //if(basename($_SERVER['PHP_SELF'])!="booksearch.php" && basename($_SERVER['PHP_SELF'])!="libsearch.php")
+  //{
+    session_start();
       echo '<script src="assets/js/header.js"></script>';
-  }
+  //}
 ?>
 <div class="header">
     <div id="lang">
@@ -35,7 +36,12 @@
             <ul class="dropdown-menu">
                 <li><a href="booksearch.php">Αναζήτηση Υλικού</a></li>
                 <li><a href="bookentry.php">Καταχώρηση Υλικού</a></li>
-                <li><a href="mybooks.php">Τα Βιβλία μου</a></li>
+                <?php
+                    if(!empty($_SESSION['email']) && !empty($_SESSION['id']))
+                    {
+                        echo '<li><a href="mybooks.php">Τα Βιβλία μου</a></li>';
+                    }
+                ?>
             </ul>
          </li>
          <li><a href="contact.php">Επικοινωνία</a></li>
@@ -54,33 +60,44 @@
              </form>';
            }
           ?>
-         <ul class="nav nav-tabs pull-right">
+          <?php
+          if(empty($_SESSION['email']) && empty($_SESSION['id']))
+          {
+            echo '<ul class="nav nav-tabs pull-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Συνδεθείτε</b> <span class="caret"></span></a>
-    			<ul id="login-dp" class="dropdown-menu">
-    				<li>
-    					 <div class="row">
-    							<div class="col-md-12">
-    								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-    										<div class="form-group">
-    											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-    										</div>
-    										<div class="form-group">
-    											 <label class="sr-only" for="exampleInputPassword2">Password</label>
-    											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-    										</div>
-    										<div class="form-group">
-    											 <button type="submit" class="btn btn-primary btn-block">Σύνδεση</button>
-    										</div>
-    								 </form>
-    							</div>
-    							<div class="bottom text-center">
-    								Νέος Χρήστης ? <br /> <a href="signup.php"><b>Εγγραφείτε</b></a>
-    							</div>
-    					 </div>
-    				</li>
-    			</ul>
+                <ul id="login-dp" class="dropdown-menu">
+    				      <li>
+    					        <div class="row">
+    							      <div class="col-md-12">
+    								        <form class="form" role="form" method="post" accept-charset="UTF-8" id="login-nav">
+    										       <div class="form-group">
+    											           <label class="sr-only">Username</label>
+    											            <input name="Username" type="text" class="form-control" id="Username" placeholder="Username" required>
+    										        </div>
+    										          <div class="form-group">
+    											            <label class="sr-only">Email</label>
+    											            <input name="Email" type="email" class="form-control" id="Email" placeholder="Email" required>
+    										          </div>
+    										          <div class="form-group">
+    											         <button type="button" name="loginbutton" onclick="return checkLogin()" class="btn btn-primary btn-block">Σύνδεση</button>
+    										            </div>
+                                    <div class="form-group">
+      											         <button type="reset" name="resetbutton" class="btn btn-primary btn-block">Καθαρισμός</button>
+      										            </div>
+    								            </form>
+    							        </div>
+    							       <div class="bottom text-center">
+    								        Νέος Χρήστης ? <br /> <a href="signup.php"><b>Εγγραφείτε</b></a>
+    							         </div>
+    					        </div>
+    				       </li>
+    			     </ul>';
+             }
+             else {
+              echo '<li><a href="logout.php">Αποσύνδεση</a></li><span class="caret">';
+             }
+          ?>
             </li>
           </ul>
     </ul>

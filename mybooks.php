@@ -22,6 +22,62 @@
             <div class="wrapper">
                 <h3> Τα βιβλία μου </h3>
                 <table>
+                <?php
+                    //Connect to database
+                    include 'connect.php';
+
+                    $id=$_SESSION['id'];
+                    $query = 'SELECT * FROM Documents WHERE useridLended='.$id.'';
+
+                    //ektelesi tou query
+                    $results = mysqli_query($link,$query) or die ("Query failed");
+
+                    if(mysqli_num_rows($results) > 0)
+                    {
+
+                      while($row = mysqli_fetch_object($results))
+                      {
+                      echo '<tr>
+                            <td>
+                                <img class="media-object" src="http://placehold.it/160x120" alt="...">
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td> <b> Τίτλος: </b> </td>
+                                        <td> '.$row->title.' </td>
+                                    </tr>
+                                    <tr>
+                                        <td> <b> Τύπος: </b> </td>
+                                        <td> '.$row->type.'</td>
+                                    </tr>
+                                    <tr>
+                                        <td> <b> Συγγραφέας: </b> </td>
+                                        <td> '.$row->author.'</td>
+                                    </tr>
+                                    <tr>
+                                        <td> <b> Έτος Έκδοσης: </b> </td>
+                                        <td> '.$row->publicationDate.'</td>
+                                    </tr>
+                                    <tr>
+                                        <td> <b> Βιβλιοθήκη: </b> </td>
+                                        <td> '.$row->libName.'</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <p class="date"> <b> Ημερομηνία Παράδοσης </b> <br /> '.$row->returnDate.' </p>
+                            </td>
+                        </tr>';
+
+                      }
+
+                    }
+                    else
+                        echo 'Δεν βρέθηκαν αποτελέσματα...!';
+                ?>
+              </table>
+          <!--      <table>
                     <tr>
                         <td>
                             <img class="media-object" src="http://placehold.it/160x120" alt="...">
@@ -70,7 +126,7 @@
                             <p class="date"> <b> Ημερομηνία Παράδοσης </b> <br /> 9-1-2016 </p>
                         </td>
                     </tr>
-                </table>
+                </table>-->
             </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>

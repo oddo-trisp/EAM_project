@@ -88,12 +88,16 @@
                             <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
                         </div>
                         <?php
-                        if($row->isLended!=true)
+                        if($row->isLended!=true && !empty($_SESSION['email']) && !empty($_SESSION['id']))
                         {
-                          echo '<div class="col-sm-4">
+                           echo '<form method="post">
+                             <div class="col-sm-4">
                             <h4> Δανεισμός του Συγγράμματος: </h4>
-                            <div class="submit"> <input type="submit" value="Δανεισμός" /> </div>
-                            </div>';
+                            <div><input type="hidden" name="idDoc" id="idDoc" value="'.$row->idDocuments.'"></div>
+                            <div><input type="hidden" name="idUser" id="idUser" value="'.$_SESSION['id'].'"></div>
+                            <div class="submit"> <input type="button" onclick="return lendBook()" value="Δανεισμός" /> </div>
+                            </div>
+                            <form>';
                         }
                         ?>
                     </div>
