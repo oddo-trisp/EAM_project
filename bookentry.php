@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="assets/css/footer.css">
         <link rel="stylesheet" href="assets/css/bookentry.css">
         <script src="assets/js/index.js"></script>
+        <script src="assets/js/bookinfo.js"></script>
         <title>EAM_Project</title>
     </head>
     <body>
@@ -21,30 +22,31 @@
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="wrapper">
                 <h3>Καταχώρηση Συγγράμματος</h3>
-                <form class="form">
+                <form class="form" method="post" action="index.php"  onsubmit="return submitBook();">
                     <table align="center">
                         <tr>
-                            <td> <label for="text">Τίτλος</label> </td>
-                            <td> <input type="text" name="title" id="title" placeholder="Το ονομα του ρόδου" /> </td>
+                            <td> <label for="text">Τίτλος*</label> </td>
+                            <td> <input type="text" name="title" id="title" placeholder="Το ονομα του ρόδου" required/> </td>
                         </tr>
                         <tr>
-                            <td> <label for="name">Συγγραφέας</label> </td>
-                            <td> <input type="text" name="name" id="name" placeholder="Προκόπης Προκοπίου" /> </td>
+                            <td> <label for="text">Τύπος*</label> </td>
+                            <td> <input type="text" name="type" id="type" placeholder="Bοοκ" required/> </td>
                         </tr>
                         <tr>
-                            <td> <label for="text">Εκδοτικός Οίκος</label> </td>
-                            <td> <input type="text" name="pub" id="pub" placeholder="Εκδοτική Α.Ε" /> </td>
+                            <td> <label for="name">Συγγραφέας*</label> </td>
+                            <td> <input type="text" name="author" id="author" placeholder="Uberto Eco" required/> </td>
                         </tr>
                         <tr>
-                            <td> <label for="text">ISBN</label> </td>
-                            <td> <input type="text" name="isbn" id="isbn" placeholder="4-1292-3123-1223" /> </td>
+                            <td> <label for="text">Ημερομηνία Έκδοσης*</label> </td>
+                            <td> <input type="datetime" name="pubdate" id="pubdate" placeholder="2011-01-01 00:00:00" required/> </td>
                         </tr>
                         <tr>
-                            <td> <label for="text">Περιγραφή</label> </td>
-                            <td> <textarea name="text" placeholder="" /></textarea> </td>
+                            <td> <label for="text">Βιβλιοθήκη*</label> </td>
+                            <td> <input type="text" name="library" id="library" placeholder="Φιλοσοφική" required/> </td>
                         </tr>
                     </table>
-                    <div class="submit"> <input type="submit" value="Καταχώρηση" /> </div>
+                    <div class="submit"> <input type="submit" value="Καταχώρηση" /> <input type="reset" value="Καθαρισμός" /> </div>
+                    <div align="center"><label for="text">*Υποχρεωτικά πεδία!</label> </td></div>
                 </form>
             </div>
         </div>

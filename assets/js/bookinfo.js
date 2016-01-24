@@ -120,13 +120,13 @@
 function lendBook()
 {
       var idDocuments=document.getElementById("idDoc").value;
-      var userID=document.getElementById("idUser").value;;
+      var userID=document.getElementById("idUser").value;
 
        if(idDocuments && userID)
        {
            $.ajax({
            type: 'post',
-           url: 'lendbook.php',
+           url: 'checkdata.php',
            data: {
              user_id:userID,
              documents_id:idDocuments,
@@ -153,3 +153,49 @@ function lendBook()
           return false;
         }
  }
+
+ function submitBook()
+ {
+       var title=document.getElementById("title").value;
+       var type=document.getElementById("type").value;
+       var author=document.getElementById("author").value;
+       var library=document.getElementById("library").value;
+       var pubdate=document.getElementById("pubdate").value;
+
+
+        if(title && type && author && library && pubdate)
+        {
+            $.ajax({
+            type: 'post',
+            url: 'checkdata.php',
+            data: {
+              book_title:title,
+              book_type:type,
+              book_author:author,
+              book_pubdate:pubdate,
+              book_library:library,
+            },
+            success: function (response)
+            {
+                 if(response!="OK")
+                 {
+                   alert("Αποτυχία καταχώρησης βιβλίου!");
+                   return false;
+                 }
+                 else
+                 {
+                   alert("\tΕπιτυχής καταχώρηση!\nΕπιστροφή στην αρχική σελίδα!");
+                   window.location.replace("index.php");
+                   return true;
+                 }
+
+             }
+          });
+          alert("\tΕπιτυχής καταχώρηση!\nΕπιστροφή στην αρχική σελίδα!");
+         }
+         else {
+           alert("Σφάλμα κατά την καταχώρηση!")
+           window.location.replace(location.pathname);
+           return false;
+         }
+  }

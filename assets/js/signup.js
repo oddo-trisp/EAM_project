@@ -83,7 +83,7 @@ function checkname()
     {
       $.ajax({
       type: 'post',
-      url: 'dosignup.php',
+      url: 'checkdata.php',
       data: {
       user_email:email,
       user_username:username,
@@ -103,6 +103,7 @@ function checkname()
           }
         }
       });
+      alert("\tΕπιτυχής εγγραφή!\nΕπιστροφή στην αρχική σελίδα!");
     }
     else
     {
