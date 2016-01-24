@@ -111,6 +111,32 @@ INSERT INTO `Users` VALUES (1,'nmpegetis','Begetis','nmpegetis@di.uoa.gr','Φι�
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
+DROP TABLE IF EXISTS `Announcements`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Announcements` (
+  `idAnnouncements` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL,
+  `word` varchar(2000) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`idAnnouncements`),
+  UNIQUE KEY `idAnnouncements_UNIQUE` (`idAnnouncements`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Announcements`
+--
+
+LOCK TABLES `Announcements` WRITE;
+/*!40000 ALTER TABLE `Announcements` DISABLE KEYS */;
+INSERT INTO `Announcements` VALUES (1,'Προβλήματα στη λειτουργία του Συστήματος','Σας ενημερώνουμε ότι καθώς συνεχίζονται οι διαδικασίες μετάπτωσης του υπάρχοντος συστήματος αυτοματοποίησης βιβλιοθήκης του ΕΚΠΑ στο νέο συνεργατικό μοντέλο του ILSaS (δράση που εντάσσεται στο έργο του Συνδέσμου Ελληνικών Ακαδημαϊκών Βιβλιοθηκών (ΣΕΑΒ / HEAL-Link) στο ΕΣΠΑ), θα επηρεαστούν οι διαδικασίες δανεισμού και εξυπηρέτησης χρηστών. Συγκεκριμένα, από την Πέμπτη 5 Νοεμβρίου 2015 ξεκινούν οι διαδικασίες δανεισμού με την σταδιακή ενσωμάτωση των βιβλιοθηκών μας, προκειμένου για να αντιμετωπιστούν πιθανά προβλήματα στην ομαλή ένταξη της Βιβλιοθήκης του ΕΚΠΑ στο νέο σύστημα.','2016-01-26'),(2,'Εργασίες αποκατάστασης πρόσβασης σε ψηφιακές συλλογές','Σας ενημερώνουμε ότι, λόγω εργασιών αναβάθμισης των υποδομών της Βιβλιοθήκης, οι ψηφιακές συλλογές Κοσμόπολις, Πλειάς και Δανιηλίς, αλλά και η υπηρεσία ηλεκτρονικής εκδοτικής Πασιθέη δεν θα είναι διαθέσιμες το Σαββατοκύριακο 12-13 Δεκεμβρίου 2015.
+
+Απολογούμαστε για την αναστάτωση, αλλά η διακοπή της λειτουργίας των υπηρεσιών αυτών είναι επιτακτική για την αποκατάσταση της ομαλότητας στην πρόσβαση σε αυτές.','2015-12-11'),(3,'Δωρεάν πρόσβαση σε τίτλους των σειρών Undergraduate Texts in Mathematics και Universitext','Ο εκδοτικός οίκος Springer παρέχει δωρέαν το περιεχόμενο των σειρών Undergraduate Texts in Mathematics και Universitext σε pdf μορφή. Το περιεχόμενο στο οποίο μπορεί να έχει κάποιος πρόσβαση είναι από την έναρξη κυκλοφορίας των σειρών, δηλαδή από το 1958 και το 1930 αντίστοιχα, έως το 2005. Πρακτικά ο Springer δεν επιτρέπει την ελεύθερη πρόσβαση στους τίτλους των σειρών αυτών έως και δέκα χρόνια πριν, επιβάλλοντας ένα κινούμενο τείχος (moving wall), όπως χαρακτηριστικά ονομάζεται αυτή η πρακτική. Παρ’ όλα αυτά το περιεχόμενο των σειρών είναι ιδιαίτερα χρήσιμο για προπτυχιακούς και μεταπτυχιακούς φοιτητές διαφόρων κλάδων των Μαθηματικών.','2015-12-29');
+/*!40000 ALTER TABLE `Announcements` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

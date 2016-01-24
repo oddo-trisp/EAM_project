@@ -28,7 +28,7 @@
                   if(isset($_POST["qsbutton"]))
                   {
 
-                        $query = 'SELECT * FROM Documents WHERE INSTR('.$_POST["menu"].',"'.$_POST["qsfield"].'") > 0';
+                        $query = 'SELECT * FROM Documents WHERE INSTR('.$_POST["menu"].',"'.$_POST["qsfield"].'") > 0 ORDER BY title';
 
                   }
                   else if(isset($_POST["csbutton"]))
@@ -83,6 +83,7 @@
                         else
                           $query=$query.' AND isLended='.$lended.'';
                       }
+                      $query=$query.' ORDER BY title';
 
                   }
 

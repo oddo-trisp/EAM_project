@@ -19,18 +19,36 @@
         <title>EAM_Project</title>
     </head>
     <body>
+      <?php
+          $id=$_GET['id'];
+
+          //Connect to database
+          include 'connect.php';
+
+          //sximatismos tou query
+          $query = 'SELECT * FROM Announcements WHERE idAnnouncements="'.$id.'"';
+
+          //ektelesi tou query
+          $results = mysqli_query($link,$query) or die ("Query failed");
+          $row=mysqli_fetch_object($results);
+          $results->close();
+          mysqli_close($link);
+
+      ?>
         <div id="container">
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="ann">
                 <center>
+                  <?php
+                    echo '
                     <h3> Ανακοίνωση </h3>
-                    <p class="date"> Τετάρτη, 20 Ιανουαρίου 2016 </p>
-                    <h4> <b>Προβλήματα στη λειτουργία του Συστήματος</b></h4>
+                    <p class="date"> '.$row->date.' </p>
+                    <h4> <b>'.$row->title.'</b></h4>
                     <p>
-                        Σας ενημερώνουμε ότι καθώς συνεχίζονται οι διαδικασίες μετάπτωσης του υπάρχοντος συστήματος αυτοματοποίησης βιβλιοθήκης του ΕΚΠΑ στο νέο συνεργατικό μοντέλο του ILSaS (δράση που εντάσσεται στο έργο του Συνδέσμου Ελληνικών Ακαδημαϊκών Βιβλιοθηκών (ΣΕΑΒ / HEAL-Link) στο ΕΣΠΑ), θα επηρεαστούν οι διαδικασίες δανεισμού και εξυπηρέτησης χρηστών.
-                        Συγκεκριμένα, από την Πέμπτη 5 Νοεμβρίου 2015 ξεκινούν οι διαδικασίες δανεισμού με την σταδιακή ενσωμάτωση των βιβλιοθηκών μας, προκειμένου για να  αντιμετωπιστούν πιθανά προβλήματα στην ομαλή ένταξη της Βιβλιοθήκης του ΕΚΠΑ στο νέο σύστημα.
+                        '.$row->word.'
                     </p>
-                    <p class="pdf_view"> Δείτε την ανακοίνωση σε pdf: <img class="pdf_download_icon" src="assets/img/pdf_icon.png"/> </p>
+                    <p class="pdf_view"> Δείτε την ανακοίνωση σε pdf: <img class="pdf_download_icon" src="assets/img/pdf_icon.png"/> </p>';
+                  ?>
                 </center>
             </div>
         </div>

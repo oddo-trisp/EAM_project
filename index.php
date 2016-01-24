@@ -34,31 +34,30 @@
                                 <a href="#" class="vc_goUp"><i class="fa fa-fw fa-angle-up"></i></a>
                             </div>
                             <ul class="verticalCarouselGroup vc_list">
-                                <li>
-                                    <h4>Article 1</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="ann_link"> <a href="announcementpage.php"> Περισσότερα </a> </div>
-                                </li>
-                                <li>
-                                    <h4>Article 2</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="ann_link"> <a href="announcementpage.php"> Περισσότερα </a> </div>
-                                </li>
-                                <li>
-                                    <h4>Article 3</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="ann_link"> <a href="announcementpage.php"> Περισσότερα </a> </div>
-                                </li>
-                                <li>
-                                    <h4>Article 4</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="ann_link"> <a href="announcementpage.php"> Περισσότερα </a> </div>
-                                </li>
-                                <li>
-                                    <h4>Article 5</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="ann_link"> <a href="announcementpage.php"> Περισσότερα </a> </div>
-                                </li>
+                              <?php
+                                    //Connect to database
+                                    include 'connect.php';
+
+                                    $query='SELECT * FROM Announcements ORDER BY date DESC';
+
+                                    //ektelesi tou query
+                                    $results = mysqli_query($link,$query) or die ("Query failed");
+
+                                    if(mysqli_num_rows($results) > 0)
+                                    {
+                                      while($row = mysqli_fetch_object($results))
+                                      {
+                                          $sub=substr($row->word, 0, 100);
+                                          echo '<li>
+                                            <h4>'.$row->title.'</h4>
+                                            <p>'.$sub.'...</p>
+                                            <div class="ann_link"> <a href="announcementpage.php?id='.$row->idAnnouncements.'"> Περισσότερα </a> </div>
+                                            </li>';
+                                      }
+                                    }
+                                    $results->close();
+                                    mysqli_close($link);
+                              ?>
                             </ul>
                         </div>
                         <script>
