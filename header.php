@@ -30,7 +30,7 @@
             </ul>
          </li>
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Υλικό(Βιβλία)
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Υλικό (Βιβλία)
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
