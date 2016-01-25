@@ -172,4 +172,56 @@ if (isset($_POST['user_id']) && isset($_POST['documents_id'])){
      exit();
 }
 
+//Aksiologisi vivliou
+if (isset($_POST['book_rating']) && isset($_POST['book_name'])){
+
+  include 'connect.php';
+
+  $rating=$_POST['book_rating'];
+  $name=$_POST['book_name'];
+
+  $query="SELECT points,voters FROM Documents WHERE title='$name'";
+
+  $results = mysqli_query($link,$query) or die ("Query failed");
+
+  if(mysqli_num_rows($results) > 0)
+  {
+    $row = mysqli_fetch_object($results);
+
+    if($row->points != NULL && $row->voters != NULL)
+    {
+      $points=$row->points;
+      $points=$points+$rating;
+      $voters=$row->voters;
+      $voters=$voters+1;
+
+      $checkdata=" UPDATE Documents SET voters=$voters,points=$points WHERE title='$name'";
+
+      $results1 = mysqli_query($link,$checkdata) or die ("Query failed");
+
+      if($results1 == TRUE){
+         echo "OK";
+      }
+      else{
+        echo "Invalid";
+       }
+
+      mysqli_close($link);
+      exit();
+
+    }
+    else {
+      echo 'Error!';
+      mysqli_close($link);
+      exit();
+    }
+  }
+  else {
+    echo 'Error';
+    mysqli_close($link);
+    exit();
+  }
+
+}
+
  ?>

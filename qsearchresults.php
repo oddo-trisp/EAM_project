@@ -168,8 +168,8 @@
                                echo '</div>';
                              }
                              else
-                             echo '<div class="col-md-5">';
                                 $flag1="false";
+                             echo '<div class="col-md-5">';
                              if(mysqli_num_rows($results3) > 0 || mysqli_num_rows($results4) > 0)
                              {
                                echo '<h3>Βιβλιοθήκες</h3>';
@@ -187,7 +187,6 @@
                                }
                                while($row = mysqli_fetch_object($results4))
                                {
-
                                  echo '<li class="media">
                                    <div class="media-body" id="lib-body">
                                      <a href="libpage.php?name='.$row->libName.'"><h4 class="media-heading">'.$row->libName.'</h4></a>

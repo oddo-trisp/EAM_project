@@ -35,6 +35,8 @@ CREATE TABLE `Documents` (
   `useridLended` int(11) DEFAULT NULL,
   `isLended` int(1) unsigned zerofill NOT NULL,
   `imageLink` varchar(100) DEFAULT NULL,
+  `points` int DEFAULT NULL,
+  `voters` int DEFAULT NULL,
   PRIMARY KEY (`idDocuments`),
   UNIQUE KEY `idDocuments_UNIQUE` (`idDocuments`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
@@ -46,7 +48,7 @@ CREATE TABLE `Documents` (
 
 LOCK TABLES `Documents` WRITE;
 /*!40000 ALTER TABLE `Documents` DISABLE KEYS */;
-INSERT INTO `Documents` VALUES (1,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'http://d.scdn.gr/images/books/000399/399685-big.jpg'),(2,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00','2016-01-24 00:00:00','Φιλοσοφική',1,1,'http://d.scdn.gr/images/books/000399/399685-big.jpg'),(3,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'http://d.scdn.gr/images/books/000399/399685-big.jpg'),(4,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'https://d.scdn.gr/images/books/000322/322209-big.jpg'),(5,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00','2016-01-31 00:00:00','Θετικές Επιστήμες',5,1,'https://d.scdn.gr/images/books/000322/322264-big.jpg'),(6,'Διακριτα Μαθηματικά','book','Liu','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'http://www.cup.gr/Images/Products/STOIXEIA_DIAKRITON_MATHIMATIKON.jpg'),(7,'Εισαγωγή στη βιοχημεία','paper','Georgatsos','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'http://a.scdn.gr/images/books/000118/118836-big.jpg'),(8,'Νεοελληνική Φιλολογία','book','Mastrodimitris','1996-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'https://a.scdn.gr/images/books/000133/133085-big.jpg'),(9,'Αστικό δίκαιο: επιτομή','book','Papasteriou','2010-01-01 00:00:00',NULL,'Νομική',NULL,0,'http://www.e-shop.gr/images/BKS/BKS.0333561.jpg'),(10,'Χριστιανισμός και έρως','book','Sherrard','1994-01-01 00:00:00',NULL,'Θεολογική',NULL,0,'https://images-na.ssl-images-amazon.com/images/I/31WvmpS81eL._SL256_.jpg'),(11,'Βιοηθική (κλωνοποίηση)','book','Charalambous','2001-01-01 00:00:00',NULL,'Επιστήμες Υγείας',NULL,0,NULL);
+INSERT INTO `Documents` VALUES (1,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'http://d.scdn.gr/images/books/000399/399685-big.jpg',4,1),(2,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00','2016-01-24 00:00:00','Φιλοσοφική',1,1,'http://d.scdn.gr/images/books/000399/399685-big.jpg',4,1),(3,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'http://d.scdn.gr/images/books/000399/399685-big.jpg',4,1),(4,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'https://d.scdn.gr/images/books/000322/322209-big.jpg',4,1),(5,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00','2016-01-31 00:00:00','Θετικές Επιστήμες',5,1,'https://d.scdn.gr/images/books/000322/322264-big.jpg',4,1),(6,'Διακριτα Μαθηματικά','book','Liu','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'http://www.cup.gr/Images/Products/STOIXEIA_DIAKRITON_MATHIMATIKON.jpg',4,1),(7,'Εισαγωγή στη βιοχημεία','paper','Georgatsos','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'http://a.scdn.gr/images/books/000118/118836-big.jpg',4,1),(8,'Νεοελληνική Φιλολογία','book','Mastrodimitris','1996-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'https://a.scdn.gr/images/books/000133/133085-big.jpg',4,1),(9,'Αστικό δίκαιο: επιτομή','book','Papasteriou','2010-01-01 00:00:00',NULL,'Νομική',NULL,0,'http://www.e-shop.gr/images/BKS/BKS.0333561.jpg',5,1),(10,'Χριστιανισμός και έρως','book','Sherrard','1994-01-01 00:00:00',NULL,'Θεολογική',NULL,0,'https://images-na.ssl-images-amazon.com/images/I/31WvmpS81eL._SL256_.jpg',4,1),(11,'Βιοηθική (κλωνοποίηση)','book','Charalambous','2001-01-01 00:00:00',NULL,'Επιστήμες Υγείας',NULL,0,NULL,3,1);
 /*!40000 ALTER TABLE `Documents` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,6 +67,8 @@ CREATE TABLE `Libraries` (
   `email` varchar(45) NOT NULL,
   `website` varchar(45) DEFAULT NULL,
   `department` varchar(45) NOT NULL,
+  `latitude` float NOT NULL,
+  `longitude` float NOT NULL,
   PRIMARY KEY (`idLibraries`),
   UNIQUE KEY `idLibraries_UNIQUE` (`idLibraries`),
   UNIQUE KEY `telNum_UNIQUE` (`telNum`)
@@ -77,7 +81,7 @@ CREATE TABLE `Libraries` (
 
 LOCK TABLES `Libraries` WRITE;
 /*!40000 ALTER TABLE `Libraries` DISABLE KEYS */;
-INSERT INTO `Libraries` VALUES (1,'Φιλοσοφική','Πανεπιστημιούπολη',2107272132,'psychologia@lib.uoa.gr','lib.uoa.gr','Φιλοσοφική'),(2,'Θετικές Επιστήμες','Πανεπιστημιούπολη',2107276524,'sci@lib.uoa.gr','www.lib.uoa.gr/sci','Πληροφορική'),(3,'Νομική','Ιπποκράτους 33',2103688371,'dimdikaiou@lib.uoa.gr','www.lib.uoa.gr/law','Νομική'),(4,'Θεολογική','Πανεπιστημιούπολη',2107275781,'theologiki@lib.uoa.gr','','Θεολογική'),(5,'Επιστήμες Υγείας','Μικράς Ασίας και Δήλου 1',2107461400,'epistigias@lib.uoa.gr','','Ιατρική');
+INSERT INTO `Libraries` VALUES (1,'Φιλοσοφική','Πανεπιστημιούπολη',2107272132,'psychologia@lib.uoa.gr','lib.uoa.gr','Φιλοσοφική',37.97009,23.78035),(2,'Θετικές Επιστήμες','Πανεπιστημιούπολη',2107276524,'sci@lib.uoa.gr','www.lib.uoa.gr/sci','Πληροφορική',37.96854,23.76695),(3,'Νομική','Ιπποκράτους 33',2103688371,'dimdikaiou@lib.uoa.gr','www.lib.uoa.gr/law','Νομική',37.98286,23.73555),(4,'Θεολογική','Πανεπιστημιούπολη',2107275781,'theologiki@lib.uoa.gr','','Θεολογική',37.96913,23.77610),(5,'Επιστήμες Υγείας','Μικράς Ασίας και Δήλου 1',2107461400,'epistigias@lib.uoa.gr','','Ιατρική',37.98330,23.76642);
 /*!40000 ALTER TABLE `Libraries` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +126,7 @@ CREATE TABLE `Announcements` (
   `date` date NOT NULL,
   PRIMARY KEY (`idAnnouncements`),
   UNIQUE KEY `idAnnouncements_UNIQUE` (`idAnnouncements`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +137,7 @@ LOCK TABLES `Announcements` WRITE;
 /*!40000 ALTER TABLE `Announcements` DISABLE KEYS */;
 INSERT INTO `Announcements` VALUES (1,'Προβλήματα στη λειτουργία του Συστήματος','Σας ενημερώνουμε ότι καθώς συνεχίζονται οι διαδικασίες μετάπτωσης του υπάρχοντος συστήματος αυτοματοποίησης βιβλιοθήκης του ΕΚΠΑ στο νέο συνεργατικό μοντέλο του ILSaS (δράση που εντάσσεται στο έργο του Συνδέσμου Ελληνικών Ακαδημαϊκών Βιβλιοθηκών (ΣΕΑΒ / HEAL-Link) στο ΕΣΠΑ), θα επηρεαστούν οι διαδικασίες δανεισμού και εξυπηρέτησης χρηστών. Συγκεκριμένα, από την Πέμπτη 5 Νοεμβρίου 2015 ξεκινούν οι διαδικασίες δανεισμού με την σταδιακή ενσωμάτωση των βιβλιοθηκών μας, προκειμένου για να αντιμετωπιστούν πιθανά προβλήματα στην ομαλή ένταξη της Βιβλιοθήκης του ΕΚΠΑ στο νέο σύστημα.','2016-01-26'),(2,'Εργασίες αποκατάστασης πρόσβασης σε ψηφιακές συλλογές','Σας ενημερώνουμε ότι, λόγω εργασιών αναβάθμισης των υποδομών της Βιβλιοθήκης, οι ψηφιακές συλλογές Κοσμόπολις, Πλειάς και Δανιηλίς, αλλά και η υπηρεσία ηλεκτρονικής εκδοτικής Πασιθέη δεν θα είναι διαθέσιμες το Σαββατοκύριακο 12-13 Δεκεμβρίου 2015.
 
-Απολογούμαστε για την αναστάτωση, αλλά η διακοπή της λειτουργίας των υπηρεσιών αυτών είναι επιτακτική για την αποκατάσταση της ομαλότητας στην πρόσβαση σε αυτές.','2015-12-11'),(3,'Δωρεάν πρόσβαση σε τίτλους των σειρών Undergraduate Texts in Mathematics και Universitext','Ο εκδοτικός οίκος Springer παρέχει δωρέαν το περιεχόμενο των σειρών Undergraduate Texts in Mathematics και Universitext σε pdf μορφή. Το περιεχόμενο στο οποίο μπορεί να έχει κάποιος πρόσβαση είναι από την έναρξη κυκλοφορίας των σειρών, δηλαδή από το 1958 και το 1930 αντίστοιχα, έως το 2005. Πρακτικά ο Springer δεν επιτρέπει την ελεύθερη πρόσβαση στους τίτλους των σειρών αυτών έως και δέκα χρόνια πριν, επιβάλλοντας ένα κινούμενο τείχος (moving wall), όπως χαρακτηριστικά ονομάζεται αυτή η πρακτική. Παρ’ όλα αυτά το περιεχόμενο των σειρών είναι ιδιαίτερα χρήσιμο για προπτυχιακούς και μεταπτυχιακούς φοιτητές διαφόρων κλάδων των Μαθηματικών.','2015-12-29');
+Απολογούμαστε για την αναστάτωση, αλλά η διακοπή της λειτουργίας των υπηρεσιών αυτών είναι επιτακτική για την αποκατάσταση της ομαλότητας στην πρόσβαση σε αυτές.','2015-12-11'),(3,'Δωρεάν πρόσβαση σε τίτλους των σειρών Undergraduate Texts in Mathematics και Universitext','Ο εκδοτικός οίκος Springer παρέχει δωρέαν το περιεχόμενο των σειρών Undergraduate Texts in Mathematics και Universitext σε pdf μορφή. Το περιεχόμενο στο οποίο μπορεί να έχει κάποιος πρόσβαση είναι από την έναρξη κυκλοφορίας των σειρών, δηλαδή από το 1958 και το 1930 αντίστοιχα, έως το 2005. Πρακτικά ο Springer δεν επιτρέπει την ελεύθερη πρόσβαση στους τίτλους των σειρών αυτών έως και δέκα χρόνια πριν, επιβάλλοντας ένα κινούμενο τείχος (moving wall), όπως χαρακτηριστικά ονομάζεται αυτή η πρακτική. Παρ’ όλα αυτά το περιεχόμενο των σειρών είναι ιδιαίτερα χρήσιμο για προπτυχιακούς και μεταπτυχιακούς φοιτητές διαφόρων κλάδων των Μαθηματικών.','2015-12-29'),(4,'Διακοπή υπηρεσιών του HEAL-LInk για εργασίες συντήρησης','Θα θέλαμε να σας ενημερώσουμε ότι από Παρασκευή 22/01/2016 έως και Κυριακή 24/01/2016 θα υπάρξει διακοπή των υπηρεσιών των ηλεκτρονικών πηγών του HEAL-Link, λόγω εκτεταμένων εργασιών συντήρησης στις υποδομές του. Η διακοπή αναμένεται να επηρεάσει τη λειτουργία του δικτυακού τόπου, ενώ η πρόσβαση στο περιεχόμενο των εκδοτών, συμπεριλαμβανομένης της λειτουργίας των υπηρεσιών πιστοποίησης, εκτιμάται ότι θα είναι ομαλή.','2016-01-22');
 /*!40000 ALTER TABLE `Announcements` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

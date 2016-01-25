@@ -82,15 +82,34 @@
                             </tr>';
                           }
                         ?>
+                        <tr>
+                          <td> <b> Βαθμολογία: </b> </td>
+                          <td>
+                          <?php
+                              if($row->points != NULL && $row->voters != NULL)
+                              {
+                                $realRating=($row->points)/($row->voters);
+                                $rating=intval($realRating);
+                                $realRating=substr($realRating, 0, 4);
+                                echo '('.$realRating.'/5)  Από '.$row->voters.' χρήστες';
+                                echo '<input type="number" class="cur_rating" data-min="1" data-max="5" value="'.$rating.'"/>';
+                              }
+                              else
+                              {
+                                echo 'Δεν υπάρχουν βαθμολογίες';
+                                echo '<input type="number" class="cur_rating" data-min="1" data-max="5" value="0"/>';
+                              }
+
+                          ?>
+                          </td>
+                        </tr>
                     </table>
                     <div class="row rates">
                         <div class="col-sm-4">
                             <h4> Αξιολόγηση Συγγράμματος: </h4>
-                            <input type="number" class="rating" data-min="1" data-max="5" value="0">
-                        </div>
-                        <div class="col-sm-4">
-                            <h4> Μεταφόρτωση δείγματος του Συγγράμματος: </h4>
-                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            <input type="number" id="ratingval" name="ratingval" class="rating" data-min="1" data-max="5" value="0">
+                            <?php echo'<div><input type="hidden" name="nameDoc" id="nameDoc" value="'.$row->title.'"></div>'; ?>
+                            <div class="rating"> <input type="button" onclick="return rateByUser()" value="Αξιολόγηση" /> </div>
                         </div>
                         <?php
                         if($row->isLended!=true && !empty($_SESSION['email']) && !empty($_SESSION['id']))
@@ -105,6 +124,10 @@
                             <form>';
                         }
                         ?>
+                        <div class="col-sm-4">
+                            <h4> Μεταφόρτωση δείγματος του Συγγράμματος: </h4>
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                        </div>
                     </div>
                 </center>
             </div>

@@ -65,13 +65,18 @@
                             }
                             else
                             {
-                              echo '<a href="http://www.'.$row->website.'">www.'.$row->website.'</a>';
+                              if(!empty($row->website))
+                                echo '<a href="http://www.'.$row->website.'">www.'.$row->website.'</a>';
+                              else
+                                echo 'Μη διαθέσιμο';
                             }
                         ?>
                       </td>
                     </tr>
                 </table>
                 <center>
+                  <div><input type="hidden" name="latitude" id="latitude" value="<?php echo''.$row->latitude.''?>"></div>
+                  <div><input type="hidden" name="longitude" id="longitude" value="<?php echo''.$row->longitude.''?>"></div>
                     <div id="map"></div>
                 </center>
             </div>

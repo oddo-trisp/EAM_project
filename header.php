@@ -81,7 +81,7 @@
     										          </div>
     										          <div class="form-group">
     											         <button type="button" name="loginbutton" onclick="return checkLogin()" class="btn btn-primary btn-block">Σύνδεση</button>
-    										            </div>
+                                    </div>
                                     <div class="form-group">
       											         <button type="reset" name="resetbutton" class="btn btn-primary btn-block">Καθαρισμός</button>
       										            </div>
