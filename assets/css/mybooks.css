@@ -22,3 +22,16 @@
     margin-left: 10%;
     color: red;
 }
+
+.wrapper .extendloan{
+    padding: 5px;
+    background-color: #336699;
+    color: #fff;
+    border: 1px solid #003366;
+    border-radius: 25px;
+}
+
+.wrapper .extendloan:hover{
+    background-color: #003366;
+    border: 1px solid #002244;
+}

@@ -68,6 +68,9 @@
                             <td>
                                 <p class="date"> <b> Ημερομηνία Παράδοσης </b> <br /> '.$row->returnDate.' </p>
                             </td>
+                            <td>
+                                <input type="button" class="extendloan" value="Παράταση Δανεισμού"/>
+                            </td>
                         </tr>';
 
                       }
@@ -77,56 +80,6 @@
                         echo 'Δεν βρέθηκαν αποτελέσματα...!';
                 ?>
               </table>
-          <!--      <table>
-                    <tr>
-                        <td>
-                            <img class="media-object" src="http://placehold.it/160x120" alt="...">
-                        </td>
-                        <td>
-                            <table>
-                                <tr>
-                                    <td> <b> Τίτλος: </b> </td>
-                                    <td> Το όνομα του ρόδου </td>
-                                </tr>
-                                <tr>
-                                    <td> <b> Συγγραφέας: </b> </td>
-                                    <td> Umberto Eco</td>
-                                </tr>
-                                <tr>
-                                    <td> <b> Εκδοτικός Οίκος: </b> </td>
-                                    <td> Εκδοτική Α.Ε </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td>
-                            <p class="date"> <b> Ημερομηνία Παράδοσης </b> <br /> 23-2-2016 </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img class="media-object" src="http://placehold.it/160x120" alt="...">
-                        </td>
-                        <td>
-                            <table>
-                                <tr>
-                                    <td> <b> Τίτλος: </b> </td>
-                                    <td> Πρακτική Φιλοσοφία</td>
-                                </tr>
-                                <tr>
-                                    <td> <b> Συγγραφέας: </b> </td>
-                                    <td> Ευάγγελος Παπανούτσος </td>
-                                </tr>
-                                <tr>
-                                    <td> <b> Εκδοτικός Οίκος: </b> </td>
-                                    <td> Εκδόσεις "Δωδώνη"</td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td>
-                            <p class="date"> <b> Ημερομηνία Παράδοσης </b> <br /> 9-1-2016 </p>
-                        </td>
-                    </tr>
-                </table>-->
             </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>
