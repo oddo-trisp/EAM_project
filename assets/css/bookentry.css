@@ -5,14 +5,10 @@
 
 .wrapper{
     text-align: center;
+    margin-bottom: 5%;
 }
 
-
-/* ===========================
-   ====== Contact Form =======
-   =========================== */
-
-.wrapper input, textarea {
+.wrapper input, .wrapper textarea, .wrapper #library-dropdown {
     margin-top: 20px;
 	padding: 10px;
 	border: 1px solid #e5e5e5;
@@ -43,6 +39,7 @@ input:focus, textarea:focus {
 	color: #888;
     margin-right: 20px;
 }
+
 
 /* ===========================
    ====== Submit Button ======
