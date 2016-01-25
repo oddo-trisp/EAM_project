@@ -153,8 +153,10 @@ if (isset($_POST['user_id']) && isset($_POST['documents_id'])){
 
   $idUser=$_POST['user_id'];
   $idDocuments=$_POST['documents_id'];
+  $date = strtotime("+1 months");
+  $date=date('Y-m-d', $date);
 
-  $checkdata=" UPDATE Documents SET isLended=1,useridLended=$idUser,returnDate='2016-01-24 00:00:00' WHERE idDocuments=$idDocuments ";
+  $checkdata=" UPDATE Documents SET isLended=1,useridLended=$idUser,returnDate='$date' WHERE idDocuments=$idDocuments ";
   //$checkdata=" SELECT * FROM Users WHERE username='$name' ";
 
   $results = mysqli_query($link,$checkdata) or die ("Query failed");

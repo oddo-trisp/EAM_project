@@ -38,7 +38,7 @@
                       mysqli_close($link);
 
                   ?>
-                    <h3> Πληροφορίες Συγγράμματος </h3>
+                    <h3> Πληροφορίες Βιβλίου </h3>
                     <?php
                       if($row->imageLink==NULL)
                         echo '<img class="media-object" src="http://placehold.it/250x160" alt="...">';
@@ -106,7 +106,7 @@
                     </table>
                     <div class="row rates">
                         <div class="col-sm-4">
-                            <h4> Αξιολόγηση Συγγράμματος: </h4>
+                            <h4> Αξιολόγηση Βιβλίου: </h4>
                             <input type="number" id="ratingval" name="ratingval" class="rating" data-min="1" data-max="5" value="0">
                             <?php echo'<div><input type="hidden" name="nameDoc" id="nameDoc" value="'.$row->title.'"></div>'; ?>
                             <div class="rating"> <input type="button" onclick="return rateByUser()" value="Αξιολόγηση" /> </div>
@@ -116,16 +116,23 @@
                         {
                            echo '<form method="post">
                              <div class="col-sm-4">
-                            <h4> Δανεισμός του Συγγράμματος: </h4>
+                            <h4> Δανεισμός του Βιβλίου: </h4>
                             <div><input type="hidden" name="idDoc" id="idDoc" value="'.$row->idDocuments.'"></div>
                             <div><input type="hidden" name="idUser" id="idUser" value="'.$_SESSION['id'].'"></div>
-                            <div class="submit"> <input type="button" onclick="return lendBook()" value="Δανεισμός" /> </div>
+                            <div class="submit"> <input type="button" onclick="return lendBook()" value="Δανεισμός*" /> </div>
+                            <br>
+                            <div>  *Δανειστείτε τo βιβλίο για ένα μήνα! </div>
                             </div>
                             <form>';
                         }
+                        else
+                        {
+                          echo '<form method="post">
+                            <div class="col-sm-4"></div>';
+                        }
                         ?>
                         <div class="col-sm-4">
-                            <h4> Μεταφόρτωση δείγματος του Συγγράμματος: </h4>
+                            <h4> Μεταφόρτωση δείγματος του Βιβλίου: </h4>
                             <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
                         </div>
                     </div>
