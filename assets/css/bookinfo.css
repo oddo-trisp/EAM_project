@@ -31,6 +31,10 @@
     cursor: pointer;
 }
 
+.rates .glyphicon-save{
+    font-size: 35px;
+}
+
 .rates .submit input {
 	height: 35px;
 	background-color: #cccc99;
