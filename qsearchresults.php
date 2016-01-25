@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="assets/css/index.css">
         <link rel="stylesheet" href="assets/css/header.css">
         <link rel="stylesheet" href="assets/css/footer.css">
-        <link rel="stylesheet" href="assets/css/bookresults.css">
+        <link rel="stylesheet" href="assets/css/qsearchresults.css">
         <script src="assets/js/index.js"></script>
         <title>EAM_Project</title>
     </head>
@@ -43,204 +43,177 @@
                   $results3 = mysqli_query($link,$query3) or die ("Query failed");
                   $results4 = mysqli_query($link,$query4) or die ("Query failed");
                 ?>
-                <div class="row">
-                   <div class="col-md-7 col-lg-7">
-                       <ul class="media-list main-list">
-                         <?php
-                         $flag1="true";
-                         $flag2="true";
-                         if(mysqli_num_rows($results) > 0 || mysqli_num_rows($results1) > 0 || mysqli_num_rows($results2) > 0)
-                         {
-                           echo '<h3>Βιβλία</h3>';
-                           while($row = mysqli_fetch_object($results))
-                           {
-                            $lend="";
-                             if($row->isLended==true)
-                                $lend="Lended";
-                              else
-                                $lend="Available";
-                                if($row->imageLink==NULL)
-                                {
-                                  echo '<li class="media">
-                                    <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
-                                      <img class="media-object" src="http://placehold.it/150x240" alt="...">
-                                    </a>
-                                    <div class="media-body">
-                                      <h4 class="media-heading">'.$row->title.'</h4>
-                                      <p class="by-author">'.$row->type.' By '.$row->author.'</p>
-                                      <p class="by-author">'.$row->libName.'</p>
-                                      <p class="by-author">'.$lend.'</p>
-                                    </div>
-                                  </li>';
-                                }
-                                else
-                                {
-                                  echo '<li class="media">
-                                    <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
-                                      <img class="media-object" src="'.$row->imageLink.'" alt="...">
-                                    </a>
-                                    <div class="media-body">
-                                      <h4 class="media-heading">'.$row->title.'</h4>
-                                      <p class="by-author">'.$row->type.' By '.$row->author.'</p>
-                                      <p class="by-author">'.$row->libName.'</p>
-                                      <p class="by-author">'.$lend.'</p>
-                                    </div>
-                                  </li>';
-                                }
-                                 echo '<br>';
-                           }
-                           while($row = mysqli_fetch_object($results1))
-                           {
-                            $lend="";
-                             if($row->isLended==true)
-                                $lend="Lended";
-                              else
-                                $lend="Available";
-                                if($row->imageLink==NULL)
-                                {
-                                  echo '<li class="media">
-                                    <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
-                                      <img class="media-object" src="http://placehold.it/150x240" alt="...">
-                                    </a>
-                                    <div class="media-body">
-                                      <h4 class="media-heading">'.$row->title.'</h4>
-                                      <p class="by-author">'.$row->type.' By '.$row->author.'</p>
-                                      <p class="by-author">'.$row->libName.'</p>
-                                      <p class="by-author">'.$lend.'</p>
-                                    </div>
-                                  </li>';
-                                }
-                                else
-                                {
-                                  echo '<li class="media">
-                                    <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
-                                      <img class="media-object" src="'.$row->imageLink.'" alt="...">
-                                    </a>
-                                    <div class="media-body">
-                                      <h4 class="media-heading">'.$row->title.'</h4>
-                                      <p class="by-author">'.$row->type.' By '.$row->author.'</p>
-                                      <p class="by-author">'.$row->libName.'</p>
-                                      <p class="by-author">'.$lend.'</p>
-                                    </div>
-                                  </li>';
-                                }
-                                 echo '<br>';
-                           }
-                           while($row = mysqli_fetch_object($results2))
-                           {
-                            $lend="";
-                             if($row->isLended==true)
-                                $lend="Lended";
-                              else
-                                $lend="Available";
-                                if($row->imageLink==NULL)
-                                {
-                                  echo '<li class="media">
-                                    <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
-                                      <img class="media-object" src="http://placehold.it/150x240" alt="...">
-                                    </a>
-                                    <div class="media-body">
-                                      <h4 class="media-heading">'.$row->title.'</h4>
-                                      <p class="by-author">'.$row->type.' By '.$row->author.'</p>
-                                      <p class="by-author">'.$row->libName.'</p>
-                                      <p class="by-author">'.$lend.'</p>
-                                    </div>
-                                  </li>';
-                                }
-                                else
-                                {
-                                  echo '<li class="media">
-                                    <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
-                                      <img class="media-object" src="'.$row->imageLink.'" alt="...">
-                                    </a>
-                                    <div class="media-body">
-                                      <h4 class="media-heading">'.$row->title.'</h4>
-                                      <p class="by-author">'.$row->type.' By '.$row->author.'</p>
-                                      <p class="by-author">'.$row->libName.'</p>
-                                      <p class="by-author">'.$lend.'</p>
-                                    </div>
-                                  </li>';
-                                }
-                                 echo '<br>';
-                           }
-                         }
-                         else
-                            $flag1="false";
-                         if(mysqli_num_rows($results3) > 0 || mysqli_num_rows($results4) > 0)
-                         {
-                           echo '<h3>Βιβλιοθήκες</h3>';
-                           while($row = mysqli_fetch_object($results3))
-                           {
+                     <ul class="media-list main-list">
+                         <div class="row">
+                             <div class="col-md-1">
+                             </div>
+                             <?php
+                             echo '<div class="col-md-5">';
+                             $flag1="true";
+                             $flag2="true";
+                             if(mysqli_num_rows($results) > 0 || mysqli_num_rows($results1) > 0 || mysqli_num_rows($results2) > 0)
+                             {
+                               echo '<h3>Βιβλία</h3>';
+                               while($row = mysqli_fetch_object($results))
+                               {
+                                $lend="";
+                                 if($row->isLended==true)
+                                    $lend="Lended";
+                                  else
+                                    $lend="Available";
+                                    if($row->imageLink==NULL)
+                                    {
+                                      echo '<li class="media">
+                                        <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
+                                          <img class="media-object" src="http://placehold.it/150x240" alt="...">
+                                        </a>
+                                        <div class="media-body">
+                                          <h4 class="media-heading">'.$row->title.'</h4>
+                                          <p class="by-author">'.$row->type.' By '.$row->author.'</p>
+                                          <p class="by-author">'.$row->libName.'</p>
+                                          <p class="by-author">'.$lend.'</p>
+                                        </div>
+                                      </li>';
+                                    }
+                                    else
+                                    {
+                                      echo '<li class="media">
+                                        <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
+                                          <img class="media-object" src="'.$row->imageLink.'" alt="...">
+                                        </a>
+                                        <div class="media-body">
+                                          <h4 class="media-heading">'.$row->title.'</h4>
+                                          <p class="by-author">'.$row->type.' By '.$row->author.'</p>
+                                          <p class="by-author">'.$row->libName.'</p>
+                                          <p class="by-author">'.$lend.'</p>
+                                        </div>
+                                      </li>';
+                                    }
+                                     echo '<br>';
+                               }
+                               while($row = mysqli_fetch_object($results1))
+                               {
+                                $lend="";
+                                 if($row->isLended==true)
+                                    $lend="Lended";
+                                  else
+                                    $lend="Available";
+                                    if($row->imageLink==NULL)
+                                    {
+                                      echo '<li class="media">
+                                        <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
+                                          <img class="media-object" src="http://placehold.it/150x240" alt="...">
+                                        </a>
+                                        <div class="media-body">
+                                          <h4 class="media-heading">'.$row->title.'</h4>
+                                          <p class="by-author">'.$row->type.' By '.$row->author.'</p>
+                                          <p class="by-author">'.$row->libName.'</p>
+                                          <p class="by-author">'.$lend.'</p>
+                                        </div>
+                                      </li>';
+                                    }
+                                    else
+                                    {
+                                      echo '<li class="media">
+                                        <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
+                                          <img class="media-object" src="'.$row->imageLink.'" alt="...">
+                                        </a>
+                                        <div class="media-body">
+                                          <h4 class="media-heading">'.$row->title.'</h4>
+                                          <p class="by-author">'.$row->type.' By '.$row->author.'</p>
+                                          <p class="by-author">'.$row->libName.'</p>
+                                          <p class="by-author">'.$lend.'</p>
+                                        </div>
+                                      </li>';
+                                    }
+                                     echo '<br>';
+                               }
+                               while($row = mysqli_fetch_object($results2))
+                               {
+                                $lend="";
+                                 if($row->isLended==true)
+                                    $lend="Lended";
+                                  else
+                                    $lend="Available";
+                                    if($row->imageLink==NULL)
+                                    {
+                                      echo '<li class="media">
+                                        <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
+                                          <img class="media-object" src="http://placehold.it/150x240" alt="...">
+                                        </a>
+                                        <div class="media-body">
+                                          <h4 class="media-heading">'.$row->title.'</h4>
+                                          <p class="by-author">'.$row->type.' By '.$row->author.'</p>
+                                          <p class="by-author">'.$row->libName.'</p>
+                                          <p class="by-author">'.$lend.'</p>
+                                        </div>
+                                      </li>';
+                                    }
+                                    else
+                                    {
+                                      echo '<li class="media">
+                                        <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
+                                          <img class="media-object" src="'.$row->imageLink.'" alt="...">
+                                        </a>
+                                        <div class="media-body">
+                                          <h4 class="media-heading">'.$row->title.'</h4>
+                                          <p class="by-author">'.$row->type.' By '.$row->author.'</p>
+                                          <p class="by-author">'.$row->libName.'</p>
+                                          <p class="by-author">'.$lend.'</p>
+                                        </div>
+                                      </li>';
+                                    }
+                                     echo '<br>';
+                               }
+                               echo '</div>';
+                             }
+                             else
+                             echo '<div class="col-md-5">';
+                                $flag1="false";
+                             if(mysqli_num_rows($results3) > 0 || mysqli_num_rows($results4) > 0)
+                             {
+                               echo '<h3>Βιβλιοθήκες</h3>';
+                               while($row = mysqli_fetch_object($results3))
+                               {
 
-                             echo '<li class="media">
-                               <a class="pull-left" href="libpage.php?name='.$row->libName.'">
-                                 <img class="media-object" src="http://placehold.it/150x90" alt="...">
-                               </a>
-                               <div class="media-body">
-                                 <h4 class="media-heading">'.$row->libName.'</h4>
-                                 <p class="by-author">'.$row->department.'</p>
-                                 <p class="by-author">'.$row->address.'</p>
-                               </div>
-                             </li>';
-                                 echo '<br>';
-                           }
-                           while($row = mysqli_fetch_object($results4))
-                           {
+                                 echo '<li class="media">
+                                   <div class="media-body" id="lib-body">
+                                     <a href="libpage.php?name='.$row->libName.'"><h4 class="media-heading">'.$row->libName.'</h4></a>
+                                     <p class="by-author">'.$row->department.'</p>
+                                     <p class="by-author">'.$row->address.'</p>
+                                   </div>
+                                 </li>';
+                                     echo '<br>';
+                               }
+                               while($row = mysqli_fetch_object($results4))
+                               {
 
-                             echo '<li class="media">
-                               <a class="pull-left" href="libpage.php?name='.$row->libName.'">
-                                 <img class="media-object" src="http://placehold.it/150x90" alt="...">
-                               </a>
-                               <div class="media-body">
-                                 <h4 class="media-heading">'.$row->libName.'</h4>
-                                 <p class="by-author">'.$row->department.'</p>
-                                 <p class="by-author">'.$row->address.'</p>
-                               </div>
-                             </li>';
-                                 echo '<br>';
-                           }
-                         }
-                         else
-                            $flag2="false";
-                          if($flag1=="false" && $flag2=="false")
-                            echo 'Δεν βρέθηκαν αποτελέσματα...!';
-                          $results->close();
-                          $results1->close();
-                          $results2->close();
-                          $results3->close();
-                          $results4->close();
-                          mysqli_close($link);
-                        ?>
-                         <!--<li class="media">
-                           <a class="pull-left" href="bookinfo.php">
-                             <img class="media-object" src="http://placehold.it/150x90" alt="...">
-                           </a>
-                           <div class="media-body">
-                             <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
-                             <p class="by-author">By Jhon Doe</p>
-                           </div>
-                         </li>
-                         <li class="media">
-                           <a class="pull-left" href="bookinfo.php">
-                             <img class="media-object" src="http://placehold.it/150x90" alt="...">
-                           </a>
-                           <div class="media-body">
-                             <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
-                             <p class="by-author">By Jhon Doe</p>
-                           </div>
-                         </li>
-                         <li class="media">
-                           <a class="pull-left" href="bookinfo.php">
-                             <img class="media-object" src="http://placehold.it/150x90" alt="...">
-                           </a>
-                           <div class="media-body">
-                             <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
-                             <p class="by-author">By Jhon Doe</p>
-                           </div>
-                         </li>-->
+                                 echo '<li class="media">
+                                   <div class="media-body" id="lib-body">
+                                     <a href="libpage.php?name='.$row->libName.'"><h4 class="media-heading">'.$row->libName.'</h4></a>
+                                     <p class="by-author">'.$row->department.'</p>
+                                     <p class="by-author">'.$row->address.'</p>
+                                   </div>
+                                 </li>';
+                                     echo '<br>';
+                               }
+                               echo '</div>';
+                             }
+                             else
+                                $flag2="false";
+                              if($flag1=="false" && $flag2=="false")
+                                echo 'Δεν βρέθηκαν αποτελέσματα...!';
+                              $results->close();
+                              $results1->close();
+                              $results2->close();
+                              $results3->close();
+                              $results4->close();
+                              mysqli_close($link);
+                            ?>
                        </ul>
-                   </div>
-               </div>
+                       <div class="col-md-1">
+                       </div>
+                </div>
             </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>
