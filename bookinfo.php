@@ -86,7 +86,7 @@
                           <td> <b> Βαθμολογία: </b> </td>
                           <td>
                           <?php
-                              if($row->points != NULL && $row->voters != NULL)
+                              if($row->points != 0 && $row->voters != 0)
                               {
                                 $realRating=($row->points)/($row->voters);
                                 $rating=intval($realRating);

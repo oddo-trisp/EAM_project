@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="assets/css/footer.css">
         <link rel="stylesheet" href="assets/css/mybooks.css">
         <script src="assets/js/index.js"></script>
+        <script src="assets/js/bookinfo.js"></script>
         <title>EAM_Project</title>
     </head>
     <body>
@@ -31,17 +32,28 @@
 
                     //ektelesi tou query
                     $results = mysqli_query($link,$query) or die ("Query failed");
+                    $flag="false";
 
                     if(mysqli_num_rows($results) > 0)
                     {
 
                       while($row = mysqli_fetch_object($results))
                       {
-                      echo '<tr>
-                            <td>
-                                <img class="media-object" src="http://placehold.it/160x120" alt="...">
-                            </td>
-                            <td>
+                        if($row->imageLink==NULL)
+                            echo '<tr>
+                              <td>
+                                <a href="bookinfo.php?id='.$row->idDocuments.'">
+                                  <img class="media-object" src="http://placehold.it/160x120" alt="...">
+                                </a>
+                              </td>';
+                          else
+                              echo '<tr>
+                              <td>
+                                <a href="bookinfo.php?id='.$row->idDocuments.'">
+                                  <img class="media-object" src="'.$row->imageLink.'" alt="...">
+                                </a>
+                              </td>';
+                        echo   '<td>
                                 <table>
                                     <tr>
                                         <td> <b> Τίτλος: </b> </td>
@@ -64,22 +76,43 @@
                                         <td> '.$row->libName.'</td>
                                     </tr>
                                 </table>
-                            </td>
-                            <td>
-                                <p class="date"> <b> Ημερομηνία Παράδοσης </b> <br /> '.$row->returnDate.' </p>
-                            </td>
-                            <td>
-                                <input type="button" class="extendloan" value="Παράταση Δανεισμού"/>
-                            </td>
-                        </tr>';
+                            </td>';
+                            $today = date('Y-m-d');
+                            if($row->returnDate > $today)
+                            {
+                              echo '<td>
+                                <p class="date"><font color="green"><b> Ημερομηνία Παράδοσης </b> <br /> '.$row->returnDate.'</font></p>
+                                </td>';
+                            }
+                            else
+                            {
+                              echo '<td>
+                                <p class="date"><font color="red"><b> Ημερομηνία Παράδοσης </b> <br />'.$row->returnDate.'</font> </p>
+                                </td>';
+                            }
+                            if($row->extension==FALSE && $row->returnDate > $today)
+                            {
+                              echo '<td>
+                                <div><input type="hidden" name="idDoc" id="idDoc" value="'.$row->idDocuments.'"></div>
+                                <input type="button" onclick="return doExtension()" class="extendloan" value="Παράταση Δανεισμού*"/>
+                              </td>';
+                              if($flag=="false")
+                                  $flag="true";
+
+                            }
+
 
                       }
-
                     }
                     else
                         echo 'Δεν βρέθηκαν αποτελέσματα...!';
                 ?>
               </table>
+              <?php
+                if($flag=="true")
+                  echo '<div align="center"><label for="text">*Παράταση ημερομηνίας δανεισμού κατά μία εβδομάδα!</label> </td></div>';
+                  ?>
+
             </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>

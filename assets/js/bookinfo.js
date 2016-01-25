@@ -339,3 +339,40 @@ function lendBook()
       }
 
   }
+
+  function doExtension()
+  {
+    var idDocuments=document.getElementById("idDoc").value;
+
+     if(idDocuments)
+     {
+         $.ajax({
+         type: 'post',
+         url: 'checkdata.php',
+         data: {
+           book_id:idDocuments,
+         },
+         success: function (response)
+         {
+              if(response!="OK")
+              {
+                  alert(response);
+                alert("Αποτυχία παράτασης δανεισμού!");
+                return false;
+              }
+              else
+              {
+                alert("Η ημερομηνία παράδοσης του βιβλίου\n  παρατάθηκε κατά μία εβδομάδα!");
+                 window.location.replace(location.pathname);
+                return true;
+              }
+
+          }
+       });
+      }
+      else {
+        alert("Σφάλμα κατά την προσπάθεια παράτασης!");
+        return false;
+      }
+
+  }

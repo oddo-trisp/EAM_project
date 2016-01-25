@@ -35,8 +35,9 @@ CREATE TABLE `Documents` (
   `useridLended` int(11) DEFAULT NULL,
   `isLended` int(1) unsigned zerofill NOT NULL,
   `imageLink` varchar(100) DEFAULT NULL,
-  `points` int DEFAULT NULL,
-  `voters` int DEFAULT NULL,
+  `points` int NOT NULL DEFAULT 0,
+  `voters` int NOT NULL DEFAULT 0,
+  `extension` int(1) unsigned zerofill NOT NULL DEFAULT 0,
   PRIMARY KEY (`idDocuments`),
   UNIQUE KEY `idDocuments_UNIQUE` (`idDocuments`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
@@ -48,7 +49,7 @@ CREATE TABLE `Documents` (
 
 LOCK TABLES `Documents` WRITE;
 /*!40000 ALTER TABLE `Documents` DISABLE KEYS */;
-INSERT INTO `Documents` VALUES (1,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'http://d.scdn.gr/images/books/000399/399685-big.jpg',4,1),(2,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00','2016-01-24 00:00:00','Φιλοσοφική',1,1,'http://d.scdn.gr/images/books/000399/399685-big.jpg',4,1),(3,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'http://d.scdn.gr/images/books/000399/399685-big.jpg',4,1),(4,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'https://d.scdn.gr/images/books/000322/322209-big.jpg',4,1),(5,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00','2016-01-31 00:00:00','Θετικές Επιστήμες',5,1,'https://d.scdn.gr/images/books/000322/322264-big.jpg',4,1),(6,'Διακριτα Μαθηματικά','book','Liu','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'http://www.cup.gr/Images/Products/STOIXEIA_DIAKRITON_MATHIMATIKON.jpg',4,1),(7,'Εισαγωγή στη βιοχημεία','paper','Georgatsos','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'http://a.scdn.gr/images/books/000118/118836-big.jpg',4,1),(8,'Νεοελληνική Φιλολογία','book','Mastrodimitris','1996-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'https://a.scdn.gr/images/books/000133/133085-big.jpg',4,1),(9,'Αστικό δίκαιο: επιτομή','book','Papasteriou','2010-01-01 00:00:00',NULL,'Νομική',NULL,0,'http://www.e-shop.gr/images/BKS/BKS.0333561.jpg',5,1),(10,'Χριστιανισμός και έρως','book','Sherrard','1994-01-01 00:00:00',NULL,'Θεολογική',NULL,0,'https://images-na.ssl-images-amazon.com/images/I/31WvmpS81eL._SL256_.jpg',4,1),(11,'Βιοηθική (κλωνοποίηση)','book','Charalambous','2001-01-01 00:00:00',NULL,'Επιστήμες Υγείας',NULL,0,NULL,3,1);
+INSERT INTO `Documents` VALUES (1,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'http://d.scdn.gr/images/books/000399/399685-big.jpg',4,1,0),(2,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00','2016-01-24 00:00:00','Φιλοσοφική',1,1,'http://d.scdn.gr/images/books/000399/399685-big.jpg',4,1,0),(3,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'http://d.scdn.gr/images/books/000399/399685-big.jpg',4,1,0),(4,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'https://d.scdn.gr/images/books/000322/322209-big.jpg',4,1,0),(5,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00','2016-01-31 00:00:00','Θετικές Επιστήμες',5,1,'https://d.scdn.gr/images/books/000322/322264-big.jpg',4,1,0),(6,'Διακριτα Μαθηματικά','book','Liu','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'http://www.cup.gr/Images/Products/STOIXEIA_DIAKRITON_MATHIMATIKON.jpg',4,1,0),(7,'Εισαγωγή στη βιοχημεία','paper','Georgatsos','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'http://a.scdn.gr/images/books/000118/118836-big.jpg',4,1,0),(8,'Νεοελληνική Φιλολογία','book','Mastrodimitris','1996-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'https://a.scdn.gr/images/books/000133/133085-big.jpg',4,1,0),(9,'Αστικό δίκαιο: επιτομή','book','Papasteriou','2010-01-01 00:00:00',NULL,'Νομική',NULL,0,'http://www.e-shop.gr/images/BKS/BKS.0333561.jpg',5,1,0),(10,'Χριστιανισμός και έρως','book','Sherrard','1994-01-01 00:00:00',NULL,'Θεολογική',NULL,0,'https://images-na.ssl-images-amazon.com/images/I/31WvmpS81eL._SL256_.jpg',4,1,0),(11,'Βιοηθική (κλωνοποίηση)','book','Charalambous','2001-01-01 00:00:00',NULL,'Επιστήμες Υγείας',NULL,0,NULL,3,1,0);
 /*!40000 ALTER TABLE `Documents` ENABLE KEYS */;
 UNLOCK TABLES;
 

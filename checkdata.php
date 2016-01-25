@@ -175,7 +175,7 @@ if (isset($_POST['user_id']) && isset($_POST['documents_id'])){
 }
 
 //Aksiologisi vivliou
-if (isset($_POST['book_rating']) && isset($_POST['book_name'])){
+if(isset($_POST['book_rating']) && isset($_POST['book_name'])){
 
   include 'connect.php';
 
@@ -206,24 +206,59 @@ if (isset($_POST['book_rating']) && isset($_POST['book_name'])){
       }
       else{
         echo "Invalid";
-       }
+      }
 
+      $results->close();
       mysqli_close($link);
       exit();
 
     }
     else {
       echo 'Error!';
+      $results->close();
       mysqli_close($link);
       exit();
     }
   }
-  else {
+  else{
     echo 'Error';
+    $results->close();
     mysqli_close($link);
     exit();
   }
-
 }
+
+//Paratash daneismou
+if(isset($_POST['book_id'])){
+
+    include 'connect.php';
+
+    $idDocuments=$_POST['book_id'];
+
+    $query="SELECT returnDate FROM Documents WHERE idDocuments=$idDocuments";
+
+    $results = mysqli_query($link,$query) or die ("Query failed");
+    $row=mysqli_fetch_object($results);
+
+    $date = strtotime("+1 weeks", strtotime($row->returnDate));
+    $date=date('Y-m-d', $date);
+
+    $checkdata=" UPDATE Documents SET returnDate='$date',extension=1 WHERE idDocuments=$idDocuments ";
+    //$checkdata=" SELECT * FROM Users WHERE username='$name' ";
+
+  $results->close();
+
+    $results = mysqli_query($link,$checkdata) or die ("Query failed");
+
+      if($results == TRUE){
+         echo "OK";
+      }
+      else{
+        echo "Invalid";
+       }
+       mysqli_close($link);
+       exit();
+  }
+
 
  ?>
