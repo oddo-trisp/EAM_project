@@ -95,7 +95,7 @@
     			     </ul>';
              }
              else {
-              echo '<li class="nav pull-right"><a href="logout.php">Αποσύνδεση</a></li><span class="caret">';
+              echo '<li class="nav pull-right"><a href="logout.php">Αποσύνδεση</a></li>';
              }
           ?>
             </li>
