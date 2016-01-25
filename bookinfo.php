@@ -39,7 +39,12 @@
 
                   ?>
                     <h3> Πληροφορίες Συγγράμματος </h3>
-                    <img class="media-object" src="http://placehold.it/250x160" alt="...">
+                    <?php
+                      if($row->imageLink==NULL)
+                        echo '<img class="media-object" src="http://placehold.it/250x160" alt="...">';
+                      else
+                        echo '<img class="media-object" src="'.$row->imageLink.'" alt="...">';
+                    ?>
                     <table>
                         <tr>
                             <td> <b> Τίτλος: </b> </td>

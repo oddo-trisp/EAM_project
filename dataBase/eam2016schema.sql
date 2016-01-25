@@ -34,6 +34,7 @@ CREATE TABLE `Documents` (
   `libName` varchar(45) NOT NULL,
   `useridLended` int(11) DEFAULT NULL,
   `isLended` int(1) unsigned zerofill NOT NULL,
+  `imageLink` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idDocuments`),
   UNIQUE KEY `idDocuments_UNIQUE` (`idDocuments`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
@@ -45,7 +46,7 @@ CREATE TABLE `Documents` (
 
 LOCK TABLES `Documents` WRITE;
 /*!40000 ALTER TABLE `Documents` DISABLE KEYS */;
-INSERT INTO `Documents` VALUES (1,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0),(2,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00','2016-01-24 00:00:00','Φιλοσοφική',1,1),(3,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0),(4,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0),(5,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00','2016-01-31 00:00:00','Θετικές Επιστήμες',5,1),(6,'Διακριτα Μαθηματικά','book','Liu','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0),(7,'Εισαγωγή στη βιοχημεία','paper','Georgatsos','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0),(8,'Νεοελληνική Φιλολογία','book','Mastrodimitris','1996-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0),(9,'Αστικό δίκαιο: επιτομή','book','Papasteriou','2010-01-01 00:00:00',NULL,'Νομική',NULL,0),(10,'Χριστιανισμός και έρως','book','Sherrard','1994-01-01 00:00:00',NULL,'Θεολογική',NULL,0),(11,'Βιοηθική (κλωνοποίηση)','book','Charalambous','2001-01-01 00:00:00',NULL,'Επιστήμες Υγείας',NULL,0);
+INSERT INTO `Documents` VALUES (1,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'http://d.scdn.gr/images/books/000399/399685-big.jpg'),(2,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00','2016-01-24 00:00:00','Φιλοσοφική',1,1,'http://d.scdn.gr/images/books/000399/399685-big.jpg'),(3,'Ψυχομετρία','paper','Alexopoulos','2011-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'http://d.scdn.gr/images/books/000399/399685-big.jpg'),(4,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'https://d.scdn.gr/images/books/000322/322209-big.jpg'),(5,'Μαθηματική ανάλυση','book','Rassias','2014-01-01 00:00:00','2016-01-31 00:00:00','Θετικές Επιστήμες',5,1,'https://d.scdn.gr/images/books/000322/322264-big.jpg'),(6,'Διακριτα Μαθηματικά','book','Liu','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'http://www.cup.gr/Images/Products/STOIXEIA_DIAKRITON_MATHIMATIKON.jpg'),(7,'Εισαγωγή στη βιοχημεία','paper','Georgatsos','2013-01-01 00:00:00',NULL,'Θετικές Επιστήμες',NULL,0,'http://a.scdn.gr/images/books/000118/118836-big.jpg'),(8,'Νεοελληνική Φιλολογία','book','Mastrodimitris','1996-01-01 00:00:00',NULL,'Φιλοσοφική',NULL,0,'https://a.scdn.gr/images/books/000133/133085-big.jpg'),(9,'Αστικό δίκαιο: επιτομή','book','Papasteriou','2010-01-01 00:00:00',NULL,'Νομική',NULL,0,'http://www.e-shop.gr/images/BKS/BKS.0333561.jpg'),(10,'Χριστιανισμός και έρως','book','Sherrard','1994-01-01 00:00:00',NULL,'Θεολογική',NULL,0,'https://images-na.ssl-images-amazon.com/images/I/31WvmpS81eL._SL256_.jpg'),(11,'Βιοηθική (κλωνοποίηση)','book','Charalambous','2001-01-01 00:00:00',NULL,'Επιστήμες Υγείας',NULL,0,NULL);
 /*!40000 ALTER TABLE `Documents` ENABLE KEYS */;
 UNLOCK TABLES;
 

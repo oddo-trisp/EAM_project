@@ -97,12 +97,24 @@
                                 {
                                     while($row = mysqli_fetch_object($results))
                                     {
-                                        echo '<a href="bookinfo.php?id='.$row->idDocuments.'">
+                                        if($row->imageLink==NULL)
+                                        {
+                                          echo '<a href="bookinfo.php?id='.$row->idDocuments.'">
                                                     <div class="img-with-txt">
                                                         <img class="media-object" src="http://placehold.it/100x150"/>
                                                         <p> '.$row->title.'</p>
                                                     </div>
                                                 </a>';
+                                        }
+                                        else
+                                        {
+                                          echo '<a href="bookinfo.php?id='.$row->idDocuments.'">
+                                                    <div class="img-with-txt">
+                                                        <img class="media-object" src="'.$row->imageLink.'"/>
+                                                        <p> '.$row->title.'</p>
+                                                    </div>
+                                                </a>';
+                                        }
                                     }
                                 }
                                 $results->close();

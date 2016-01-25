@@ -103,17 +103,34 @@
                                 $lend="Lended";
                               else
                                 $lend="Available";
-                             echo '<li class="media">
-                               <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
-                                 <img class="media-object" src="http://placehold.it/150x90" alt="...">
-                               </a>
-                               <div class="media-body">
-                                 <h4 class="media-heading">'.$row->title.'</h4>
-                                 <p class="by-author">'.$row->type.' By '.$row->author.'</p>
-                                 <p class="by-author">'.$row->libName.'</p>
-                                 <p class="by-author">'.$lend.'</p>
-                               </div>
-                             </li>';
+                              if($row->imageLink==NULL)
+                              {
+                                echo '<li class="media">
+                                  <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
+                                    <img class="media-object" src="http://placehold.it/150x240" alt="...">
+                                  </a>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">'.$row->title.'</h4>
+                                    <p class="by-author">'.$row->type.' By '.$row->author.'</p>
+                                    <p class="by-author">'.$row->libName.'</p>
+                                    <p class="by-author">'.$lend.'</p>
+                                  </div>
+                                </li>';
+                              }
+                              else
+                              {
+                                echo '<li class="media">
+                                  <a class="pull-left" href="bookinfo.php?id='.$row->idDocuments.'">
+                                    <img class="media-object" src="'.$row->imageLink.'" alt="...">
+                                  </a>
+                                  <div class="media-body">
+                                    <h4 class="media-heading">'.$row->title.'</h4>
+                                    <p class="by-author">'.$row->type.' By '.$row->author.'</p>
+                                    <p class="by-author">'.$row->libName.'</p>
+                                    <p class="by-author">'.$lend.'</p>
+                                  </div>
+                                </li>';
+                              }
                                  echo '<br>';
                            }
                          }
