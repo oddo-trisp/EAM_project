@@ -127,8 +127,11 @@
                         }
                         else
                         {
-                          echo '<form method="post">
-                            <div class="col-sm-4"></div>';
+                          if($row->isLended!=true)
+                            echo '<form method="post">
+                              <div class="col-sm-4" ><font color="red"><h4> Για το δανεισμό του βιβλίου απαιτείται σύνδεση! </h4></font></div>';
+                            else
+                              echo '<div class="col-sm-4" ></div>';
                         }
                         ?>
                         <div class="col-sm-4">

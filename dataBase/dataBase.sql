@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `eamuser54` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `eamuser54`;
--- MySQL dump 10.13  Distrib 5.6.19, for osx10.7 (i386)
+-- MySQL dump 10.13  Distrib 5.5.46, for debian-linux-gnu (x86_64)
 --
--- Host: 127.0.0.1    Database: eamuser54
+-- Host: localhost    Database: eamuser54
 -- ------------------------------------------------------
--- Server version	5.5.38
+-- Server version	5.5.46-0ubuntu0.14.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,6 +16,33 @@ USE `eamuser54`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `Announcements`
+--
+
+DROP TABLE IF EXISTS `Announcements`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Announcements` (
+  `idAnnouncements` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL,
+  `word` varchar(2000) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`idAnnouncements`),
+  UNIQUE KEY `idAnnouncements_UNIQUE` (`idAnnouncements`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Announcements`
+--
+
+LOCK TABLES `Announcements` WRITE;
+/*!40000 ALTER TABLE `Announcements` DISABLE KEYS */;
+INSERT INTO `Announcements` VALUES (1,'Προβλήματα στη λειτουργία του Συστήματος','Σας ενημερώνουμε ότι καθώς συνεχίζονται οι διαδικασίες μετάπτωσης του υπάρχοντος συστήματος αυτοματοποίησης βιβλιοθήκης του ΕΚΠΑ στο νέο συνεργατικό μοντέλο του ILSaS (δράση που εντάσσεται στο έργο του Συνδέσμου Ελληνικών Ακαδημαϊκών Βιβλιοθηκών (ΣΕΑΒ / HEAL-Link) στο ΕΣΠΑ), θα επηρεαστούν οι διαδικασίες δανεισμού και εξυπηρέτησης χρηστών. Συγκεκριμένα, από την Πέμπτη 5 Νοεμβρίου 2015 ξεκινούν οι διαδικασίες δανεισμού με την σταδιακή ενσωμάτωση των βιβλιοθηκών μας, προκειμένου για να αντιμετωπιστούν πιθανά προβλήματα στην ομαλή ένταξη της Βιβλιοθήκης του ΕΚΠΑ στο νέο σύστημα.','2016-01-26'),(2,'Εργασίες αποκατάστασης πρόσβασης σε ψηφιακές συλλογές','Σας ενημερώνουμε ότι, λόγω εργασιών αναβάθμισης των υποδομών της Βιβλιοθήκης, οι ψηφιακές συλλογές Κοσμόπολις, Πλειάς και Δανιηλίς, αλλά και η υπηρεσία ηλεκτρονικής εκδοτικής Πασιθέη δεν θα είναι διαθέσιμες το Σαββατοκύριακο 12-13 Δεκεμβρίου 2015.\n\nΑπολογούμαστε για την αναστάτωση, αλλά η διακοπή της λειτουργίας των υπηρεσιών αυτών είναι επιτακτική για την αποκατάσταση της ομαλότητας στην πρόσβαση σε αυτές.','2015-12-11'),(3,'Δωρεάν πρόσβαση σε τίτλους των σειρών Undergraduate Texts in Mathematics και Universitext','Ο εκδοτικός οίκος Springer παρέχει δωρέαν το περιεχόμενο των σειρών Undergraduate Texts in Mathematics και Universitext σε pdf μορφή. Το περιεχόμενο στο οποίο μπορεί να έχει κάποιος πρόσβαση είναι από την έναρξη κυκλοφορίας των σειρών, δηλαδή από το 1958 και το 1930 αντίστοιχα, έως το 2005. Πρακτικά ο Springer δεν επιτρέπει την ελεύθερη πρόσβαση στους τίτλους των σειρών αυτών έως και δέκα χρόνια πριν, επιβάλλοντας ένα κινούμενο τείχος (moving wall), όπως χαρακτηριστικά ονομάζεται αυτή η πρακτική. Παρ’ όλα αυτά το περιεχόμενο των σειρών είναι ιδιαίτερα χρήσιμο για προπτυχιακούς και μεταπτυχιακούς φοιτητές διαφόρων κλάδων των Μαθηματικών.','2015-12-29'),(4,'Διακοπή υπηρεσιών του HEAL-LInk για εργασίες συντήρησης','Θα θέλαμε να σας ενημερώσουμε ότι από Παρασκευή 22/01/2016 έως και Κυριακή 24/01/2016 θα υπάρξει διακοπή των υπηρεσιών των ηλεκτρονικών πηγών του HEAL-Link, λόγω εκτεταμένων εργασιών συντήρησης στις υποδομές του. Η διακοπή αναμένεται να επηρεάσει τη λειτουργία του δικτυακού τόπου, ενώ η πρόσβαση στο περιεχόμενο των εκδοτών, συμπεριλαμβανομένης της λειτουργίας των υπηρεσιών πιστοποίησης, εκτιμάται ότι θα είναι ομαλή.','2016-01-22');
+/*!40000 ALTER TABLE `Announcements` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `Documents`
@@ -35,9 +62,9 @@ CREATE TABLE `Documents` (
   `useridLended` int(11) DEFAULT NULL,
   `isLended` int(1) unsigned zerofill NOT NULL,
   `imageLink` varchar(100) DEFAULT NULL,
-  `points` int NOT NULL DEFAULT 0,
-  `voters` int NOT NULL DEFAULT 0,
-  `extension` int(1) unsigned zerofill NOT NULL DEFAULT 0,
+  `points` int(11) NOT NULL DEFAULT '0',
+  `voters` int(11) NOT NULL DEFAULT '0',
+  `extension` int(1) unsigned zerofill NOT NULL DEFAULT '0',
   PRIMARY KEY (`idDocuments`),
   UNIQUE KEY `idDocuments_UNIQUE` (`idDocuments`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
@@ -82,7 +109,7 @@ CREATE TABLE `Libraries` (
 
 LOCK TABLES `Libraries` WRITE;
 /*!40000 ALTER TABLE `Libraries` DISABLE KEYS */;
-INSERT INTO `Libraries` VALUES (1,'Φιλοσοφική','Πανεπιστημιούπολη',2107272132,'psychologia@lib.uoa.gr','lib.uoa.gr','Φιλοσοφική',37.97009,23.78035),(2,'Θετικές Επιστήμες','Πανεπιστημιούπολη',2107276524,'sci@lib.uoa.gr','www.lib.uoa.gr/sci','Πληροφορική',37.96854,23.76695),(3,'Νομική','Ιπποκράτους 33',2103688371,'dimdikaiou@lib.uoa.gr','www.lib.uoa.gr/law','Νομική',37.98286,23.73555),(4,'Θεολογική','Πανεπιστημιούπολη',2107275781,'theologiki@lib.uoa.gr','','Θεολογική',37.96913,23.77610),(5,'Επιστήμες Υγείας','Μικράς Ασίας και Δήλου 1',2107461400,'epistigias@lib.uoa.gr','','Ιατρική',37.98330,23.76642);
+INSERT INTO `Libraries` VALUES (1,'Φιλοσοφική','Πανεπιστημιούπολη',2107272132,'psychologia@lib.uoa.gr','lib.uoa.gr','Φιλοσοφική',37.9701,23.7803),(2,'Θετικές Επιστήμες','Πανεπιστημιούπολη',2107276524,'sci@lib.uoa.gr','www.lib.uoa.gr/sci','Πληροφορική',37.9685,23.767),(3,'Νομική','Ιπποκράτους 33',2103688371,'dimdikaiou@lib.uoa.gr','www.lib.uoa.gr/law','Νομική',37.9829,23.7355),(4,'Θεολογική','Πανεπιστημιούπολη',2107275781,'theologiki@lib.uoa.gr','','Θεολογική',37.9691,23.7761),(5,'Επιστήμες Υγείας','Μικράς Ασίας και Δήλου 1',2107461400,'epistigias@lib.uoa.gr','','Ιατρική',37.9833,23.7664);
 /*!40000 ALTER TABLE `Libraries` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,32 +142,14 @@ LOCK TABLES `Users` WRITE;
 INSERT INTO `Users` VALUES (1,'nmpegetis','Begetis','nmpegetis@di.uoa.gr','Φιλοσοφική','Nikos'),(2,'kelraheb','Elraheb','kelraheb@di.uoa.gr','Θεολογική','Katerina'),(3,'vkatifori','Katifori','vkatifori@di.uoa.gr','Νομική','Vivi'),(4,'sbaltzi','Baltzi','sbaltzi@di.uoa.gr','Ιατρική','Sofia'),(5,'yioannidis','Ioannidis','yioannidis@di.uoa.gr','Πληροφορική','Yannis'),(6,'lpapadopoulos','Papadopoulos','lpapad@di.uoa.gr','Πληροφορική','Labis');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-DROP TABLE IF EXISTS `Announcements`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Announcements` (
-  `idAnnouncements` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(200) NOT NULL,
-  `word` varchar(2000) NOT NULL,
-  `date` date NOT NULL,
-  PRIMARY KEY (`idAnnouncements`),
-  UNIQUE KEY `idAnnouncements_UNIQUE` (`idAnnouncements`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Announcements`
+-- Dumping events for database 'eamuser54'
 --
 
-LOCK TABLES `Announcements` WRITE;
-/*!40000 ALTER TABLE `Announcements` DISABLE KEYS */;
-INSERT INTO `Announcements` VALUES (1,'Προβλήματα στη λειτουργία του Συστήματος','Σας ενημερώνουμε ότι καθώς συνεχίζονται οι διαδικασίες μετάπτωσης του υπάρχοντος συστήματος αυτοματοποίησης βιβλιοθήκης του ΕΚΠΑ στο νέο συνεργατικό μοντέλο του ILSaS (δράση που εντάσσεται στο έργο του Συνδέσμου Ελληνικών Ακαδημαϊκών Βιβλιοθηκών (ΣΕΑΒ / HEAL-Link) στο ΕΣΠΑ), θα επηρεαστούν οι διαδικασίες δανεισμού και εξυπηρέτησης χρηστών. Συγκεκριμένα, από την Πέμπτη 5 Νοεμβρίου 2015 ξεκινούν οι διαδικασίες δανεισμού με την σταδιακή ενσωμάτωση των βιβλιοθηκών μας, προκειμένου για να αντιμετωπιστούν πιθανά προβλήματα στην ομαλή ένταξη της Βιβλιοθήκης του ΕΚΠΑ στο νέο σύστημα.','2016-01-26'),(2,'Εργασίες αποκατάστασης πρόσβασης σε ψηφιακές συλλογές','Σας ενημερώνουμε ότι, λόγω εργασιών αναβάθμισης των υποδομών της Βιβλιοθήκης, οι ψηφιακές συλλογές Κοσμόπολις, Πλειάς και Δανιηλίς, αλλά και η υπηρεσία ηλεκτρονικής εκδοτικής Πασιθέη δεν θα είναι διαθέσιμες το Σαββατοκύριακο 12-13 Δεκεμβρίου 2015.
-
-Απολογούμαστε για την αναστάτωση, αλλά η διακοπή της λειτουργίας των υπηρεσιών αυτών είναι επιτακτική για την αποκατάσταση της ομαλότητας στην πρόσβαση σε αυτές.','2015-12-11'),(3,'Δωρεάν πρόσβαση σε τίτλους των σειρών Undergraduate Texts in Mathematics και Universitext','Ο εκδοτικός οίκος Springer παρέχει δωρέαν το περιεχόμενο των σειρών Undergraduate Texts in Mathematics και Universitext σε pdf μορφή. Το περιεχόμενο στο οποίο μπορεί να έχει κάποιος πρόσβαση είναι από την έναρξη κυκλοφορίας των σειρών, δηλαδή από το 1958 και το 1930 αντίστοιχα, έως το 2005. Πρακτικά ο Springer δεν επιτρέπει την ελεύθερη πρόσβαση στους τίτλους των σειρών αυτών έως και δέκα χρόνια πριν, επιβάλλοντας ένα κινούμενο τείχος (moving wall), όπως χαρακτηριστικά ονομάζεται αυτή η πρακτική. Παρ’ όλα αυτά το περιεχόμενο των σειρών είναι ιδιαίτερα χρήσιμο για προπτυχιακούς και μεταπτυχιακούς φοιτητές διαφόρων κλάδων των Μαθηματικών.','2015-12-29'),(4,'Διακοπή υπηρεσιών του HEAL-LInk για εργασίες συντήρησης','Θα θέλαμε να σας ενημερώσουμε ότι από Παρασκευή 22/01/2016 έως και Κυριακή 24/01/2016 θα υπάρξει διακοπή των υπηρεσιών των ηλεκτρονικών πηγών του HEAL-Link, λόγω εκτεταμένων εργασιών συντήρησης στις υποδομές του. Η διακοπή αναμένεται να επηρεάσει τη λειτουργία του δικτυακού τόπου, ενώ η πρόσβαση στο περιεχόμενο των εκδοτών, συμπεριλαμβανομένης της λειτουργίας των υπηρεσιών πιστοποίησης, εκτιμάται ότι θα είναι ομαλή.','2016-01-22');
-/*!40000 ALTER TABLE `Announcements` ENABLE KEYS */;
-UNLOCK TABLES;
+--
+-- Dumping routines for database 'eamuser54'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -151,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-01-19 17:07:09
+-- Dump completed on 2016-01-26 17:30:00

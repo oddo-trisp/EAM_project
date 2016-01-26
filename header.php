@@ -35,7 +35,7 @@
             <ul class="dropdown-menu">
                 <li><a href="booksearch.php">Αναζήτηση Υλικού</a></li>
                 <li><a href="bookentry.php">Καταχώρηση Υλικού</a></li>
-                <li><a href="allbooks.php">Προβολή Βιβλίων</a></li>
+                <li><a href="allbooks.php">Προβολή Όλων</a></li>
                 <?php
                     if(!empty($_SESSION['email']) && !empty($_SESSION['id']))
                     {

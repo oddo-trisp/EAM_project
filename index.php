@@ -70,8 +70,8 @@
                     <div class="col-md-8">
                         <h3> Καλώς ήρθατε! </h3>
                         <p>
-                            Καλώς ορίσατε στον δικτυακό τόπο των Βιβλιοθηκών του
-                            <a href="http://www.uoa.gr"> Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών. </a>
+                            Καλώς ορίσατε στον δικτυακό τόπο των Βιβλιοθηκών του<br>
+                            <a href="http://www.uoa.gr"> Εθνικού και Καποδιστριακού Πανεπιστημίου Αθηνών </a>
                         </p>
                         <h4> Μια σύντομη ιστορική αναδρομή </h4>
                         <p>
@@ -83,7 +83,7 @@
                         </p>
                         <h4> Πρόσφατες αναρτήσεις </p>
                         <div class="recent">
-                            <?
+                            <?php
                                 echo '<br>';
 
                                 //Connect to database
@@ -121,11 +121,7 @@
                                 $results->close();
                                 mysqli_close($link);
                             ?>
-                          <!--  <img class="media-object" src="http://placehold.it/100x150"/>
-                            <img class="media-object" src="http://placehold.it/100x150"/>
-                            <img class="media-object" src="http://placehold.it/100x150"/>
-                            <img class="media-object" src="http://placehold.it/100x150"/>
-                            <img class="media-object" src="http://placehold.it/100x150"/>-->
+
                         </div>
                     </div>
                     <div class="col-md-1">
