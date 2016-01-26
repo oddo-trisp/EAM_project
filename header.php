@@ -19,7 +19,6 @@
     <ul class="nav nav-tabs">
         <li><a href="index.php">  <span class="glyphicon glyphicon-home"/> </a></li>
 <!--<img src="assets/img/home.png" class="homeimg"></a></li>-->
-        <li><a href="faq.php">Πληροφορίες (F.A.Q)</a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Βιβλιοθήκες
                 <span class="caret"></span>
@@ -36,6 +35,7 @@
             <ul class="dropdown-menu">
                 <li><a href="booksearch.php">Αναζήτηση Υλικού</a></li>
                 <li><a href="bookentry.php">Καταχώρηση Υλικού</a></li>
+                <li><a href="allbooks.php">Προβολή Βιβλίων</a></li>
                 <?php
                     if(!empty($_SESSION['email']) && !empty($_SESSION['id']))
                     {
@@ -44,7 +44,19 @@
                 ?>
             </ul>
          </li>
-         <li><a href="contact.php">Επικοινωνία</a></li>
+         <li class="dropdown">
+             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Βοήθεια
+                 <span class="caret"></span>
+             </a>
+             <ul class="dropdown-menu">
+               <li><a href="faq.php">Πληροφορίες (F.A.Q)</a></li>
+               <li><a href="contact.php">Επικοινωνία</a></li>
+            </ul>
+          </li>
+          <?php
+              if(basename($_SERVER['PHP_SELF'])!="index.php")
+                echo '<li><a href="announceresults.php">Ανακοινώσεις</a></li>';
+          ?>
          <?php
           if(basename($_SERVER['PHP_SELF'])!="booksearch.php" && basename($_SERVER['PHP_SELF'])!="libsearch.php")
           {

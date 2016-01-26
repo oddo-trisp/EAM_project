@@ -64,3 +64,19 @@
 	-webkit-border-radius: 3px;
     margin-bottom: 20px;
 }
+
+.wrapper .prev-all h4{
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.wrapper .prev-all .submit input {
+   width: 100px;
+   height: 40px;
+   background-color: #336699;
+   color: #FFF;
+   border-radius: 3px;
+   -moz-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   margin-bottom: 20px;
+}

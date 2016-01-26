@@ -20,86 +20,35 @@
         <div id="container">
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="wrapper">
-                <h3> Αποτελέσματα Αναζήτησης </h3>
+                <h2> Όλα τα Βιβλία ανά είδος </h2>
                 <?php
                     //Connect to database
                     include 'connect.php';
 
-                  if(isset($_POST["qsbutton"]))
-                  {
+                    $query='select count(idDocuments) as papers from Documents where type="paper"';
+                    $results = mysqli_query($link,$query) or die ("Query failed");
+                    $row=mysqli_fetch_object($results);
+                    $papers=$row->papers;
+                    $query='select count(idDocuments) as books from Documents where type="book"';
+                    $results = mysqli_query($link,$query) or die ("Query failed");
+                    $row=mysqli_fetch_object($results);
+                    $books=$row->books;
 
-                        $query = 'SELECT * FROM Documents WHERE INSTR('.$_POST["menu"].',"'.$_POST["qsfield"].'") > 0 ORDER BY title';
-
-                  }
-                  else if(isset($_POST["csbutton"]))
-                  {
-                      $query='SELECT * FROM Documents WHERE ';
-                      $first='true';
-                      if($_POST["title"] != NULL && $_POST["title"] != '')
-                      {
-                        $query=$query.'INSTR(title,"'.$_POST["title"].'") > 0';
-                        $first='false';
-                      }
-                      if($_POST["author"] != NULL && $_POST["author"] != '')
-                      {
-                          if($first=='true')
-                          {
-                            $query=$query.'INSTR(author,"'.$_POST["author"].'") > 0';
-                            $first='false';
-                          }
-                          else
-                            $query=$query.' AND INSTR(author,"'.$_POST["author"].'") > 0';
-                      }
-                      if($_POST["libMenu"] != 'empty')
-                      {
-                        if($first=='true')
-                        {
-                          $query=$query.'INSTR(libName,"'.$_POST["libMenu"].'")>0';
-                          $first='false';
-                        }
-                        else
-                          $query=$query.' AND INSTR(libName,"'.$_POST["libMenu"].'") > 0';
-                      }
-                      if($_POST["typeMenu"] != 'empty')
-                      {
-                          if($first=='true')
-                          {
-                            $query=$query.'INSTR(type,"'.$_POST["typeMenu"].'") > 0';
-                            $first='false';
-                          }
-                          else
-                            $query=$query.' AND INSTR(type,"'.$_POST["typeMenu"].'") > 0';
-                      }
-                      if($_POST["statusMenu"] != 'empty')
-                      {
-                        $lended=0;
-                        if($_POST["statusMenu"]=='lended')
-                              $lended=1;
-                        if($first=='true')
-                        {
-                          $query=$query.'isLended='.$lended.'';
-                          $first='false';
-                        }
-                        else
-                          $query=$query.' AND isLended='.$lended.'';
-                      }
-                      $query=$query.' ORDER BY title';
-
-                  }
+                    $query='SELECT * FROM Documents';
 
                   //ektelesi tou query
                   $results = mysqli_query($link,$query) or die ("Query failed");
                 ?>
                 <div class="row">
                          <?php
-                         $i=0;
                          if(mysqli_num_rows($results) > 0)
                          {
                            echo '<div class="col-md-5 col-lg-5">
-                               <ul class="media-list main-list">';
+                               <ul class="media-list main-list">
+                               <h2>Books('.$books.')</h2>';
                            while($row = mysqli_fetch_object($results))
                            {
-                             if(($i % 2)==0)
+                             if(($row->type)=='book')
                              {
                                $lend="";
                                if($row->isLended==true)
@@ -136,17 +85,16 @@
                                   }
                                   echo '<br>';
                                 }
-                                $i++;
                            }
                          echo '</ul>
                           </div>';
                            echo '<div class="col-md-7 col-lg-7">
-                               <ul class="media-list main-list">';
-                            $i=1;
-                            mysqli_data_seek($results,1);
+                               <ul class="media-list main-list">
+                                <h2>Papers('.$papers.')</h2>';
+                            mysqli_data_seek($results,0);
                            while($row = mysqli_fetch_object($results))
                            {
-                             if(($i % 2)!=0)
+                             if(($row->type)=='paper')
                              {
                                $lend="";
                                if($row->isLended==true)
@@ -183,7 +131,6 @@
                                   }
                                   echo '<br>';
                                 }
-                                $i++;
                            }
                            echo '</ul>
                             </div>';

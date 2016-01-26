@@ -52,8 +52,14 @@
                           </div>
 
                           <p>Για να χρησιμοποιήσετε τη "Γρήγορη Αναζήτηση", επιλέξτε από το μενού την κατηγορία αναζήτησης και πληκτρολογείστε τον όρο που αναζητείτε.</p>
+                          </form>
+                          <form action="allbooks.php" method="post">
+                          <center class="prev-all">
+                                <p>  <h4> Προβολή όλων των Βιβλίων </h4> </p>
+                                <div class="submit"> <input  onClick="window.location.href='allbooks.php'" type="submit" value="Προβολή"/></div>
+                            </center>
+                          </form>
                       </div>
-                    </form>
                   </center>
                     <center>
                         <div class="col-sm-6 combined">
@@ -64,10 +70,6 @@
                                         <td> <label for="text">Τίτλος</label> </td>
                                 		<td> <input type="text" name="title"/> </td>
                                     </tr>
-                                    <tr>
-                                        <td> <label for="text">Τύπος</label> </td>
-                                    <td> <input type="text" name="type"/> </td>
-                                  </tr>
                                     <tr>
                                         <td> <label for="name">Συγγραφέας</label> </td>
                                 		<td> <input type="text" name="author"/> </td>
@@ -92,12 +94,33 @@
                                                   echo '<option value="'.$row->libName.'"><i class="fa fa-angle-double-right"></i>'.$row->libName.'</option>';
                                             }
                                           }
-                                          $results->close();
-                                          mysqli_close($link);
                                         ?>
                                       </select>
                                       </td>
                                 </tr>
+                                <tr>
+                                  <td> <label for="text">Τύπος</label> </td>
+                                  <td> <select id="menu" name="typeMenu" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <option value="empty"><i class="fa fa-angle-double-right"></i>--------Επιλογή Τύπου-------</option>
+                                    <?php
+
+                                      //sximatismos tou query
+                                      $query = 'select distinct type from Documents';
+
+                                      $results = mysqli_query($link,$query) or die ("Query failed");
+
+                                      if(mysqli_num_rows($results) > 0)
+                                      {
+                                        while($row = mysqli_fetch_object($results))
+                                        {
+                                              echo '<option value="'.$row->type.'"><i class="fa fa-angle-double-right"></i>'.$row->type.'</option>';
+                                        }
+                                      }
+                                      $results->close();
+                                      mysqli_close($link);
+                                    ?>
+                                  </select>
+                              </tr>
                                 <tr>
                                     <td> <label for="name">Κατάσταση</label> </td>
                                     <td> <select id="menu" name="statusMenu" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -108,7 +131,7 @@
                                 </table>
                                 <div class="submit"> <input onclick="return validateCombForm()" type="submit" name="csbutton" value="Αναζήτηση" /> <input type="reset" value="Καθαρισμός" />  </div>
                             </form>
-                            <p>Για να χρησιμοποιήσετε τη "Σύνθετη Αναζήτηση", συμπληρώστε τη φόρμα και πατήστε το πλήκτρο αναζήτησης.</p>
+                            <p>Για να χρησιμοποιήσετε τη "Σύνθετη Αναζήτηση", συμπληρώστε τουλάχιστον ένα πεδίο της φόρμας και πατήστε το πλήκτρο αναζήτησης.</p>
                         </div>
                     </center>
                 </div>
