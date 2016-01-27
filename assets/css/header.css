@@ -102,6 +102,16 @@
     margin: auto;
 }
 
+.header .pull-right .dropdown-menu button[type=reset]{
+    background-color:#713646;
+    border:none;
+}
+
+.header .pull-right .dropdown-menu button[type=reset]:hover{
+    background-color:#42172e;
+    border:none;
+}
+
 .header .pull-right .dropdown-menu .text-center{
     color: #fff;
 }

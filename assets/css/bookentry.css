@@ -48,11 +48,20 @@ input:focus, textarea:focus {
 .submit input {
     margin-top: 20px;
 	width: 150px;
-	height: 40px;
 	background-color: #336699;
 	color: #FFF;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
     margin-bottom: 20px;
+}
+
+.submit input[type=reset]{
+    background-color:#713646;
+        border:none;
+}
+
+.submit input[type=reset]:hover{
+    background-color:#42172e;
+    border:none;
 }

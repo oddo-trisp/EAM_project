@@ -65,6 +65,17 @@
     margin-bottom: 20px;
 }
 
+.wrapper .combined .submit input[type=reset]{
+    background-color:#713646;
+        border:none;
+}
+
+.wrapper .combined .submit input[type=reset]:hover{
+    background-color:#42172e;
+    border:none;
+}
+
+
 .wrapper .prev-all h4{
     margin-top: 5%;
     margin-bottom: 2%;

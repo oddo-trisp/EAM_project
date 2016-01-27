@@ -56,7 +56,6 @@
 .wrapper .combined .submit input {
     width: 100px;
     margin-top: 20px;
-	height: 40px;
 	background-color: #336699;
 	color: #FFF;
 	border-radius: 3px;
@@ -64,6 +63,17 @@
 	-webkit-border-radius: 3px;
     margin-bottom: 20px;
 }
+
+.wrapper .combined .submit input[type=reset]{
+    background-color:#713646;
+        border:none;
+}
+
+.wrapper .combined .submit input[type=reset]:hover{
+    background-color:#42172e;
+    border:none;
+}
+
 
 .wrapper .prev-all h4{
     margin-top: 5%;
