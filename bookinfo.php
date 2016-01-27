@@ -91,7 +91,7 @@
                                 $realRating=($row->points)/($row->voters);
                                 $rating=intval($realRating);
                                 $realRating=substr($realRating, 0, 4);
-                                echo '('.$realRating.'/5)  Από '.$row->voters.' χρήστες';
+                                echo ''.$realRating.'/5  (Από '.$row->voters.' χρήστες)';
                                 echo '<input type="number" class="cur_rating" data-min="1" data-max="5" value="'.$rating.'"/>';
                               }
                               else

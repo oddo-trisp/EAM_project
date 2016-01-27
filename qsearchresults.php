@@ -42,11 +42,11 @@
                              <div class="col-md-1">
                              </div>
                              <?php
-                             echo '<div class="col-md-5">';
                              $flag1="true";
                              $flag2="true";
                              if(mysqli_num_rows($results) > 0)
                              {
+                                echo '<div class="col-md-5">';
                                echo '<h3>Βιβλία</h3>';
                                while($row = mysqli_fetch_object($results))
                                {
@@ -90,9 +90,9 @@
                              }
                              else
                                 $flag1="false";
-                             echo '<div class="col-md-5">';
                              if(mysqli_num_rows($results3) > 0)
                              {
+                               echo '<div class="col-md-5">';
                                echo '<h3>Βιβλιοθήκες</h3>';
                                while($row = mysqli_fetch_object($results3))
                                {
@@ -112,7 +112,7 @@
                              else
                                 $flag2="false";
                               if($flag1=="false" && $flag2=="false")
-                                echo 'Δεν βρέθηκαν αποτελέσματα...!';
+                                echo '<p class="noresults">Δεν βρέθηκαν αποτελέσματα...!</p>';
                               $results->close();
                               $results3->close();
                               mysqli_close($link);
