@@ -33,3 +33,21 @@ table{
     margin-bottom: 5%;
     width: 600px;
 }
+
+.lib .prev-all{
+    margin-top: 5%;
+}
+
+.lib .prev-all .submit input{
+    width: 100px;
+    height: 40px;
+    background-color: #336699;
+    color: #FFF;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.lib .prev-all .submit input:hover{
+    background-color: #003366;
+}
