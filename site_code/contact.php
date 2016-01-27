@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="assets/css/footer.css">
         <link rel="stylesheet" href="assets/css/contact.css">
         <script src="assets/js/index.js"></script>
-        <title>EAM_Project</title>
+        <title>ΥΚΒ ΕΚΠΑ</title>
     </head>
     <body>
         <div id="container">

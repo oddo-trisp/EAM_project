@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="assets/css/bookinfo.css">
         <script src="assets/js/bookinfo.js"></script>
         <script src="assets/js/index.js"></script>
-        <title>EAM_Project</title>
+        <title>ΥΚΒ ΕΚΠΑ</title>
     </head>
     <body>
         <div id="container">

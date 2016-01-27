@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="assets/css/booksearch.css">
         <script src="assets/js/validators.js"></script>
         <script src="assets/js/index.js"></script>
-        <title>EAM_Project</title>
+        <title>ΥΚΒ ΕΚΠΑ</title>
     </head>
     <body>
         <div id="container">

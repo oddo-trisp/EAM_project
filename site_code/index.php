@@ -19,7 +19,7 @@
         <script src="assets/js/index.js"></script>
         <script src="assets/js/jQuery.verticalCarousel.js"></script>
 
-        <title>EAM_Project</title>
+        <title>ΥΚΒ ΕΚΠΑ</title>
     </head>
     <body>
         <div id="container">

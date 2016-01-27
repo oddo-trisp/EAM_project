@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="assets/css/libpage.css">
         <script src="assets/js/libpage.js"></script>
         <script src="assets/js/index.js"></script>
-        <title>EAM_Project</title>
+        <title>ΥΚΒ ΕΚΠΑ</title>
     </head>
     <body>
         <div id="container">

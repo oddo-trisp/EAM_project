@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="assets/css/signup.css">
         <script src="assets/js/index.js"></script>
         <script src="assets/js/signup.js"></script>
-        <title>EAM_Project</title>
+        <title>ΥΚΒ ΕΚΠΑ</title>
     </head>
     <body>
         <div id="container">
