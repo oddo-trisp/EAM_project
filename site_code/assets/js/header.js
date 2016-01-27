@@ -9,16 +9,16 @@ function validateForm() {
 function checkLogin()
 {
        var name=document.getElementById("Username").value;
-       var email=document.getElementById("Email").value;
+       var pass=document.getElementById("Pass").value;
 
-       if(email && name)
+       if(pass && name)
        {
            $.ajax({
            type: 'post',
            url: 'checkdata.php',
            data: {
              user_name:name,
-             user_email:email,
+             user_pass:pass,
            },
            success: function (response)
            {

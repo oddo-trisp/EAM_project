@@ -17,7 +17,6 @@
 
     <ul class="nav nav-tabs">
         <li><a href="index.php">  <span class="glyphicon glyphicon-home"/> </a></li>
-<!--<img src="assets/img/home.png" class="homeimg"></a></li>-->
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Βιβλιοθήκες
                 <span class="caret"></span>
@@ -36,7 +35,7 @@
                 <li><a href="bookentry.php">Καταχώρηση Υλικού</a></li>
                 <li><a href="allbooks.php">Προβολή Όλων</a></li>
                 <?php
-                    if(!empty($_SESSION['email']) && !empty($_SESSION['id']))
+                    if(!empty($_SESSION['pass']) && !empty($_SESSION['id']))
                     {
                         echo '<li><a href="mybooks.php">Τα Βιβλία μου</a></li>';
                     }
@@ -72,7 +71,7 @@
            }
           ?>
           <?php
-          if(empty($_SESSION['email']) && empty($_SESSION['id']))
+          if(empty($_SESSION['pass']) && empty($_SESSION['id']))
           {
             echo '<ul class="nav nav-tabs pull-right">
             <li class="dropdown">
@@ -88,7 +87,7 @@
     										        </div>
     										          <div class="form-group">
     											            <label class="sr-only">Email</label>
-    											            <input name="Email" type="email" class="form-control" id="Email" placeholder="Email" required>
+    											            <input name="Pass" type="password" class="form-control" id="Pass" placeholder="Password" required>
     										          </div>
     										          <div class="form-group">
     											         <button type="button" name="loginbutton" onclick="return checkLogin()" class="btn btn-primary btn-block">Σύνδεση</button>

@@ -112,7 +112,7 @@
                             <div class="rating"> <input type="button" onclick="return rateByUser()" value="Αξιολόγηση" /> </div>
                         </div>
                         <?php
-                        if($row->isLended!=true && !empty($_SESSION['email']) && !empty($_SESSION['id']))
+                        if($row->isLended!=true && !empty($_SESSION['pass']) && !empty($_SESSION['id']))
                         {
                            echo '<form method="post">
                              <div class="col-sm-4">

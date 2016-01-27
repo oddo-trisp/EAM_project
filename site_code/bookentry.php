@@ -41,8 +41,7 @@
                             <td> <input type="datetime" name="pubdate" id="pubdate" placeholder="2011-01-01" required/> </td>
                         </tr>
                         <tr>
-                          <!--  <td> <label for="text">Βιβλιοθήκη*</label> </td>
-                            <td> <input type="text" name="library" id="library" placeholder="Φιλοσοφική" required/> </td>-->
+
                             <td> <label for="text">Βιβλιοθήκη*</label> </td>
                             <td> <select name="library" id="library-dropdown" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                               <?php

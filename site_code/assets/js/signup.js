@@ -78,8 +78,16 @@ function checkname()
        var name=document.getElementById("name").value;
        var surname=document.getElementById("surname").value;
        var department=document.getElementById("department").value;
+       var pass=document.getElementById("pass").value;
+       var check_pass=document.getElementById("check_pass").value;
 
-    if(namehtml=="OK" && emailhtml=="OK")
+       if(check_pass != pass)
+       {
+          alert("Παρακαλώ βεβαιωθείται ότι ο κωδικός πρόσβασης\n\t\tείναι ίδιος και στα δύο πεδία!");
+          return false;
+      }
+
+    if(namehtml=="OK" && emailhtml=="OK" )
     {
       $.ajax({
       type: 'post',
@@ -90,6 +98,7 @@ function checkname()
       user_name:name,
       user_surname:surname,
       user_department:department,
+      user_pass:pass,
       },
       success: function (response) {
       $( '#email_status' ).html(response);

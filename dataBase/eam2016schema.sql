@@ -101,6 +101,7 @@ CREATE TABLE `Users` (
   `email` varchar(45) NOT NULL,
   `department` varchar(45) NOT NULL,
   `name` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
   PRIMARY KEY (`idUsers`,`email`),
   UNIQUE KEY `idUsers_UNIQUE` (`idUsers`),
   UNIQUE KEY `email_UNIQUE` (`email`)
@@ -113,7 +114,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (1,'nmpegetis','Begetis','nmpegetis@di.uoa.gr','Φιλοσοφική','Nikos'),(2,'kelraheb','Elraheb','kelraheb@di.uoa.gr','Θεολογική','Katerina'),(3,'vkatifori','Katifori','vkatifori@di.uoa.gr','Νομική','Vivi'),(4,'sbaltzi','Baltzi','sbaltzi@di.uoa.gr','Ιατρική','Sofia'),(5,'yioannidis','Ioannidis','yioannidis@di.uoa.gr','Πληροφορική','Yannis'),(6,'lpapadopoulos','Papadopoulos','lpapad@di.uoa.gr','Πληροφορική','Labis');
+INSERT INTO `Users` VALUES (1,'nmpegetis','Begetis','nmpegetis@di.uoa.gr','Φιλοσοφική','Nikos','1234'),(2,'kelraheb','Elraheb','kelraheb@di.uoa.gr','Θεολογική','Katerina','1234'),(3,'vkatifori','Katifori','vkatifori@di.uoa.gr','Νομική','Vivi','1234'),(4,'sbaltzi','Baltzi','sbaltzi@di.uoa.gr','Ιατρική','Sofia','1234'),(5,'yioannidis','Ioannidis','yioannidis@di.uoa.gr','Πληροφορική','Yannis','1234'),(6,'lpapadopoulos','Papadopoulos','lpapad@di.uoa.gr','Πληροφορική','Labis','1234');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

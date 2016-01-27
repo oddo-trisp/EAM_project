@@ -32,6 +32,16 @@
                       </td>
                       </tr>
                       <tr>
+                          <td> <label for="pass">Password*</label> </td>
+                          <td> <input type="password" name="pass" id="pass" placeholder="Παρακαλώ πληκτρολογείστε έναν κωδικό πρόσβασης" required>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td> <label for="check_pass">Επιβεβαίωση Password*</label> </td>
+                          <td> <input type="password" name="check_pass" id="check_pass" placeholder="Παρακαλώ επαναλλάβετε τον κωδικό πρόσβασης" required>
+                          </td>
+                      </tr>
+                      <tr>
                             <td> <label for="name">Όνομα*</label> </td>
                     		<td> <input type="text" name="name" id="name" placeholder="Προκόπης" required/> </td>
                         </tr>

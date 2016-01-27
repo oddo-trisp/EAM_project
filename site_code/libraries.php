@@ -24,9 +24,6 @@
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="libs">
                 <h3> Βιβλιοθήκες Πανεπιστημίου Αθηνών </h3>
-                    <!--<li><a href="libpage.php">Βιβλιοθήκη Αγγλικής Γλώσσας και Φιλολογίας</a></li>
-                    <li><a href="libpage.php">Βιβλιοθήκη Αρχαιολογίας και Ιστορίας της Τέχνης</a></li>
-                    <li><a href="libpage.php">Βιβλιοθήκη Αστροφυσικής και Αστρονομίας</a></li>-->
                     <?php
                         //Connect to database
                         include 'connect.php';
