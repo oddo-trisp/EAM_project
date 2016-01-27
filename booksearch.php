@@ -34,19 +34,11 @@
                                     <option value="type"><i class="fa fa-angle-double-right"></i> Τύπος</option>
                                     <option value="author"><i class="fa fa-angle-double-right"></i> Συγγραφέας</option>
                                   </select>
-                              <!--<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                              <span id="search_concept">Name</span> <span class="caret"></span>
-                              </button>
-                              <ul class="dropdown-menu" role="menu">
-                                <li><a href="#id"><i class="fa fa-angle-double-right"></i> ID</a></li>
-                                <li><a href="#name"><i class="fa fa-angle-double-right"></i> Name</a></li>
-                                <li><a href="#description"><i class="fa fa-angle-double-right"></i> Description</a></li>
-                              </ul>-->
                             </div>
                             <input type="hidden" name="search_param" value="name" id="search_param">
                             <input type="text" class="form-control" name="qsfield" placeholder="Search.." id="search_key" value="">
                             <span class="input-group-btn">
-                                <button class="btn btn-default text-muted" type="reset" title="Clear"><i class="glyphicon glyphicon-remove"></i> </button>
+                                <button class="btn btn-default text-muted" type="reset" title="Clear" ><i class="glyphicon glyphicon-remove"></i> </button></font>
                                 <button  onclick="return validateQuickForm()" name="qsbutton" class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </span>
                           </div>
@@ -68,11 +60,11 @@
                                 <table>
                                     <tr>
                                         <td> <label for="text">Τίτλος</label> </td>
-                                		<td> <input type="text" name="title"/> </td>
+                                		<td> <input type="text" name="title" placeholder="Το όνομα του ρόδου"/> </td>
                                     </tr>
                                     <tr>
                                         <td> <label for="name">Συγγραφέας</label> </td>
-                                		<td> <input type="text" name="author"/> </td>
+                                		<td> <input type="text" name="author" placeholder="Umberto Eco"/> </td>
                                 	</tr>
                                 <tr>
                                       <td> <label for="text">Βιβλιοθήκη</label> </td>

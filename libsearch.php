@@ -54,15 +54,15 @@
                                 <table>
                                     <tr>
                                         <td> <label for="text">Όνομα</label> </td>
-                                		<td> <input type="text" name="libName"/> </td>
+                                		<td> <input type="text" name="libName" placeholder="Φιλοσοφική"/> </td>
                                     </tr>
                                     <tr>
                                         <td> <label for="name">Διεύθυνση</label> </td>
-                                		<td> <input type="text" name="address"/> </td>
+                                		<td> <input type="text" name="address" placeholder="Πανεπιστημιούπολη"/> </td>
                                 	</tr>
                                     <tr>
                                         <td> <label for="text">Τμήμα</label> </td>
-                                		<td> <input type="text" name="department"/> </td>
+                                		<td> <input type="text" name="department" placeholder="Φιλοσοφική"/> </td>
                                 	</tr>
                                 </table>
                                 <div class="submit"> <input onclick="return validateCombFormLib()" type="submit" name="csbutton" value="Αναζήτηση" /> <input type="reset" value="Καθαρισμός" />  </div>

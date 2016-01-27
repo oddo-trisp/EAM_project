@@ -1,9 +1,8 @@
 <?php
-  //if(basename($_SERVER['PHP_SELF'])!="booksearch.php" && basename($_SERVER['PHP_SELF'])!="libsearch.php")
-  //{
+
     session_start();
       echo '<script src="assets/js/header.js"></script>';
-  //}
+
 ?>
 <div class="header">
     <div id="lang">

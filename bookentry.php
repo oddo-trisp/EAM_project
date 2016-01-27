@@ -26,7 +26,7 @@
                     <table align="center">
                         <tr>
                             <td> <label for="text">Τίτλος*</label> </td>
-                            <td> <input type="text" name="title" id="title" placeholder="Το ονομα του ρόδου" required/> </td>
+                            <td> <input type="text" name="title" id="title" placeholder="Το όνομα του ρόδου" required/> </td>
                         </tr>
                         <tr>
                             <td> <label for="text">Τύπος*</label> </td>
@@ -34,11 +34,11 @@
                         </tr>
                         <tr>
                             <td> <label for="name">Συγγραφέας*</label> </td>
-                            <td> <input type="text" name="author" id="author" placeholder="Uberto Eco" required/> </td>
+                            <td> <input type="text" name="author" id="author" placeholder="Umberto Eco" required/> </td>
                         </tr>
                         <tr>
                             <td> <label for="text">Ημερομηνία Έκδοσης*</label> </td>
-                            <td> <input type="datetime" name="pubdate" id="pubdate" placeholder="2011-01-01 00:00:00" required/> </td>
+                            <td> <input type="datetime" name="pubdate" id="pubdate" placeholder="2011-01-01" required/> </td>
                         </tr>
                         <tr>
                           <!--  <td> <label for="text">Βιβλιοθήκη*</label> </td>

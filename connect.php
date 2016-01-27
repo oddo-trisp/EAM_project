@@ -4,7 +4,7 @@ $db_hostname = "localhost";		//database server (use localhost or 127.0.0.1 if th
 $db_name = "eamuser54";		// database
 $db_user = "root";			// database username
 $db_pass = "";			// database password
-$link=mysqli_connect($db_hostname, $db_user, $db_pass, $db_name) or die ("Unable to connect to database");
+$link=mysqli_connect($db_hostname, $db_user, $db_pass, $db_name) or die (mysqli_connect_error());
 mysqli_set_charset($link,"utf8");
 
 ?>
