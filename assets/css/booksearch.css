@@ -21,6 +21,10 @@
     background-color: #66CCFF;
 }
 
+.wrapper .quick .input-group .input-group-btn button[type=reset]{
+        border: 1px solid #ccc;
+}
+
 .wrapper p{
     width: 450px;
     margin-top: 3%;

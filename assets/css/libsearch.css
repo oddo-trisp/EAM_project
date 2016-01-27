@@ -21,6 +21,10 @@
     background-color: #66CCFF;
 }
 
+.wrapper .quick .input-group .input-group-btn button[type=reset]{
+        border: 1px solid #ccc;
+}
+
 .wrapper p{
     width: 450px;
     margin-top: 3%;
@@ -68,6 +72,8 @@
 .wrapper .combined .submit input[type=reset]{
     background-color:#713646;
         border:none;
+        width: 100px;
+        height: 38px;
 }
 
 .wrapper .combined .submit input[type=reset]:hover{

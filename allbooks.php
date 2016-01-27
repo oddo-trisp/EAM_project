@@ -25,16 +25,26 @@
                     //Connect to database
                     include 'connect.php';
 
-                    $query='select count(idDocuments) as papers from Documents where type="paper"';
+                    if(isset($_POST["button"]))
+                      $query='select count(idDocuments) as papers from Documents where type="paper" and libName="'.$_POST["value"].'"';
+                    else
+                      $query='select count(idDocuments) as papers from Documents where type="paper"';
                     $results = mysqli_query($link,$query) or die ("Query failed");
                     $row=mysqli_fetch_object($results);
                     $papers=$row->papers;
-                    $query='select count(idDocuments) as books from Documents where type="book"';
+
+                    if(isset($_POST["button"]))
+                        $query='select count(idDocuments) as books from Documents where type="book" and libName="'.$_POST["value"].'"';
+                    else
+                        $query='select count(idDocuments) as books from Documents where type="book"';
                     $results = mysqli_query($link,$query) or die ("Query failed");
                     $row=mysqli_fetch_object($results);
                     $books=$row->books;
 
-                    $query='SELECT * FROM Documents';
+                    if(isset($_POST["button"]))
+                      $query='SELECT * FROM Documents WHERE libName="'.$_POST["value"].'"';
+                    else
+                      $query='SELECT * FROM Documents';
 
                   //ektelesi tou query
                   $results = mysqli_query($link,$query) or die ("Query failed");

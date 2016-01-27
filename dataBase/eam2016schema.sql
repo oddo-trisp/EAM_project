@@ -70,6 +70,7 @@ CREATE TABLE `Libraries` (
   `department` varchar(45) NOT NULL,
   `latitude` float NOT NULL,
   `longitude` float NOT NULL,
+  `program` varchar(100) NOT NULL,
   PRIMARY KEY (`idLibraries`),
   UNIQUE KEY `idLibraries_UNIQUE` (`idLibraries`),
   UNIQUE KEY `telNum_UNIQUE` (`telNum`)
@@ -82,7 +83,7 @@ CREATE TABLE `Libraries` (
 
 LOCK TABLES `Libraries` WRITE;
 /*!40000 ALTER TABLE `Libraries` DISABLE KEYS */;
-INSERT INTO `Libraries` VALUES (1,'Φιλοσοφική','Πανεπιστημιούπολη',2107272132,'psychologia@lib.uoa.gr','lib.uoa.gr','Φιλοσοφική',37.97009,23.78035),(2,'Θετικές Επιστήμες','Πανεπιστημιούπολη',2107276524,'sci@lib.uoa.gr','www.lib.uoa.gr/sci','Πληροφορική',37.96854,23.76695),(3,'Νομική','Ιπποκράτους 33',2103688371,'dimdikaiou@lib.uoa.gr','www.lib.uoa.gr/law','Νομική',37.98286,23.73555),(4,'Θεολογική','Πανεπιστημιούπολη',2107275781,'theologiki@lib.uoa.gr','','Θεολογική',37.96913,23.77610),(5,'Επιστήμες Υγείας','Μικράς Ασίας και Δήλου 1',2107461400,'epistigias@lib.uoa.gr','','Ιατρική',37.98330,23.76642);
+INSERT INTO `Libraries` VALUES (1,'Φιλοσοφική','Πανεπιστημιούπολη',2107272132,'psychologia@lib.uoa.gr','lib.uoa.gr','Φιλοσοφική',37.97009,23.78035,'Δευτέρα-Πέμπτη: 09:00- 18:00 και Παρασκευή: 09.00-15.00'),(2,'Θετικές Επιστήμες','Πανεπιστημιούπολη',2107276524,'sci@lib.uoa.gr','www.lib.uoa.gr/sci','Πληροφορική',37.96854,23.76695,'Δευτέρα-Παρασκευή: 08:30-19:00 και Σάββατο: 09:00-14:00'),(3,'Νομική','Ιπποκράτους 33',2103688371,'dimdikaiou@lib.uoa.gr','www.lib.uoa.gr/law','Νομική',37.98286,23.73555,'Δευτέρα-Πέμπτη: 09.00-17.00 και Παρασκευή: 09.00-16.00'),(4,'Θεολογική','Πανεπιστημιούπολη',2107275781,'theologiki@lib.uoa.gr','','Θεολογική',37.96913,23.77610,'Δευτέρα-Πέμπτη: 08:00-19:00 και Παρασκευή: 08:00-16:00'),(5,'Επιστήμες Υγείας','Μικράς Ασίας και Δήλου 1',2107461400,'epistigias@lib.uoa.gr','','Ιατρική',37.98330,23.76642,'Δευτέρα-Παρασκευή: 08:30-20:30');
 /*!40000 ALTER TABLE `Libraries` ENABLE KEYS */;
 UNLOCK TABLES;
 

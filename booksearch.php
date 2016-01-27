@@ -21,7 +21,7 @@
         <div id="container">
             <div id="headerfile"> <?php include 'header.php' ?></div>
             <div class="wrapper">
-                <h3>Αναζήτηση Συγγραμμάτων</h3>
+                <h3>Αναζήτηση Υλικού</h3>
                 <div class="row">
                   <center>
                     <form name="quicksearch" role="search" action="bookresults.php" method="post">

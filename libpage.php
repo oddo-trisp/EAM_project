@@ -40,20 +40,41 @@
                 <h4> <b>Πληροφορίες Επικοινωνίας</b> </h4>
                 <table align="center">
                     <tr>
-                        <td><b>Τηλέφωνο:</b></td>
-                        <td> <?php echo ''.$row->telNum.''?> </td>
-                    </tr>
-                    <tr>
-                        <td> <b>Διεύθυνση:</b> </td>
-                        <td> <?php echo ''.$row->address.''?> </td>
-                    </tr>
-                    <tr>
-                        <td> <b>Τμήμα:</b> </td>
-                        <td> <?php echo ''.$row->department.''?> </td>
+                        <td><b>Τηλέφωνο: </b></td>
+                        <td> <?php echo '&nbsp;'.$row->telNum.''?> </td>
                     </tr>
                     <tr>
                         <td><b>E-mail:</b></td>
-                        <td> <?php echo ''.$row->email.''?> </td>
+                        <td> <?php echo '&nbsp;'.$row->email.''?> </td>
+                    </tr>
+                    <tr>
+                        <td> <b>Διεύθυνση:</b> </td>
+                        <td> <?php echo '&nbsp;'.$row->address.''?> </td>
+                    </tr>
+                    <tr>
+                        <td> <b>Τμήμα:</b> </td>
+                        <td> <?php echo '&nbsp;'.$row->department.''?> </td>
+                    </tr>
+                    <tr>
+                        <td> <b>Ώρες Λειτουργίας:</b> </td>
+                        <td>
+                          <?php
+                              $first=strstr($row->program, 'και', true);
+                              $second=strstr($row->program,'και');
+                              $second=strstr($second,' ');
+                              $var=strpos($row->program,'και');
+                              if($var !== FALSE)
+                              {
+                                  echo '&nbsp;'.$first.'';
+                                  echo '<br>';
+                                  echo '&nbsp;'.$second.'';
+                              }
+                              else
+                              {
+                                  echo '&nbsp;'.$row->program.'';
+                              }
+                            ?>
+                        </td>
                     </tr>
                     <tr>
                         <td><b>Web site:</b></td>
@@ -61,14 +82,14 @@
                         <?php
                             if(strpos($row->website,'www') !== FALSE)
                             {
-                              echo '<a href="http://'.$row->website.'">'.$row->website.'</a>';
+                              echo ' &nbsp;<a href="http://'.$row->website.'">'.$row->website.'</a>';
                             }
                             else
                             {
                               if(!empty($row->website))
-                                echo '<a href="http://www.'.$row->website.'">www.'.$row->website.'</a>';
+                                echo '&nbsp;<a href="http://www.'.$row->website.'">www.'.$row->website.'</a>';
                               else
-                                echo 'Μη διαθέσιμο';
+                                echo '&nbsp;Μη διαθέσιμο';
                             }
                         ?>
                       </td>
@@ -79,6 +100,14 @@
                   <div><input type="hidden" name="longitude" id="longitude" value="<?php echo''.$row->longitude.''?>"></div>
                     <div id="map"></div>
                 </center>
+                <form action="allbooks.php" method="post">
+                <center class="prev-all">
+                      <p>  <h4> Προβολή όλων των Βιβλίων της βιβλιοθήκης </h4> </p>
+                      <div class="submit"> <input name="button" id="button" onClick="window.location.href='allbooks.php'" type="submit" value="Προβολή"/>
+                                        <input name="value" id="value" type="hidden" <?php echo 'value="'.$row->libName.'"';?>/>
+                      </div>
+                  </center>
+                  <form>
             </div>
         </div>
         <div id="footerfile"> <?php include 'footer.php' ?></div>
